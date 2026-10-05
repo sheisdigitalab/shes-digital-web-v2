@@ -22,7 +22,10 @@
   <script>
     (function (d) {
       var r = d.documentElement; r.classList.add('js');
-      if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      var manual = false;
+      try { manual = localStorage.getItem('sd-motion') === 'reduce'; } catch (e) {}
+      if (manual) r.classList.add('reduce-motion');
+      if (!manual && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
         r.classList.add('is-anim');
         // Si las librerías no llegan, se muestra todo sin animar
         setTimeout(function () { if (!window.gsap) r.classList.remove('is-anim'); }, 3000);
@@ -430,6 +433,7 @@
         </div>
 
         <form class="form" id="contact-form" novalidate data-reveal>
+          <p class="form__note" id="form-note">Todos los campos son obligatorios.</p>
           <div class="field">
             <label for="f-name">¿Cómo te llamas?</label>
             <input id="f-name" name="name" type="text" autocomplete="name" required aria-describedby="f-name-err" />
@@ -500,6 +504,7 @@
       </div>
       <div class="footer__bottom">
         <p>© 2026 She's Digital · Jenifer Jaldo</p>
+        <button class="motion-toggle" type="button" aria-pressed="false" data-motion-toggle>Reducir animaciones</button>
         <p>Hecho a mano en Barcelona ✦</p>
       </div>
     </div>

@@ -4,6 +4,7 @@
   'use strict';
   if (typeof window.gsap === 'undefined' || typeof window.ScrollTrigger === 'undefined') return;
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (document.documentElement.classList.contains('reduce-motion')) return;
 
   const mm = gsap.matchMedia();
 
@@ -34,6 +35,9 @@
     };
     // La imagen es lazy: hay que medir cuando ya tiene altura real
     img.loading = 'eager';
+    // Aquí la captura avanza con el scroll de la página: la ventana ya no se desplaza sola,
+    // así que deja de ser una parada del tabulador
+    screen.removeAttribute('tabindex');
 
     mm.add('(min-width: 1024px)', () => {
       gsap.to(img, {

@@ -21,7 +21,10 @@
   <script>
     (function (d) {
       var r = d.documentElement; r.classList.add('js');
-      if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      var manual = false;
+      try { manual = localStorage.getItem('sd-motion') === 'reduce'; } catch (e) {}
+      if (manual) r.classList.add('reduce-motion');
+      if (!manual && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
         r.classList.add('is-anim');
         setTimeout(function () { if (!window.gsap) r.classList.remove('is-anim'); }, 3000);
       }
@@ -72,15 +75,17 @@
             <p class="cs-hero__lead" data-hero="fade">Osteopatía en la empresa. Un servicio nuevo, con marca nueva, que tenía que convencer a empresas desde el primer día: profesionalidad clínica, tono cercano y un camino claro hasta pedir propuesta.</p>
           </div>
 
+          <div class="cs-side">
           <dl class="cs-meta" data-hero="fade">
             <div><dt>Cliente</dt><dd>Olia Workplace</dd></div>
             <div><dt>Lugar</dt><dd>Barcelona</dd></div>
             <div><dt>Qué hicimos</dt><dd>Branding · Diseño web · Bilingüe</dd></div>
             <div><dt>Estado</dt><dd>Web publicada</dd></div>
-            <div class="cs-meta__actions">
-              <a href="https://oliaworkplace.com/" class="btn btn--dark btn--magnetic" target="_blank" rel="noopener">Ver la web <span class="btn__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg></span><span class="sr-only">(se abre en una pestaña nueva)</span></a>
-            </div>
           </dl>
+          <div class="cs-meta__actions" data-hero="fade">
+            <a href="https://oliaworkplace.com/" class="btn btn--dark btn--magnetic" target="_blank" rel="noopener">Ver la web <span class="btn__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg></span><span class="sr-only">(se abre en una pestaña nueva)</span></a>
+          </div>
+          </div>
         </div>
       </div>
 
@@ -123,13 +128,13 @@
               <li><span>04</span>Prueba piloto, quién soy y la propuesta.</li>
             </ol>
           </div>
-          <div class="cs-browser" aria-label="Captura completa de la web de Olia Workplace" role="img">
+          <div class="cs-browser">
             <div class="cs-browser__bar" aria-hidden="true">
               <i></i><i></i><i></i>
               <span>oliaworkplace.com</span>
             </div>
-            <div class="cs-browser__screen" data-tour-screen tabindex="0" aria-label="Captura desplazable de la web completa">
-              <img src="../../assets/img/cases/olia-workplace/full.webp" alt="" width="1200" height="7705" loading="lazy" data-tour-img />
+            <div class="cs-browser__screen" data-tour-screen tabindex="0" role="region" aria-label="Web completa de Olia Workplace, desplazable">
+              <img src="../../assets/img/cases/olia-workplace/full.webp" alt="Captura de la página de inicio completa de Olia Workplace, de la portada al pie" width="1200" height="7705" loading="lazy" data-tour-img />
             </div>
           </div>
         </div>
@@ -237,7 +242,7 @@
           <p class="eyebrow" data-reveal>04 — En el móvil</p>
           <h2 class="h2" id="phones-title" data-split>Pensada para<br /><em>convencer en el móvil.</em></h2>
         </header>
-        <div class="cs-phones__row">
+        <div class="cs-phones__row" tabindex="0" role="region" aria-label="Capturas en el móvil de Olia Workplace">
           <figure class="phone" data-phone="0"><img src="../../assets/img/cases/olia-workplace/mobile-1.webp" alt="Móvil: portada Osteopatía en la empresa" width="585" height="1266" loading="lazy" /></figure>
           <figure class="phone" data-phone="1"><img src="../../assets/img/cases/olia-workplace/mobile-2.webp" alt="Móvil: datos sobre dolor de espalda en el trabajo" width="585" height="1266" loading="lazy" /></figure>
           <figure class="phone" data-phone="2"><img src="../../assets/img/cases/olia-workplace/mobile-3.webp" alt="Móvil: beneficios para la empresa" width="585" height="1266" loading="lazy" /></figure>
@@ -315,6 +320,7 @@
       </div>
       <div class="footer__bottom">
         <p>© 2026 She's Digital · Jenifer Jaldo</p>
+        <button class="motion-toggle" type="button" aria-pressed="false" data-motion-toggle>Reducir animaciones</button>
         <p>Hecho a mano en Barcelona ✦</p>
       </div>
     </div>

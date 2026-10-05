@@ -4,12 +4,28 @@
   'use strict';
 
   const root = document.documentElement;
-  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const systemReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const reduced = systemReduced || root.classList.contains('reduce-motion');
   const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
   const hasGsap = typeof window.gsap !== 'undefined' && typeof window.ScrollTrigger !== 'undefined';
   const animate = hasGsap && !reduced;
 
   if (!animate) root.classList.remove('is-anim');
+
+  /* ---------- Interruptor «Reducir animaciones» (se recuerda en este navegador) ---------- */
+  document.querySelectorAll('[data-motion-toggle]').forEach((btn) => {
+    if (systemReduced) {
+      btn.setAttribute('aria-pressed', 'true');
+      btn.disabled = true;
+      btn.textContent = 'Animaciones reducidas por tu sistema';
+      return;
+    }
+    btn.setAttribute('aria-pressed', String(reduced));
+    btn.addEventListener('click', () => {
+      try { localStorage.setItem('sd-motion', reduced ? 'full' : 'reduce'); } catch (err) { /* sin almacenamiento */ }
+      window.location.reload();
+    });
+  });
 
   /* ---------- Navegación ---------- */
   const nav = document.querySelector('[data-nav]');
@@ -264,7 +280,7 @@
     const marks = visual.querySelectorAll('em');
     gsap.set(words, { yPercent: 110 });
     gsap.set(marks, { backgroundSize: '0% 100%' });
-    const tl = gsap.timeline({ scrollTrigger: { trigger: el, start: 'top 86%', once: true } });
+    const tl = gsap.timeline({ scrollTrigger: { trigger: el, start: 'top 86%', toggleActions: 'play none none none' } });
     tl.to(words, { yPercent: 0, duration: 1.05, ease: 'expo.out', stagger: 0.045 })
       .to(marks, { backgroundSize: '100% 100%', duration: .9, ease: 'expo.inOut' }, '-=.7');
   });
@@ -272,7 +288,6 @@
   /* ---------- Revelados generales ---------- */
   ScrollTrigger.batch('[data-reveal]', {
     start: 'top 90%',
-    once: true,
     onEnter: (batch) => gsap.to(batch, { opacity: 1, y: 0, duration: 1, ease: 'expo.out', stagger: 0.08, overwrite: true })
   });
 
@@ -327,18 +342,13 @@
     scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true }
   });
 
-  /* ---------- Cinta: velocidad según el scroll ---------- */
+  /* ---------- Cinta: avanza con el scroll ---------- */
   const track = document.querySelector('[data-marquee]');
+  // Solo se mueve con el scroll: nada se desplaza por su cuenta (WCAG 2.2.2)
   if (track) {
-    const loop = gsap.to(track, { xPercent: -50, duration: 38, ease: 'none', repeat: -1 });
-    ScrollTrigger.create({
-      trigger: '.ribbon', start: 'top bottom', end: 'bottom top',
-      onToggle: (self) => (self.isActive ? loop.play() : loop.pause()),
-      onUpdate: (self) => {
-        const v = Math.min(Math.abs(self.getVelocity()) / 400, 4);
-        gsap.to(loop, { timeScale: (self.direction < 0 ? -1 : 1) * (1 + v), duration: .3, overwrite: true });
-        gsap.to(loop, { timeScale: self.direction < 0 ? -1 : 1, duration: 1, delay: .3 });
-      }
+    gsap.fromTo(track, { xPercent: 0 }, {
+      xPercent: -30, ease: 'none',
+      scrollTrigger: { trigger: '.ribbon', start: 'top bottom', end: 'bottom top', scrub: true }
     });
   }
 
@@ -357,7 +367,8 @@
       s.textContent = w;
       return i < words.length - 1 ? [s, document.createTextNode(' ')] : [s];
     }));
-    gsap.fromTo(p.querySelectorAll('.word'), { opacity: .18 }, {
+    // Opacidad mínima 0,66: el texto atenuado sigue cumpliendo el contraste AA
+    gsap.fromTo(p.querySelectorAll('.word'), { opacity: .66 }, {
       opacity: 1, ease: 'none', stagger: .1,
       scrollTrigger: { trigger: p, start: 'top 80%', end: 'bottom 45%', scrub: true }
     });
@@ -377,7 +388,7 @@
     const obj = { v: 0 };
     gsap.to(obj, {
       v: end, duration: 1.6, ease: 'expo.out',
-      scrollTrigger: { trigger: el, start: 'top 85%', once: true },
+      scrollTrigger: { trigger: el, start: 'top 85%', toggleActions: 'play none none none' },
       onUpdate: () => { el.textContent = Math.round(obj.v); }
     });
   });

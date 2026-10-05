@@ -21,7 +21,10 @@
   <script>
     (function (d) {
       var r = d.documentElement; r.classList.add('js');
-      if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      var manual = false;
+      try { manual = localStorage.getItem('sd-motion') === 'reduce'; } catch (e) {}
+      if (manual) r.classList.add('reduce-motion');
+      if (!manual && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
         r.classList.add('is-anim');
         setTimeout(function () { if (!window.gsap) r.classList.remove('is-anim'); }, 3000);
       }
@@ -72,15 +75,17 @@
             <p class="cs-hero__lead" data-hero="fade">Una experiencia única, también en la web. Cinco espacios, cocina mediterránea de raíz y un restaurante con historia desde 2014: el reto era que la web lo transmitiera antes de que el cliente cruzara la puerta.</p>
           </div>
 
+          <div class="cs-side">
           <dl class="cs-meta" data-hero="fade">
             <div><dt>Cliente</dt><dd>Restaurante Martilota</dd></div>
             <div><dt>Lugar</dt><dd>Alcalá de Henares</dd></div>
             <div><dt>Qué hicimos</dt><dd>Diseño web · Desarrollo · SEO local</dd></div>
             <div><dt>Estado</dt><dd>Prototipo web</dd></div>
-            <div class="cs-meta__actions">
-              <a href="https://jenn-jt.github.io/martilota/" class="btn btn--dark btn--magnetic" target="_blank" rel="noopener">Ver el prototipo <span class="btn__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg></span><span class="sr-only">(se abre en una pestaña nueva)</span></a>
-            </div>
           </dl>
+          <div class="cs-meta__actions" data-hero="fade">
+            <a href="https://jenn-jt.github.io/martilota/" class="btn btn--dark btn--magnetic" target="_blank" rel="noopener">Ver el prototipo <span class="btn__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg></span><span class="sr-only">(se abre en una pestaña nueva)</span></a>
+          </div>
+          </div>
         </div>
       </div>
 
@@ -123,13 +128,13 @@
               <li><span>04</span>Coffee, Alcalá y el cierre con la reserva.</li>
             </ol>
           </div>
-          <div class="cs-browser" aria-label="Captura completa de la web de Martilota" role="img">
+          <div class="cs-browser">
             <div class="cs-browser__bar" aria-hidden="true">
               <i></i><i></i><i></i>
               <span>jenn-jt.github.io/martilota</span>
             </div>
-            <div class="cs-browser__screen" data-tour-screen tabindex="0" aria-label="Captura desplazable de la web completa">
-              <img src="../../assets/img/cases/martilota/full.webp" alt="" width="1200" height="7849" loading="lazy" data-tour-img />
+            <div class="cs-browser__screen" data-tour-screen tabindex="0" role="region" aria-label="Web completa de Martilota, desplazable">
+              <img src="../../assets/img/cases/martilota/full.webp" alt="Captura de la página de inicio completa de Martilota, de la portada al pie" width="1200" height="7849" loading="lazy" data-tour-img />
             </div>
           </div>
         </div>
@@ -237,7 +242,7 @@
           <p class="eyebrow" data-reveal>04 — En el móvil</p>
           <h2 class="h2" id="phones-title" data-split>Pensada para<br /><em>reservar desde la calle.</em></h2>
         </header>
-        <div class="cs-phones__row">
+        <div class="cs-phones__row" tabindex="0" role="region" aria-label="Capturas en el móvil de Martilota">
           <figure class="phone" data-phone="0"><img src="../../assets/img/cases/martilota/mobile-1.webp" alt="Móvil: portada con botones Reservar mesa y Ver la carta" width="585" height="1266" loading="lazy" /></figure>
           <figure class="phone" data-phone="1"><img src="../../assets/img/cases/martilota/mobile-2.webp" alt="Móvil: sección Cinco escenarios con la Terraza Mirador" width="585" height="1266" loading="lazy" /></figure>
           <figure class="phone" data-phone="2"><img src="../../assets/img/cases/martilota/mobile-3.webp" alt="Móvil: sección de la carta en fondo oscuro" width="585" height="1266" loading="lazy" /></figure>
@@ -315,6 +320,7 @@
       </div>
       <div class="footer__bottom">
         <p>© 2026 She's Digital · Jenifer Jaldo</p>
+        <button class="motion-toggle" type="button" aria-pressed="false" data-motion-toggle>Reducir animaciones</button>
         <p>Hecho a mano en Barcelona ✦</p>
       </div>
     </div>

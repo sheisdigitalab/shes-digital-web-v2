@@ -209,3 +209,8 @@ figcaption { margin-top: 14px; font-size: var(--fs-6); color: var(--muted); }
 @media (prefers-reduced-motion: no-preference) {
   .js.is-anim .cs-cover { clip-path: inset(0 var(--gutter) round var(--card-r)); }
 }
+
+/* Columna lateral de la cabecera: ficha + botón */
+.cs-side { display: grid; }
+.cs-phones__row:focus-visible { outline: 2px solid var(--ink); outline-offset: 6px; border-radius: 8px; }
+.cs-browser__screen:focus-visible { outline: 2px solid var(--ink); outline-offset: -2px; }

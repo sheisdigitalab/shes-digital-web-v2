@@ -244,7 +244,10 @@ HEAD = Template('''<!doctype html>
   <script>
     (function (d) {
       var r = d.documentElement; r.classList.add('js');
-      if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      var manual = false;
+      try { manual = localStorage.getItem('sd-motion') === 'reduce'; } catch (e) {}
+      if (manual) r.classList.add('reduce-motion');
+      if (!manual && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
         r.classList.add('is-anim');
         setTimeout(function () { if (!window.gsap) r.classList.remove('is-anim'); }, 3000);
       }
@@ -344,15 +347,17 @@ def page(i, c, nxt):
             <p class="cs-hero__lead" data-hero="fade">{e(c['lead'])}</p>
           </div>
 
+          <div class="cs-side">
           <dl class="cs-meta" data-hero="fade">
             <div><dt>Cliente</dt><dd>{e(c['client'])}</dd></div>
             <div><dt>Lugar</dt><dd>{e(c['place'])}</dd></div>
             <div><dt>Qué hicimos</dt><dd>{e(c['did'])}</dd></div>
             <div><dt>Estado</dt><dd>{e(c['status'])}</dd></div>
-            <div class="cs-meta__actions">
-              <a href="{c['url']}" class="btn btn--dark btn--magnetic" target="_blank" rel="noopener">{e(c['url_label'])} {ARROW_OUT}<span class="sr-only">(se abre en una pestaña nueva)</span></a>
-            </div>
           </dl>
+          <div class="cs-meta__actions" data-hero="fade">
+            <a href="{c['url']}" class="btn btn--dark btn--magnetic" target="_blank" rel="noopener">{e(c['url_label'])} {ARROW_OUT}<span class="sr-only">(se abre en una pestaña nueva)</span></a>
+          </div>
+          </div>
         </div>
       </div>
 
@@ -390,13 +395,13 @@ def page(i, c, nxt):
 {steps}
             </ol>
           </div>
-          <div class="cs-browser" aria-label="Captura completa de la web de {e(c['name'])}" role="img">
+          <div class="cs-browser">
             <div class="cs-browser__bar" aria-hidden="true">
               <i></i><i></i><i></i>
               <span>{e(host)}</span>
             </div>
-            <div class="cs-browser__screen" data-tour-screen tabindex="0" aria-label="Captura desplazable de la web completa">
-              <img src="{base}full.webp" alt="" width="1200" height="{full_h}" loading="lazy" data-tour-img />
+            <div class="cs-browser__screen" data-tour-screen tabindex="0" role="region" aria-label="Web completa de {e(c['name'])}, desplazable">
+              <img src="{base}full.webp" alt="Captura de la página de inicio completa de {e(c['name'])}, de la portada al pie" width="1200" height="{full_h}" loading="lazy" data-tour-img />
             </div>
           </div>
         </div>
@@ -457,7 +462,7 @@ def page(i, c, nxt):
           <p class="eyebrow" data-reveal>04 — En el móvil</p>
           <h2 class="h2" id="phones-title" data-split>{h2(c['phones_h'])}</h2>
         </header>
-        <div class="cs-phones__row">
+        <div class="cs-phones__row" tabindex="0" role="region" aria-label="Capturas en el móvil de {e(c['name'])}">
 {phones}
         </div>
       </div>
@@ -532,6 +537,7 @@ def page(i, c, nxt):
       </div>
       <div class="footer__bottom">
         <p>© 2026 She's Digital · Jenifer Jaldo</p>
+        <button class="motion-toggle" type="button" aria-pressed="false" data-motion-toggle>Reducir animaciones</button>
         <p>Hecho a mano en Barcelona ✦</p>
       </div>
     </div>
