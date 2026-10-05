@@ -61,7 +61,7 @@
 @media (max-width: 1023px) { .cs-block__grid { grid-template-columns: 1fr; } }
 
 /* ---------- Recorrido por la web ---------- */
-.cs-tour { background: var(--cream); padding-block: var(--section); }
+.cs-tour { padding-block: var(--section); border-block: 1px solid var(--line); }
 .cs-tour__grid { display: grid; grid-template-columns: minmax(0, .75fr) minmax(0, 1.25fr); gap: clamp(40px, 6vw, 96px); align-items: center; }
 .cs-tour__copy .h2 { margin-top: 20px; }
 .cs-tour__steps { margin-top: 40px; border-top: 1px solid var(--line); }
@@ -83,7 +83,7 @@
 .cs-browser__bar i { width: 10px; height: 10px; border-radius: 50%; background: var(--line); }
 .cs-browser__bar span {
   margin-left: 12px; font-size: var(--fs-6); color: var(--muted);
-  background: var(--cream); border-radius: var(--radius); padding: 6px 14px;
+  background: var(--line); border-radius: var(--radius); padding: 6px 14px;
   white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
 }
 .cs-browser__screen { height: min(64vh, 620px); overflow-y: auto; overscroll-behavior: contain; }
@@ -118,7 +118,7 @@
 }
 
 .cs-wide { margin-top: clamp(64px, 8vw, 120px); }
-.cs-wide__media { border-radius: var(--card-r); overflow: hidden; max-height: 88vh; background: var(--cream); }
+.cs-wide__media { border-radius: var(--card-r); overflow: hidden; max-height: 88vh; background: var(--line); }
 .cs-wide__media img { width: 100%; height: auto; }
 figcaption { margin-top: 14px; font-size: var(--fs-6); color: var(--muted); }
 
@@ -160,7 +160,7 @@ figcaption { margin-top: 14px; font-size: var(--fs-6); color: var(--muted); }
 }
 
 /* ---------- Móviles ---------- */
-.cs-phones { background: var(--cream); overflow: hidden; }
+.cs-phones { overflow: hidden; }
 .cs-phones__row { display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(16px, 3vw, 40px); align-items: start; }
 .phone {
   border-radius: clamp(20px, 3vw, 36px); overflow: hidden;
