@@ -1,0 +1,103 @@
+/* =========================================================
+   She's Digital · Páginas de servicio
+   Reutiliza styles.css y case.css; aquí solo lo específico
+   ========================================================= */
+
+.sv-crumbs ol { display: flex; flex-wrap: wrap; gap: 4px 10px; font-size: var(--fs-6); color: var(--muted); margin-bottom: clamp(24px, 4vw, 48px); }
+.sv-crumbs li { display: inline-flex; align-items: center; gap: 10px; }
+.sv-crumbs li + li::before { content: "/"; color: var(--line); }
+.sv-crumbs a { color: var(--ink-2); text-decoration: none; display: inline-flex; align-items: center; min-height: 44px; }
+.sv-crumbs a:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 4px; }
+.sv-crumbs [aria-current="page"] { color: var(--ink); font-weight: 500; }
+
+.sv-title {
+  font-family: var(--display); font-size: var(--fs-1); font-weight: 500;
+  line-height: .96; letter-spacing: -.045em; margin-top: 20px;
+}
+.sv-mark {
+  background: linear-gradient(transparent 62%, var(--mint) 62%, var(--mint) 92%, transparent 92%);
+  -webkit-box-decoration-break: clone; box-decoration-break: clone;
+}
+.sv-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+@media (max-width: 479px) { .sv-actions .btn { width: 100%; } }
+.sv-hero .cs-meta { align-self: end; }
+.sv-sub { color: var(--ink-2); font-size: var(--fs-4); max-width: 52ch; }
+
+/* Tira de proyectos */
+.sv-strip { margin-top: clamp(56px, 7vw, 96px); overflow-x: auto; scrollbar-width: none; }
+.sv-strip::-webkit-scrollbar { display: none; }
+.js.is-anim .sv-strip { overflow: hidden; }
+.sv-strip__track { display: flex; gap: clamp(12px, 1.6vw, 24px); width: max-content; padding-inline: var(--gutter); }
+.sv-strip__track li { width: clamp(240px, 28vw, 440px); flex: none; }
+.sv-strip__track a { display: block; border-radius: 14px; overflow: hidden; aspect-ratio: 16 / 10; box-shadow: 0 0 0 1px rgba(34, 30, 30, .08); }
+.sv-strip__track img { width: 100%; height: 100%; object-fit: cover; object-position: top center; transition: transform .9s var(--ease); }
+.sv-strip__track a:hover img, .sv-strip__track a:focus-visible img { transform: scale(1.05); }
+
+/* Qué incluye: separación respecto al bloque anterior */
+.sv-includes { border-top: 1px solid var(--line); }
+
+/* Planes */
+.sv-plans { border-top: 1px solid var(--line); }
+.plans { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(16px, 2vw, 24px); align-items: stretch; }
+.plan {
+  display: flex; flex-direction: column; gap: 16px;
+  padding: clamp(24px, 3vw, 40px); border-radius: calc(var(--card-r) + 4px);
+  border: 1px solid var(--line); background: var(--paper);
+}
+.plan__tag { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; font-family: var(--display); font-size: var(--fs-6); font-weight: 500; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+.plan__badge { text-transform: none; letter-spacing: 0; background: var(--mint); color: var(--ink); border-radius: var(--radius); padding: 4px 12px; }
+.plan__name { font-family: var(--display); font-size: var(--fs-3); font-weight: 500; letter-spacing: -.02em; line-height: 1.15; }
+.plan__price { font-family: var(--display); font-size: var(--fs-2); font-weight: 500; letter-spacing: -.04em; line-height: 1; }
+.plan__price span, .plan__price small { font-family: var(--sans); font-size: var(--fs-6); font-weight: 500; letter-spacing: 0; color: var(--muted); }
+.plan__desc { color: var(--ink-2); }
+.plan .checks { margin-top: 4px; }
+.plan__cta { margin-top: auto; align-self: flex-start; }
+.plan--featured { background: var(--ink); color: var(--on-ink); border-color: var(--ink); }
+.plan--featured .plan__tag, .plan--featured .plan__price span, .plan--featured .plan__price small { color: var(--on-ink-muted); }
+.plan--featured .plan__desc { color: var(--on-ink-muted); }
+.plan--featured .btn--dark { background: var(--mint); color: var(--ink); border-color: var(--mint); }
+.plan--featured .btn--dark:hover { background: transparent; color: var(--on-ink); }
+.plan--featured :focus-visible { outline-color: var(--mint); }
+@media (max-width: 1023px) { .plans { grid-template-columns: 1fr; } }
+
+/* Proyectos (rejilla, sin carril horizontal) */
+.sv-work { padding-block: var(--section); }
+.sv-work .work__head { margin-bottom: clamp(40px, 5vw, 72px); flex-wrap: wrap; }
+@media (min-width: 1024px) {
+  .work.sv-work .work__track { grid-template-columns: repeat(3, 1fr); gap: 40px; }
+}
+.btn--mint:hover { color: var(--on-ink); }
+
+/* Proceso: cuándo pasa cada fase */
+.step__when { font-family: var(--display); font-size: var(--fs-6); font-weight: 500; color: var(--mint); }
+
+/* Tecnología: filas del índice sin enlace */
+.sv-tech { border-top: 1px solid var(--line); }
+.sv-tech__row { grid-template-columns: 64px minmax(0, 1fr) minmax(0, 1.2fr); cursor: default; }
+.sv-tech__row::before { display: none; }
+.sv-tech__row:hover .index__name { transform: none; }
+@media (min-width: 1024px) { .sv-tech .index__name { font-size: var(--fs-3); } }
+@media (max-width: 767px) {
+  .sv-tech__row { grid-template-columns: 40px minmax(0, 1fr); }
+  .sv-tech__row .index__desc { grid-column: 2; grid-row: 2; }
+}
+
+/* Cabecera: titular a todo el ancho, entradilla y ficha debajo */
+.sv-hero .sv-title { max-width: 14ch; }
+@media (min-width: 1024px) { .sv-hero .sv-title { max-width: none; } }
+.sv-hero__grid { margin-top: clamp(8px, 1.5vw, 16px); align-items: start; }
+.sv-hero__grid .cs-meta { margin-top: 28px; }
+
+/* Pack combinado */
+.pack {
+  display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 24px 48px; align-items: center;
+  margin-top: clamp(16px, 2vw, 24px); padding: clamp(24px, 3vw, 40px);
+  border-radius: calc(var(--card-r) + 4px); background: var(--mint); color: var(--ink);
+}
+.pack > div:first-child { display: grid; gap: 12px; }
+.pack .plan__tag, .pack .plan__desc, .pack .plan__price small { color: var(--ink); }
+.pack .plan__badge { background: var(--ink); color: var(--on-ink); }
+.pack__price { display: grid; gap: 8px; justify-items: start; }
+.pack__was { font-size: var(--fs-6); }
+.pack .btn--dark:hover { background: transparent; color: var(--ink); }
+@media (max-width: 767px) { .pack { grid-template-columns: 1fr; } }
