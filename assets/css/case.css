@@ -130,8 +130,6 @@ figcaption { margin-top: 14px; font-size: var(--fs-6); color: var(--muted); }
 .cs-type { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--on-ink-line); border-radius: var(--card-r); overflow: hidden; }
 .cs-type__item { background: var(--ink); padding: clamp(24px, 3vw, 40px); display: grid; gap: 16px; align-content: space-between; min-height: 280px; }
 .cs-type__sample { font-size: var(--fs-1); line-height: 1; color: var(--on-ink); }
-.cs-type__sample--serif { font-family: 'Cormorant Infant', Georgia, serif; font-style: italic; }
-.cs-type__sample--sans { font-family: 'Libre Franklin', Arial, sans-serif; font-weight: 400; }
 .cs-type__item p { display: grid; gap: 4px; }
 .cs-type__item strong { font-family: var(--display); font-weight: 500; font-size: var(--fs-5); }
 .cs-type__item p span { font-size: var(--fs-6); color: var(--on-ink-muted); }
@@ -148,9 +146,9 @@ figcaption { margin-top: 14px; font-size: var(--fs-6); color: var(--muted); }
 .cs-palette code { font-family: var(--sans); font-size: var(--fs-6); color: var(--on-ink-muted); }
 
 .cs-design__text { margin-top: clamp(48px, 6vw, 80px); max-width: 62ch; font-size: var(--fs-4); color: var(--on-ink-muted); }
-.cs-duo { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(20px, 3vw, 40px); margin-top: clamp(56px, 7vw, 96px); }
-.cs-duo__media { border-radius: var(--card-r); overflow: hidden; aspect-ratio: 4 / 3; }
-.cs-duo__media img { width: 100%; height: 100%; object-fit: cover; }
+.cs-duo { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(20px, 3vw, 40px); margin-top: clamp(56px, 7vw, 96px); align-items: start; }
+.cs-duo__media { border-radius: var(--card-r); overflow: hidden; }
+.cs-duo__media img { width: 100%; height: auto; }
 @media (max-width: 1023px) {
   .cs-design__grid, .cs-duo { grid-template-columns: 1fr; }
   .cs-palette li::before { min-height: 120px; }
