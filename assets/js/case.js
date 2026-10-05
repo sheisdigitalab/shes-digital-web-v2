@@ -1,4 +1,4 @@
-/* She's Digital · Caso de estudio — movimiento propio de la página
+/* She's Digital · Página de proyecto — movimiento propio de la página
    Se apoya en main.js (GSAP, ScrollTrigger y Lenis ya iniciados) */
 (function () {
   'use strict';
