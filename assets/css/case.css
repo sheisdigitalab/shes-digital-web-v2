@@ -83,7 +83,7 @@
 .cs-browser__bar i { width: 10px; height: 10px; border-radius: 50%; background: var(--line); }
 .cs-browser__bar span {
   margin-left: 12px; font-size: var(--fs-6); color: var(--muted);
-  background: var(--cream); border-radius: var(--radius); padding: 4px 14px;
+  background: var(--cream); border-radius: var(--radius); padding: 6px 14px;
   white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
 }
 .cs-browser__screen { height: min(64vh, 620px); overflow-y: auto; overscroll-behavior: contain; }
