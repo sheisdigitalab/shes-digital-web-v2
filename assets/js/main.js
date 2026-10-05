@@ -150,6 +150,7 @@
   const mm = gsap.matchMedia();
   mm.add('(min-width: 1024px)', () => {
     const section = document.querySelector('[data-work]');
+    if (!section) return;
     const rail = section.querySelector('[data-work-track]');
     const count = section.querySelector('[data-work-count]');
     const bar = section.querySelector('[data-work-progress]');
@@ -203,6 +204,24 @@
       section.classList.remove('is-horizontal');
     };
   });
+
+  window.SD = { lenis };
+
+  /* ---------- Etiqueta «Ver caso» que sigue al cursor en las capturas ---------- */
+  const badge = document.querySelector('[data-cursor]');
+  if (badge && finePointer) {
+    const bx = gsap.quickTo(badge, 'x', { duration: .45, ease: 'power3.out' });
+    const by = gsap.quickTo(badge, 'y', { duration: .45, ease: 'power3.out' });
+    gsap.set(badge, { xPercent: -50, yPercent: -50, scale: 0 });
+    document.querySelectorAll('[data-cursor-label]').forEach((zone) => {
+      zone.addEventListener('pointerenter', () => {
+        badge.textContent = zone.dataset.cursorLabel;
+        gsap.to(badge, { scale: 1, duration: .45, ease: 'back.out(2)' });
+      });
+      zone.addEventListener('pointerleave', () => gsap.to(badge, { scale: 0, duration: .3, ease: 'power2.in' }));
+    });
+    window.addEventListener('pointermove', (e) => { bx(e.clientX); by(e.clientY); }, { passive: true });
+  }
 
   /* ---------- Partir titulares en palabras ---------- */
   function splitWords(el) {
@@ -265,12 +284,15 @@
   const intro = gsap.timeline({ defaults: { ease: 'expo.out' }, onComplete: runRotor });
   intro
     .to('[data-hero="line"]', { y: 0, duration: 1.2, stagger: 0.12 }, 0.1)
-    .to('[data-hero="fade"]', { opacity: 1, y: 0, duration: 1, stagger: 0.08 }, 0.35)
-    .fromTo(cards,
-      { opacity: 0, yPercent: 60, rotation: 0, xPercent: 0 },
-      { opacity: 1, duration: 1.4, stagger: 0.1, yPercent: (i) => base[i].yPercent, rotation: (i) => base[i].rotation, xPercent: (i) => base[i].xPercent },
-      0.25)
-    .from('.deck__tag', { opacity: 0, scale: .8, duration: .8 }, 1.1);
+    .to('[data-hero="fade"]', { opacity: 1, y: 0, duration: 1, stagger: 0.08 }, 0.35);
+  if (cards.length) {
+    intro
+      .fromTo(cards,
+        { opacity: 0, yPercent: 60, rotation: 0, xPercent: 0 },
+        { opacity: 1, duration: 1.4, stagger: 0.1, yPercent: (i) => base[i].yPercent, rotation: (i) => base[i].rotation, xPercent: (i) => base[i].xPercent },
+        0.25)
+      .from('.deck__tag', { opacity: 0, scale: .8, duration: .8 }, 1.1);
+  }
 
   const stage = document.querySelector('[data-stage]');
   if (stage && finePointer) {
@@ -299,7 +321,7 @@
   }
 
   // El abanico se abre un poco al hacer scroll fuera del hero
-  gsap.to(cards, {
+  if (cards.length) gsap.to(cards, {
     yPercent: (i) => base[i].yPercent - 6 * (i + 1),
     ease: 'none',
     scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true }
@@ -321,7 +343,7 @@
   }
 
   /* ---------- Proceso: línea de progreso ---------- */
-  gsap.to('[data-process-line]', {
+  if (document.querySelector('[data-process-line]')) gsap.to('[data-process-line]', {
     scaleX: 1, ease: 'none',
     scrollTrigger: { trigger: '.process', start: 'top 70%', end: 'bottom 70%', scrub: true }
   });

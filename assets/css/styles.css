@@ -545,3 +545,25 @@ strong { font-weight: 600; }
   *, *::before, *::after { animation: none !important; transition-duration: .01ms !important; }
   .js .process__line span { transform: scaleX(1); }
 }
+
+/* ---------- Etiqueta que sigue al cursor ---------- */
+.cursor-badge {
+  position: fixed; left: 0; top: 0; z-index: 60; pointer-events: none;
+  display: grid; place-items: center;
+  width: 96px; height: 96px; border-radius: 50%;
+  background: var(--ink); color: var(--on-ink);
+  font-family: var(--display); font-size: var(--fs-6); font-weight: 500;
+  transform: scale(0);
+}
+@media (hover: none), (pointer: coarse) { .cursor-badge { display: none; } }
+@media (hover: hover) and (pointer: fine) { .js.is-anim [data-cursor-label] { cursor: none; } }
+
+/* ---------- Transición entre páginas (navegadores compatibles) ---------- */
+@media (prefers-reduced-motion: no-preference) {
+  @view-transition { navigation: auto; }
+  ::view-transition-group(*) { animation-duration: .8s; animation-timing-function: cubic-bezier(.16, 1, .3, 1); }
+  ::view-transition-old(root) { animation: vt-out .45s cubic-bezier(.7, 0, .84, 0) both; }
+  ::view-transition-new(root) { animation: vt-in .7s cubic-bezier(.16, 1, .3, 1) .15s both; }
+}
+@keyframes vt-out { to { opacity: 0; transform: translateY(-24px); } }
+@keyframes vt-in { from { opacity: 0; transform: translateY(32px); } }
