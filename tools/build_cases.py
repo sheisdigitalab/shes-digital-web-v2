@@ -219,6 +219,74 @@ CASES = [
         'phones_alt': ['portada Còpies, imatge i imprenta', 'ventajas del local', 'servicio de fotografía', 'pasos para pedir'],
         'cta': '¿Tu negocio necesita una web así?',
     },
+    {
+        'slug': 'civere', 'name': 'Civère', 'cover': 'civere.webp',
+        'sector': 'Ecommerce · cosmética', 'place': 'Barcelona', 'client': 'Marca ficticia para la demo',
+        'did': 'Tienda online · Diseño web · Desarrollo', 'status': 'Proyecto demo',
+        'url': 'https://sheisdigitalab.github.io/civere-web/', 'url_label': 'Ver la demo',
+        'cover_alt': 'Portada de la tienda online de Civère: pinceles y maquillaje sobre fondo arena con el titular «La piel que siempre quisiste»',
+        'lead': 'Una tienda online que vende como una boutique. Una demo de comercio electrónico para cosmética natural: catálogo con filtros, ficha de producto y carrito con envío gratis, pensada para que comprar sea tan agradable como probar el producto.',
+        'facts': [('8', 'productos con filtros, valoraciones y ofertas'), ('3 pasos', 'de la ficha de producto al carrito'), ('50 €', 'desde los que el envío es gratis, con barra de progreso')],
+        'reto_h': ('Una tienda online', 'que da ganas de comprar.'),
+        'reto_statement': 'Muchas marcas pequeñas de cosmética tienen buen producto y una comunidad fiel, pero venden por mensajes de Instagram o desde plantillas de tienda que no transmiten su universo.',
+        'reto_text': 'Vender por mensaje no escala: cada pedido son varios mensajes. Y una tienda genérica no distingue a la marca de cualquier otra. El objetivo de la demo: mostrar cómo un comercio electrónico puede cuidar la imagen de la marca y facilitar la compra a la vez, de ver a pagar en pocos pasos y también desde el móvil.',
+        'steps': ['Portada: la marca y la tienda a un clic.', 'Catálogo con filtros y valoraciones.', 'Ficha de producto con tamaños, ingredientes y modo de uso.', 'Carrito con envío gratis y sugerencias.'],
+        'sol_h': ('Seis decisiones', 'que ayudan a vender.'),
+        'points': [
+            ('Catálogo fácil de recorrer', 'Filtros por categoría, orden por más vendidos y etiquetas de «Nuevo» o «Best-seller» que guían la elección.'),
+            ('Ficha que resuelve dudas', 'Tamaños, ingredientes, modo de uso y preguntas frecuentes en la misma página, sin salir de ella.'),
+            ('Carrito que anima a completar', 'Barra de progreso hacia el envío gratis y sugerencias de productos para completar la rutina.'),
+            ('Confianza en cada paso', 'Envío, devolución y sellos como vegano o cruelty-free a la vista antes de decidir.'),
+            ('Pensada para el móvil', 'Barra de compra fija en la ficha y botones grandes: se compra con una sola mano.'),
+            ('Lista para crecer', 'Es una demo estática. En un proyecto real se conecta con WooCommerce o Shopify, con pagos y envíos.'),
+        ],
+        'design_h': ('Una cosmética', 'que se ve natural.'),
+        'fonts': [("'Playfair Display', Georgia, serif", 'normal', 500, 'Playfair Display', 'Titulares: el tono de una marca de autor'),
+                  ("'Inter', Arial, sans-serif", 'normal', 400, 'Inter', 'Texto: claro y legible')],
+        'gfonts': 'family=Playfair+Display:wght@500',
+        'palette': [('Marfil', '#F8F5F0'), ('Salvia', '#4A6B5D'), ('Arena', '#C8B89A'), ('Carbón', '#1C1C1A'), ('Hueso', '#F0EBE3')],
+        'design_text': 'La paleta sale de los ingredientes: marfil como el papel de un recetario, salvia oscura para la acción, arena como el barro de una mascarilla y carbón para el contraste. Playfair Display da carácter de autor a los titulares e Inter mantiene el texto claro.',
+        'duo_alts': [('Ficha del Sérum Rosehip Glow con galería, tamaños, precio y botón de añadir al carrito', 'La ficha, con todo lo necesario para decidir.'),
+                     ('Carrito con un producto, envío gratis desbloqueado y sugerencias para completar la rutina', 'El carrito, con envío gratis y sugerencias.')],
+        'wide_alt': ('Catálogo de la tienda con filtros por categoría y ocho productos con valoraciones y precios', 'El catálogo, con filtros, valoraciones y ofertas a la vista.'),
+        'phones_h': ('Pensada para', 'comprar desde el móvil.'),
+        'phones_alt': ['portada de la tienda', 'catálogo con filtros', 'ficha de producto con botón de compra', 'productos favoritos de la home'],
+        'cta': '¿Tu marca merece una tienda así?',
+    },
+    {
+        'slug': 'nordal-homes', 'name': 'Nordal Homes', 'cover': 'nordal-homes.webp',
+        'sector': 'Inmobiliaria', 'place': 'Barcelona', 'client': 'Inmobiliaria ficticia para la demo',
+        'did': 'Diseño web · Desarrollo · Bilingüe', 'status': 'Proyecto demo',
+        'url': 'https://sheisdigitalab.github.io/nordal-homes-demo/', 'url_label': 'Ver la demo',
+        'cover_alt': 'Portada de la web de Nordal Homes: casa moderna con piscina al anochecer y el titular «Gestión inmobiliaria en Barcelona, en manos de confianza»',
+        'lead': 'Una inmobiliaria que se ve tan sólida como gestiona. Una demo para inmobiliarias: propiedades con filtros, servicios para propietarios e inversores y una calculadora de rentabilidad, en castellano e inglés.',
+        'facts': [('10', 'propiedades con filtros por tipo, habitaciones y precio'), ('2', 'idiomas: castellano e inglés'), ('1', 'calculadora de rentabilidad para inversores')],
+        'reto_h': ('Confianza', 'antes de la primera visita.'),
+        'reto_statement': 'Quien tiene un inmueble o quiere invertir en uno decide mucho antes de llamar. Busca una inmobiliaria que se vea seria y que explique cómo trabaja.',
+        'reto_text': 'Muchas webs de inmobiliaria se reducen a un listado de pisos. Pero el propietario necesita entender el servicio de gestión y el inversor quiere cifras. El objetivo de la demo: atender a propietarios, inquilinos o compradores e inversores desde una misma web, con caminos claros y un tono sobrio.',
+        'steps': ['Portada: gestión, alquiler, venta e inversión.', 'Servicios para propietarios, paso a paso.', 'Propiedades con filtros y fichas con formulario.', 'Nordal 360 y calculadora de rentabilidad.'],
+        'sol_h': ('Seis decisiones', 'que generan confianza.'),
+        'points': [
+            ('Cada público, su camino', '«Soy propietario» y «Soy inversor» desde la portada, para que cada visitante llegue directo a lo suyo.'),
+            ('Propiedades con filtros', 'Listado por tipo, habitaciones y precio, y fichas con galería, características y formulario de contacto.'),
+            ('Servicio explicado', 'La gestión de propiedades en pasos claros, y Nordal 360 para quien invierte con acompañamiento de principio a fin.'),
+            ('Calculadora de rentabilidad', 'El inversor introduce precio, reforma y alquiler, y ve una estimación orientativa de rentabilidad bruta y neta.'),
+            ('Castellano e inglés', 'Selector de idioma para atender también a propietarios e inversores extranjeros.'),
+            ('Contacto sin fricción', 'WhatsApp flotante, teléfono y formulario con aceptación de privacidad en cada página.'),
+        ],
+        'design_h': ('Sobrio, cálido', 'y de confianza.'),
+        'fonts': [("'Figtree', Arial, sans-serif", 'normal', 400, 'Figtree', 'Titulares: limpios y modernos'),
+                  ("'Figtree', Arial, sans-serif", 'normal', 600, 'Figtree', 'Texto y botones: la misma familia')],
+        'gfonts': 'family=Figtree:wght@400;600',
+        'palette': [('Tinta', '#111820'), ('Marfil', '#F6F2EB'), ('Oro', '#7D5F33'), ('Oro claro', '#D2B385'), ('Papel', '#FFFFFF')],
+        'design_text': 'Tinta casi negra y marfil para transmitir solidez, con un oro cálido como único acento. Una sola familia tipográfica, Figtree, mantiene la web limpia y moderna; el tamaño y el espacio hacen la jerarquía.',
+        'duo_alts': [('Calculadora de rentabilidad con precio de compra, reforma y alquiler, y resultado de rentabilidad bruta y neta', 'La calculadora, con el resultado al momento.'),
+                     ('Sección Nordal 360 con los seis pasos del servicio para inversores', 'Nordal 360: los seis pasos del servicio.')],
+        'wide_alt': ('Listado de propiedades con filtros por tipo, habitaciones y precio, y fichas de alquiler y venta', 'El listado, con filtros y fichas de alquiler y venta.'),
+        'phones_h': ('Pensada para', 'consultar desde el móvil.'),
+        'phones_alt': ['portada con el aviso de demo', 'listado de propiedades', 'ficha de una propiedad', 'calculadora de rentabilidad'],
+        'cta': '¿Tu inmobiliaria merece una web así?',
+    },
 ]
 
 HEAD = Template('''<!doctype html>
@@ -228,18 +296,18 @@ HEAD = Template('''<!doctype html>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>$name · Proyecto · She's Digital</title>
   <meta name="description" content="Proyecto: web de $name ($sector_l, $place), diseñada y desarrollada por She's Digital." />
-  <meta name="robots" content="noindex, nofollow" />
   <link rel="canonical" href="https://sheisdigitalab.com/proyectos/$slug/" />
   <meta property="og:title" content="$name · Proyecto · She's Digital" />
   <meta property="og:image" content="../../assets/img/work/$cover" />
   <meta name="theme-color" content="#FAF8F4" />
   <link rel="icon" href="../../assets/img/favicon.svg" type="image/svg+xml" />
 
+  <link rel="stylesheet" href="/assets/fonts/fonts.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600&$gfonts&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?$gfonts&display=swap" />
   <link rel="preload" as="image" href="../../assets/img/work/$cover" />
-  <link rel="stylesheet" href="../../assets/css/styles.css" />
+  <link rel="stylesheet" href="../../assets/css/v2.css" />
   <link rel="stylesheet" href="../../assets/css/case.css" />
   <script>
     (function (d) {

@@ -22,6 +22,8 @@ CASES = {
     'taxi-santa-susanna': ('Taxi Santa Susanna', 'Transporte', 'taxi.webp', 'Reservas online, cuatro idiomas y SEO local para la costa del Maresme.'),
     'alma-salinas': ('Alma Salinas', 'Belleza · Proyecto demo', 'alma-salinas.webp', 'Cita por WhatsApp y estructura lista para Google Maps.'),
     'punt-i-copia': ('Punt i Còpia', 'Copistería · Proyecto demo', 'punt-i-copia.webp', 'Bilingüe, con catálogo de 12 servicios y presupuesto en un mensaje.'),
+    'civere': ('Civère', 'Ecommerce · Proyecto demo', 'civere.webp', 'Tienda online con catálogo, filtros, ficha de producto y carrito con envío gratis.'),
+    'nordal-homes': ('Nordal Homes', 'Inmobiliaria · Proyecto demo', 'nordal-homes.webp', 'Propiedades con filtros, servicios para inversores y calculadora de rentabilidad.'),
 }
 
 # El pack lanzamiento se repite en Diseño web y en Branding
@@ -43,8 +45,8 @@ SERVICES = [
         'h1': ('Webs que venden,', 'hechas a medida.'),
         'lead': 'Diseño y desarrollo web profesional en Barcelona: rápidas, accesibles y pensadas para convertir visitas en clientes. Sin plantillas y sin humo. Desde 450 € en una semana.',
         'cta_primary': 'Pedir presupuesto en 24 h', 'wa': 'Hola Jenifer, me interesa una web. ¿Podemos hablar?',
-        'meta': [('Desde', '450 € + IVA'), ('Entrega', 'De 1 a 5 semanas'), ('Para', 'Negocios locales y servicios'), ('Cambios', '2 rondas de diseño incluidas')],
-        'strip': ['martilota', 'juli-manitas', 'olia-workplace', 'punt-i-copia', 'taxi-santa-susanna', 'alma-salinas'],
+        'meta': [('Desde', '450 € + IVA'), ('Entrega', 'Desde 1 semana'), ('Para', 'Negocios locales y servicios'), ('Cambios', '2 rondas de diseño incluidas')],
+        'strip': ['martilota', 'juli-manitas', 'olia-workplace', 'punt-i-copia', 'taxi-santa-susanna', 'alma-salinas', 'civere', 'nordal-homes'],
         'facts': [('+30', 'webs lanzadas'), ('24 h', 'para tener tu presupuesto cerrado'), ('100 %', 'tuya: dominio, hosting y código a tu nombre')],
         'focus': {'h': ('No es solo', 'que sea bonita.'),
                   'statement': 'Una web profesional posiciona tu marca, convierte visitas en clientes y aguanta el paso del tiempo cuando tu negocio crece.',
@@ -175,7 +177,7 @@ SERVICES = [
         'lead': 'WooCommerce o Shopify a medida, con pagos, envíos, gestión de stock y SEO, y un diseño pensado para que comprar sea fácil. Desde 1.490 €.',
         'cta_primary': 'Pedir presupuesto en 24 h', 'wa': 'Hola Jenifer, quiero montar una tienda online.',
         'meta': [('Desde', '1.490 € + IVA'), ('Entrega', 'De 3 a 6 semanas'), ('Plataformas', 'WooCommerce o Shopify'), ('Soporte', '3 meses después del lanzamiento')],
-        'strip': ['martilota', 'olia-workplace', 'juli-manitas', 'taxi-santa-susanna', 'punt-i-copia', 'alma-salinas'],
+        'strip': ['civere', 'martilota', 'olia-workplace', 'juli-manitas', 'taxi-santa-susanna', 'punt-i-copia', 'alma-salinas', 'nordal-homes'],
         'facts': [('3 meses', 'de soporte incluidos después del lanzamiento'), ('30', 'productos subidos por mí en la tienda básica'), ('0 %', 'de comisión mía sobre tus ventas')],
         'focus': {'h': ('Vender online', 'sin complicaciones.'),
                   'statement': 'Una tienda que funciona no es solo un catálogo: es un camino claro desde que alguien ve tu producto hasta que lo paga y le llega a casa.',
@@ -211,7 +213,7 @@ SERVICES = [
                  'cta': 'Me interesa', 'wa': 'Hola Jenifer, me interesa el mantenimiento de tienda online.'},
         'guarantees': ['Pago en 2 plazos: 50 % al firmar y 50 % al lanzar', '2 rondas de cambios en el diseño; las siguientes, presupuestadas aparte',
                        'Las comisiones de pago las cobra cada pasarela, no yo'],
-        'work': ['martilota', 'olia-workplace', 'juli-manitas'], 'work_h': ('Más trabajo', 'de la agencia.'),
+        'work': ['civere', 'taxi-santa-susanna', 'juli-manitas'], 'work_h': ('Más trabajo', 'de la agencia.'),
         'process_h': ('Tu tienda lista', 'en 3-6 semanas.'),
         'process': [
             ('Estrategia y diseño', 'Semanas 1-2', 'Definimos catálogo, categorías y el camino de compra, y diseño la tienda completa antes de programar.'),
@@ -525,17 +527,13 @@ def page(s):
   <title>{e(s['title'])}</title>
   <meta name="description" content="{e(s['description'])}" />
   <!-- Versión 2 en revisión: la página oficial sigue en sheisdigitalab.com -->
-  <meta name="robots" content="noindex, nofollow" />
   <link rel="canonical" href="{SITE}/servicios/{s['path']}/" />
   <meta property="og:title" content="{e(s['title'])}" />
   <meta property="og:image" content="{up}assets/img/og-cover.jpg" />
   <meta name="theme-color" content="#FAF8F4" />
   <link rel="icon" href="{up}assets/img/favicon.svg" type="image/svg+xml" />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600&display=swap" />
-  <link rel="stylesheet" href="{up}assets/css/styles.css" />
+  <link rel="stylesheet" href="/assets/fonts/fonts.css" />
+  <link rel="stylesheet" href="{up}assets/css/v2.css" />
   <link rel="stylesheet" href="{up}assets/css/case.css" />
   <link rel="stylesheet" href="{up}assets/css/service.css" />
   <script>
