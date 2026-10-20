@@ -47,7 +47,13 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- Proyectos (no incluir /proyectos/ index — devuelve 403) -->
+  <!-- Proyectos -->
+  <url>
+    <loc>https://sheisdigitalab.com/proyectos/</loc>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
   <url>
     <loc>https://sheisdigitalab.com/proyectos/martilota/</loc>
     <lastmod>2026-10-20</lastmod>
