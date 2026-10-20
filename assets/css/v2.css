@@ -958,7 +958,10 @@ html.reduce-motion *, html.reduce-motion *::before, html.reduce-motion *::after 
 .v3-badge { font-size: .6875rem; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; padding: 4px 9px; border-radius: 999px; background: var(--cream); color: var(--ink); white-space: nowrap; }
 .v3-badge--new { background: var(--mint); }
 .v3-price--quote b { font-family: var(--sans); font-size: .875rem; font-weight: 600; }
-.v3-foot { margin-top: 28px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 8px 24px; }
+.v3-guar { list-style: none; margin-top: 24px; display: flex; flex-wrap: wrap; gap: 10px 28px; padding: 18px 22px; border-radius: 18px; background: var(--cream); }
+.v3-guar li { display: flex; align-items: center; gap: 10px; font-size: var(--fs-6); font-weight: 500; }
+.v3-guar svg { width: 18px; height: 18px; flex: none; padding: 3px; border-radius: 50%; background: var(--mint); fill: none; stroke: var(--ink); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+.v3-foot { margin-top: 20px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 8px 24px; }
 .v3-iva { font-size: .8125rem; color: var(--muted); }
 .v3-more { font-size: var(--fs-6); color: var(--ink-2); }
 .v3-more a { color: var(--ink); font-weight: 500; text-decoration-color: var(--mint); text-decoration-thickness: 2px; text-underline-offset: 4px; }
@@ -1013,7 +1016,7 @@ html.reduce-motion *, html.reduce-motion *::before, html.reduce-motion *::after 
 .ar-stack-more { font-size: .8125rem; color: var(--muted); }
 .ar-card--marca .ar-list, .ar-card--auto .ar-list { margin-top: 0; }
 .ar-card--auto { background: var(--ink); color: var(--on-ink); border-color: var(--ink); }
-.ar-card--auto .ar-lead, .ar-card--auto .ar-desc, .ar-card--auto .v3-price { color: var(--on-ink-muted); }
+.ar-card--auto .ar-n, .ar-card--auto .ar-lead, .ar-card--auto .ar-desc, .ar-card--auto .v3-price { color: var(--on-ink-muted); }
 .ar-card--auto .v3-price b { color: var(--on-ink); }
 .ar-card--auto .ar-list, .ar-card--auto .ar-list li { border-color: var(--on-ink-line); }
 .ar-card--auto .ar-row:hover, .ar-card--auto .ar-row:focus-visible { background: rgba(250, 248, 244, .06); }
@@ -1096,3 +1099,52 @@ html.reduce-motion *, html.reduce-motion *::before, html.reduce-motion *::after 
   .faq__grid { align-items: start; }
   .head--sticky { position: sticky; top: 96px; }
 }
+
+/* ============================================================
+   Proyectos · punto verde = cliente real
+   ============================================================ */
+.ps-chip--real::before {
+  content: "";
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #00854A;
+  margin-right: 6px;
+  vertical-align: middle;
+  flex-shrink: 0;
+}
+
+/* ============================================================
+   Hero · texto bajo el botón CTA
+   ============================================================ */
+.hero__sub {
+  font-size: var(--fs-6);
+  color: var(--muted);
+  margin-top: 10px;
+}
+
+/* ============================================================
+   WhatsApp · botón flotante
+   ============================================================ */
+.wa-fab {
+  position: fixed;
+  right: 20px;
+  bottom: calc(20px + env(safe-area-inset-bottom, 0px));
+  z-index: 900;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #25D366;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, .22);
+  transition: transform .2s, box-shadow .2s;
+  text-decoration: none;
+}
+.wa-fab svg { width: 30px; height: 30px; fill: #fff; }
+.wa-fab:hover, .wa-fab:focus-visible { transform: scale(1.08); box-shadow: 0 6px 20px rgba(0, 0, 0, .28); }
+.wa-fab:focus-visible { outline: 2px solid var(--mint); outline-offset: 3px; }
+@media print { .wa-fab { display: none; } }
