@@ -3,6 +3,7 @@ DirectoryIndex index.html index.php
 
 <IfModule mod_rewrite.c>
   RewriteEngine On
+  RewriteBase /
 
   # ----- Redirecciones SEO: URL antigua del servicio de SEO -----
   RewriteRule ^servicios/seo-local/?$ /servicios/seo/seo-local/ [R=301,L]
@@ -58,7 +59,19 @@ DirectoryIndex index.html index.php
   RewriteRule ^diseno-web-vigo/?$                   / [R=301,L]
   RewriteRule ^diseno-web-vitoria/?$                / [R=301,L]
   RewriteRule ^diseno-web-zaragoza/?$               / [R=301,L]
+
+  # ----- WordPress: páginas dinámicas (aviso legal, privacidad, cookies…) -----
+  RewriteRule ^index\.php$ - [L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . /index.php [L]
 </IfModule>
+
+# ----- Ocultar archivos sensibles de WordPress -----
+<FilesMatch "^(readme\.html|license\.txt|wp-config-sample\.php)$">
+  Order allow,deny
+  Deny from all
+</FilesMatch>
 
 # ----- Seguridad básica -----
 <IfModule mod_headers.c>
