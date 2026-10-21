@@ -187,11 +187,11 @@ figcaption { margin-top: 14px; font-size: var(--fs-6); color: var(--muted); }
 .cs-next__sector { font-size: var(--fs-6); color: var(--muted); }
 .cs-next__media {
   position: absolute; inset: 0; z-index: -1;
-  clip-path: inset(100% 0 0 0); transition: clip-path .9s var(--ease);
+  transform: translateY(100%); transition: transform .9s var(--ease);
 }
 .cs-next__media::after { content: ""; position: absolute; inset: 0; background: rgba(34, 30, 30, .62); }
 .cs-next__media img { width: 100%; height: 100%; object-fit: cover; transform: scale(1.12); transition: transform 1.2s var(--ease); }
-.cs-next__link:hover .cs-next__media, .cs-next__link:focus-visible .cs-next__media { clip-path: inset(0 0 0 0); }
+.cs-next__link:hover .cs-next__media, .cs-next__link:focus-visible .cs-next__media { transform: translateY(0); }
 .cs-next__link:hover .cs-next__media img { transform: scale(1); }
 .cs-next__link:hover, .cs-next__link:focus-visible { color: var(--on-ink); }
 .cs-next__link:hover .eyebrow, .cs-next__link:hover .cs-next__sector,

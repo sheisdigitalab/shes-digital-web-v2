@@ -28,10 +28,10 @@ CASES = {
 
 # El pack lanzamiento se repite en Diseño web y en Branding
 PACK_LANZAMIENTO = {
-    'tag': 'Pack lanzamiento', 'badge': 'Ahorras 290 €',
+    'tag': 'Pack lanzamiento', 'badge': 'Ahorras 90 €',
     'name': '¿Empiezas de cero? Logo y web juntos',
     'desc': 'El pack Logo de branding y la web WordPress de varias páginas, diseñados a la vez para que todo encaje desde el primer día.',
-    'price': '1.590 €', 'suffix': '+ IVA', 'was': 'En vez de 1.880 € por separado',
+    'price': '1.190 €', 'suffix': '+ IVA', 'was': 'En vez de 1.280 € por separado',
     'cta': 'Quiero el pack', 'wa': 'Hola Jenifer, me interesa el pack lanzamiento (logo + web).',
 }
 
@@ -47,7 +47,7 @@ SERVICES = [
         'cta_primary': 'Pedir presupuesto en 24 h', 'wa': 'Hola Jenifer, me interesa una web. ¿Podemos hablar?',
         'meta': [('Desde', '450 € + IVA'), ('Entrega', 'Desde 1 semana'), ('Para', 'Negocios locales y servicios'), ('Cambios', '2 rondas de diseño incluidas')],
         'strip': ['martilota', 'juli-manitas', 'olia-workplace', 'punt-i-copia', 'taxi-santa-susanna', 'alma-salinas', 'civere', 'nordal-homes'],
-        'facts': [('+30', 'webs lanzadas'), ('24 h', 'para tener tu presupuesto cerrado'), ('100 %', 'tuya: dominio, hosting y código a tu nombre')],
+        'facts': [('24 h', 'para tener tu presupuesto cerrado'), ('100 %', 'tuya: dominio, hosting y código a tu nombre')],
         'focus': {'h': ('No es solo', 'que sea bonita.'),
                   'statement': 'Una web profesional posiciona tu marca, convierte visitas en clientes y aguanta el paso del tiempo cuando tu negocio crece.',
                   'text': 'Cada proyecto empieza con una conversación, una estrategia y un diseño pensado para tu sector, sin plantillas recicladas. Después lo construyo en WordPress o con código propio, según lo que necesites editar tú después. El resultado: una web que carga rápido, se ve bien en cualquier pantalla, aparece en Google y cuenta tu marca con coherencia.'},
@@ -67,9 +67,9 @@ SERVICES = [
              'desc': 'Una sola página, larga y bien estructurada. Para profesionales y servicios concretos que quieren estar en internet sin complicarse.',
              'checks': ['Hasta 6 secciones', 'WordPress', 'Formulario de contacto', 'Lista en 1 semana'],
              'cta': 'Empezar mi landing', 'wa': 'Hola Jenifer, me interesa una landing.'},
-            {'tag': 'B · Varias páginas', 'name': 'Web WordPress de varias páginas', 'price': '1.290 €', 'num': 1290, 'suffix': '+ IVA', 'featured': True,
+            {'tag': 'B · Varias páginas', 'name': 'Web WordPress de varias páginas', 'price': '790 €', 'num': 790, 'suffix': '+ IVA', 'featured': True,
              'desc': 'Editable por ti, con blog opcional, SEO técnico avanzado y diseño 100 % a medida en Figma.',
-             'checks': ['Hasta 6 páginas', 'Blog preparado para SEO', 'Tu logo y tus colores aplicados', 'Lista en 3-5 semanas'],
+             'checks': ['Hasta 5 páginas', 'Blog preparado para SEO', 'Tu logo y tus colores aplicados', 'Lista en 3-5 semanas'],
              'cta': 'Quiero esta opción', 'wa': 'Hola Jenifer, me interesa una web de varias páginas.'},
             {'tag': 'C · A medida', 'name': 'Web a medida con código propio', 'price': '2.890 €', 'num': 2890, 'suffix': '+ IVA',
              'desc': 'Para marcas que quieren algo único: animaciones, microinteracciones, máximo rendimiento y un diseño imposible con plantillas.',
@@ -78,7 +78,7 @@ SERVICES = [
         ],
         'pack': PACK_LANZAMIENTO,
         'guarantees': ['Pago en 2 plazos: 50 % al firmar y 50 % al lanzar', '2 rondas de cambios en el diseño; las siguientes, presupuestadas aparte',
-                       '¿Vas a vender online? Tiendas desde 1.490 €. <a class="link" href="../ecommerce/">Ver Ecommerce</a>'],
+                       '¿Vas a vender online? Tiendas desde 1.190 €. <a class="link" href="../ecommerce/">Ver Ecommerce</a>'],
         'work': ['martilota', 'juli-manitas', 'olia-workplace'], 'work_h': ('Webs que ya', 'están funcionando.'),
         'process_h': ('Sabes qué pasa', 'y cuándo.'),
         'process': [
@@ -95,7 +95,7 @@ SERVICES = [
         ]},
         'faq_h': ('Lo que siempre', 'me preguntan.'),
         'faq': [
-            ('¿Cuánto cuesta una web profesional?', 'Una landing de una página cuesta desde <strong>450 €</strong>, una web WordPress de hasta 6 páginas desde <strong>1.290 €</strong> y una web a medida con código propio desde <strong>2.890 €</strong>, siempre + IVA. Si además necesitas logo, el pack lanzamiento (logo + web) sale por <strong>1.590 €</strong>. Las tiendas online empiezan en 1.490 €. El precio final depende del número de páginas, las integraciones y los idiomas.'),
+            ('¿Cuánto cuesta una web profesional?', 'Una landing de una página cuesta desde <strong>450 €</strong>, una web WordPress de hasta 5 páginas desde <strong>790 €</strong> y una web a medida con código propio desde <strong>2.890 €</strong>, siempre + IVA. Si además necesitas logo, el pack lanzamiento (logo + web) sale por <strong>1.190 €</strong>. Las tiendas online empiezan en 1.190 €. El precio final depende del número de páginas, las integraciones y los idiomas.'),
             ('¿Cuánto tarda en estar lista mi web?', 'Una landing, <strong>1 semana</strong>. Una web de varias páginas, <strong>de 3 a 5 semanas</strong>. Una web a medida, <strong>de 6 a 10 semanas</strong>. Los plazos van cerrados en el presupuesto.'),
             ('¿Trabajas con WordPress o con código a medida?', 'Con los dos. WordPress si quieres editar los contenidos tú; código a medida si necesitas el máximo rendimiento o un diseño único. Te recomiendo lo que encaja con tu caso.'),
             ('¿Podré editar la web después?', 'Sí. Con WordPress puedes cambiar textos, imágenes, el blog y crear páginas sin saber código, y te dejo un vídeo tutorial de tu propia web.'),
@@ -108,12 +108,12 @@ SERVICES = [
     {
         'path': 'branding', 'label': 'Branding', 'kicker': 'Branding y diseño de marca',
         'title': 'Branding y diseño de marca en Barcelona · She\'s Digital',
-        'description': 'Diseño de marca en Barcelona: logotipo, paleta, tipografía y manual de identidad. Marcas con personalidad propia que se recuerdan. Desde 590 € + IVA.',
+        'description': 'Diseño de marca en Barcelona: logotipo, paleta, tipografía y manual de identidad. Marcas con personalidad propia que se recuerdan. Desde 490 € + IVA.',
         'service_type': 'Diseño de marca',
         'h1': ('Marcas que', 'se recuerdan.'),
-        'lead': 'Logo, paleta, tipografía y manual de identidad para que tu negocio se distinga a primera vista. Marcas con personalidad propia, sin plantillas. Desde 590 €.',
+        'lead': 'Logo, paleta, tipografía y manual de identidad para que tu negocio se distinga a primera vista. Marcas con personalidad propia, sin plantillas. Desde 490 €.',
         'cta_primary': 'Pedir presupuesto en 24 h', 'wa': 'Hola Jenifer, me interesa crear o renovar mi marca.',
-        'meta': [('Desde', '590 € + IVA'), ('Entrega', 'De 1 a 4 semanas'), ('Revisiones', '3 rondas incluidas'), ('Recibes', 'Archivos SVG, PNG, JPG y PDF')],
+        'meta': [('Desde', '490 € + IVA'), ('Entrega', 'De 1 a 4 semanas'), ('Revisiones', '3 rondas incluidas'), ('Recibes', 'Archivos SVG, PNG, JPG y PDF')],
         'strip': None,
         'facts': [('3', 'rondas de revisión incluidas en todos los packs'), ('100 %', 'tuya: cesión total de derechos al terminar'), ('24 h', 'para tener tu presupuesto cerrado')],
         'focus': {'h': ('No es solo', 'un logo bonito.'),
@@ -131,7 +131,7 @@ SERVICES = [
         'plans_h': ('Tres formas de', 'diseñar tu marca.'),
         'plans_sub': 'Precio cerrado antes de empezar, sin sobrecostes a mitad de camino.',
         'plans': [
-            {'tag': 'A · Esencial', 'name': 'Pack Logo', 'price': '590 €', 'num': 590, 'suffix': '+ IVA',
+            {'tag': 'A · Esencial', 'name': 'Pack Logo', 'price': '490 €', 'num': 490, 'suffix': '+ IVA',
              'desc': 'Para proyectos que ya tienen nombre y necesitan una marca visual coherente.',
              'checks': ['Logo principal y 2 variantes', 'Paleta de color', 'Tipografías', 'Lista en 1-2 semanas'],
              'cta': 'Empezar mi logo', 'wa': 'Hola Jenifer, me interesa el pack Logo.'},
@@ -159,7 +159,7 @@ SERVICES = [
         'faq_h': ('Lo que siempre', 'me preguntan.'),
         'faq': [
             ('¿Qué incluye un servicio de branding?', 'Investigación, logotipo y variantes, paleta de color, tipografía, manual de marca y archivos editables. El naming se incluye en el pack Premium. Te entrego todo lo necesario para usar tu marca sin depender de nadie.'),
-            ('¿Cuánto cuesta diseñar una marca?', 'El pack Logo, desde <strong>590 €</strong>; la identidad completa con manual, desde <strong>1.290 €</strong>, y la marca completa con naming, desde <strong>2.490 €</strong>, siempre + IVA. Si además necesitas web, el pack lanzamiento (logo + web) sale por <strong>1.590 €</strong>.'),
+            ('¿Cuánto cuesta diseñar una marca?', 'El pack Logo, desde <strong>490 €</strong>; la identidad completa con manual, desde <strong>1.290 €</strong>, y la marca completa con naming, desde <strong>2.490 €</strong>, siempre + IVA. Si además necesitas web, el pack lanzamiento (logo + web) sale por <strong>1.190 €</strong>.'),
             ('¿Cuánto tarda?', 'El pack Logo, <strong>1-2 semanas</strong>; la identidad completa, <strong>2-3 semanas</strong>, y la marca completa con naming, <strong>3-4 semanas</strong>. Si tienes prisa, dímelo y miro si es posible.'),
             ('¿Cuántas revisiones puedo pedir?', '<strong>3 rondas</strong> en cualquier pack. Si necesitas más, se añaden al presupuesto sin sorpresas.'),
             ('¿Diseñas marcas para cualquier sector?', 'Sí, con más experiencia en servicios profesionales, hostelería, bienestar y comercio local. Si tu sector es muy técnico, valoramos juntos si encajamos.'),
@@ -171,12 +171,12 @@ SERVICES = [
     {
         'path': 'ecommerce', 'label': 'Ecommerce', 'kicker': 'Tiendas online',
         'title': 'Tiendas online con WooCommerce y Shopify en Barcelona · She\'s Digital',
-        'description': 'Diseño de tiendas online con WooCommerce y Shopify en Barcelona: pagos, envíos y SEO para vender desde el primer día. Desde 1.490 € + IVA.',
+        'description': 'Diseño de tiendas online con WooCommerce y Shopify en Barcelona: pagos, envíos y SEO para vender desde el primer día. Desde 1.190 € + IVA.',
         'service_type': 'Diseño de tiendas online',
         'h1': ('Tu tienda online,', 'lista para vender.'),
-        'lead': 'WooCommerce o Shopify a medida, con pagos, envíos, gestión de stock y SEO, y un diseño pensado para que comprar sea fácil. Desde 1.490 €.',
+        'lead': 'WooCommerce o Shopify a medida, con pagos, envíos, gestión de stock y SEO, y un diseño pensado para que comprar sea fácil. Desde 1.190 €.',
         'cta_primary': 'Pedir presupuesto en 24 h', 'wa': 'Hola Jenifer, quiero montar una tienda online.',
-        'meta': [('Desde', '1.490 € + IVA'), ('Entrega', 'De 3 a 6 semanas'), ('Plataformas', 'WooCommerce o Shopify'), ('Soporte', '3 meses después del lanzamiento')],
+        'meta': [('Desde', '1.190 € + IVA'), ('Entrega', 'De 3 a 6 semanas'), ('Plataformas', 'WooCommerce o Shopify'), ('Soporte', '3 meses después del lanzamiento')],
         'strip': ['civere', 'martilota', 'olia-workplace', 'juli-manitas', 'taxi-santa-susanna', 'punt-i-copia', 'alma-salinas', 'nordal-homes'],
         'facts': [('3 meses', 'de soporte incluidos después del lanzamiento'), ('30', 'productos subidos por mí en la tienda básica'), ('0 %', 'de comisión mía sobre tus ventas')],
         'focus': {'h': ('Vender online', 'sin complicaciones.'),
@@ -194,15 +194,19 @@ SERVICES = [
         'plans_h': ('Tres niveles', 'según tu catálogo.'),
         'plans_sub': 'Precio cerrado antes de empezar. Shopify tiene además su propia cuota mensual, que pagas directamente a la plataforma.',
         'plans': [
-            {'tag': 'A · Básica', 'name': 'Tienda básica', 'price': '1.490 €', 'num': 1490, 'suffix': '+ IVA',
+            {'tag': 'A · Inicial', 'name': 'Tienda inicial', 'price': '1.190 €', 'num': 1190, 'suffix': '+ IVA',
+             'desc': 'Para empezar a vender online con lo esencial bien hecho.',
+             'checks': ['Hasta 15 productos', 'Pagos y envíos configurados', 'SEO para tiendas', 'Lista en 2-3 semanas'],
+             'cta': 'Empezar mi tienda', 'wa': 'Hola Jenifer, me interesa una tienda inicial.'},
+            {'tag': 'B · Básica', 'name': 'Tienda básica', 'price': '1.490 €', 'num': 1490, 'suffix': '+ IVA',
              'desc': 'Para empezar a vender con un catálogo pequeño y bien presentado.',
              'checks': ['Hasta 30 productos', 'Pagos y envíos configurados', 'SEO para tiendas', 'Lista en 3-4 semanas'],
              'cta': 'Empezar mi tienda', 'wa': 'Hola Jenifer, me interesa una tienda básica.'},
-            {'tag': 'B · Media', 'name': 'Tienda con integraciones', 'price': '2.490 €', 'num': 2490, 'suffix': '+ IVA', 'featured': True,
+            {'tag': 'C · Media', 'name': 'Tienda con integraciones', 'price': '2.490 €', 'num': 2490, 'suffix': '+ IVA', 'featured': True,
              'desc': 'Más catálogo y tu tienda conectada con las herramientas que ya usas.',
              'checks': ['Hasta 100 productos', 'Integraciones de envío y email', 'Pago aplazado', 'Lista en 4-5 semanas'],
              'cta': 'Quiero esta opción', 'wa': 'Hola Jenifer, me interesa una tienda con integraciones.'},
-            {'tag': 'C · Pro', 'name': 'Tienda Pro', 'price': '3.990 €', 'num': 3990, 'suffix': '+ IVA',
+            {'tag': 'D · Pro', 'name': 'Tienda Pro', 'price': '3.990 €', 'num': 3990, 'suffix': '+ IVA',
              'desc': 'Catálogo amplio y venta también en marketplaces, con el stock sincronizado.',
              'checks': ['Catálogo amplio', 'Marketplaces como Amazon o Etsy', 'Stock sincronizado', 'Lista en 5-6 semanas'],
              'cta': 'Hablar de mi tienda', 'wa': 'Hola Jenifer, me interesa una tienda Pro.'},
@@ -229,7 +233,7 @@ SERVICES = [
         'faq_h': ('Lo que siempre', 'me preguntan.'),
         'faq': [
             ('¿WooCommerce o Shopify?', 'WooCommerce si quieres control total y sin cuota mensual de plataforma; Shopify si priorizas la facilidad y vendes fuera. Te lo recomiendo según tu caso en la primera llamada.'),
-            ('¿Cuánto cuesta una tienda online?', 'La tienda básica, desde <strong>1.490 €</strong>; con integraciones, desde <strong>2.490 €</strong>, y la Pro, desde <strong>3.990 €</strong>, siempre + IVA. Shopify tiene además su cuota mensual.'),
+            ('¿Cuánto cuesta una tienda online?', 'La tienda inicial, desde <strong>1.190 €</strong>; la básica, desde <strong>1.490 €</strong>; con integraciones, desde <strong>2.490 €</strong>, y la Pro, desde <strong>3.990 €</strong>, siempre + IVA. Shopify tiene además su cuota mensual.'),
             ('¿Incluye los pagos?', 'Sí: tarjeta, Bizum, PayPal y pago aplazado si lo necesitas. Las comisiones las cobra cada pasarela directamente, no yo.'),
             ('¿Puedo añadir productos yo después?', 'Sí. Te dejo el panel preparado y un tutorial para añadir productos, cambiar precios y gestionar pedidos sin código.'),
             ('¿Está pensada para el móvil?', 'Sí. Diseño primero la versión de móvil, porque es donde empiezan la mayoría de las compras, y después la adapto al ordenador.'),
@@ -241,12 +245,12 @@ SERVICES = [
     {
         'path': 'seo/seo-local', 'label': 'SEO local', 'kicker': 'SEO local · GEO',
         'title': 'SEO local en Barcelona · Google Business Profile · She\'s Digital',
-        'description': 'Posicionamiento SEO local en Barcelona: que te encuentren cuando buscan tu servicio en tu zona. Ficha de Google, reseñas y mapas. Desde 290 € + IVA.',
+        'description': 'Posicionamiento SEO local en Barcelona: que te encuentren cuando buscan tu servicio en tu zona. Ficha de Google, reseñas y mapas. Desde 190 €/mes + IVA.',
         'service_type': 'SEO local',
         'h1': ('Que te encuentren', 'en tu zona.'),
-        'lead': 'Posicionamiento local en Barcelona y Cataluña para aparecer cuando alguien busca tu servicio cerca: más llamadas, más visitas y más clientes reales. Desde 290 €.',
+        'lead': 'Posicionamiento local en Barcelona y Cataluña para aparecer cuando alguien busca tu servicio cerca: más llamadas, más visitas y más clientes reales. Desde 190 €.',
         'cta_primary': 'Pedir valoración gratis', 'wa': 'Hola Jenifer, me gustaría la valoración gratuita de mi ficha de Google.',
-        'meta': [('Desde', '290 € + IVA'), ('Primeras mejoras', 'Entre 4 y 8 semanas'), ('Ideal para', 'Negocios con clientes cerca'), ('Permanencia', 'Ninguna')],
+        'meta': [('Desde', '190 €/mes + IVA'), ('Primeras mejoras', 'Entre 4 y 8 semanas'), ('Ideal para', 'Negocios con clientes cerca'), ('Permanencia', 'Ninguna')],
         'strip': None,
         'facts': [('Gratis', 'primera valoración de tu ficha de Google'), ('4-8', 'semanas para notar las primeras mejoras'), ('0', 'permanencia: pausas cuando quieras')],
         'focus': {'h': ('Compites con', 'quien está cerca.'),
@@ -264,7 +268,7 @@ SERVICES = [
         'plans_h': ('Según lo que', 'quieras crecer.'),
         'plans_sub': 'Mensualidades sin permanencia: puedes pausar o cancelar cuando quieras.',
         'plans': [
-            {'tag': 'A · Esencial', 'name': 'Mantenimiento Esencial', 'price': '290 €', 'num': 290, 'suffix': '/mes + IVA',
+            {'tag': 'A · Esencial', 'name': 'Mantenimiento Esencial', 'price': '190 €', 'num': 190, 'suffix': '/mes + IVA',
              'desc': 'Para mantener tu ficha viva y tus reseñas al día.',
              'checks': ['Ficha de Google al día', 'Gestión de reseñas', '1 publicación por semana', 'Informe mensual'],
              'cta': 'Empezar', 'wa': 'Hola Jenifer, me interesa el SEO local Esencial.'},
@@ -303,7 +307,7 @@ SERVICES = [
         'faq': [
             ('¿Qué es el SEO local?', 'Es optimizar tu negocio para aparecer en búsquedas con intención local, como «fisio Barcelona» o «fontanero cerca de mí». Combina tu ficha de Google, contenido local, directorios y reseñas.'),
             ('¿Cuándo veré resultados?', 'Las primeras mejoras en tu ficha (llamadas, rutas, visitas) llegan en <strong>4-8 semanas</strong>. Un posicionamiento sólido necesita <strong>3-6 meses</strong> de trabajo constante. Quien promete resultados en una semana no está siendo honesto.'),
-            ('¿Cuánto cuesta?', 'La auditoría y puesta a punto, <strong>290 €</strong> en pago único. El mantenimiento, de <strong>290 a 790 €/mes</strong> según lo competido de tu sector y tu zona, siempre + IVA.'),
+            ('¿Cuánto cuesta?', 'La auditoría y puesta a punto, <strong>290 €</strong> en pago único. El mantenimiento, de <strong>190 a 790 €/mes</strong> según lo competido de tu sector y tu zona, siempre + IVA.'),
             ('¿Sirve si trabajo solo en internet?', 'Si vendes a toda España sin foco en una zona, te conviene más el SEO general. Si tus clientes están en un área concreta, aunque trabajes en remoto, el SEO local te trae contactos de allí.'),
             ('¿Tengo que darte acceso a mi ficha de Google?', 'Sí, como gestor, no como propietario: la ficha sigue siendo tuya. Si aún no tienes, te ayudo a crearla y verificarla sin coste extra.'),
             ('¿Me garantizas el primer puesto?', 'No. Nadie puede garantizar honestamente posiciones en Google: dependen del algoritmo, de tu competencia y de factores que nadie controla. Lo que sí te aseguro es un trabajo constante, un informe mensual con datos reales y que no hay permanencia: si no ves valor, lo dejas cuando quieras.'),
@@ -314,12 +318,12 @@ SERVICES = [
     {
         'path': 'redes-sociales', 'label': 'Redes sociales', 'kicker': 'Gestión de redes sociales',
         'title': 'Gestión de redes sociales en Barcelona · Instagram, TikTok y LinkedIn · She\'s Digital',
-        'description': 'Gestión de redes sociales en Barcelona: estrategia, contenido y community management para Instagram, TikTok y LinkedIn. Desde 390 €/mes + IVA, sin permanencia.',
+        'description': 'Gestión de redes sociales en Barcelona: estrategia, contenido y community management para Instagram, TikTok y LinkedIn. Desde 250 €/mes + IVA, sin permanencia.',
         'service_type': 'Gestión de redes sociales',
         'h1': ('Tu marca, con', 'una voz coherente.'),
-        'lead': 'Estrategia, contenido y community management para Instagram, TikTok y LinkedIn. Trabajo por objetivos, no por número de posts. Desde 390 €/mes, sin permanencia.',
+        'lead': 'Estrategia, contenido y community management para Instagram, TikTok y LinkedIn. Trabajo por objetivos, no por número de posts. Desde 250 €/mes, sin permanencia.',
         'cta_primary': 'Pedir valoración gratis', 'wa': 'Hola Jenifer, me gustaría una valoración de mis redes sociales.',
-        'meta': [('Desde', '390 €/mes + IVA'), ('Resultados', 'Tracción en 2-3 meses'), ('Redes', 'Instagram, TikTok y LinkedIn'), ('Permanencia', 'Ninguna, con 15 días de aviso')],
+        'meta': [('Desde', '250 €/mes + IVA'), ('Resultados', 'Tracción en 2-3 meses'), ('Redes', 'Instagram, TikTok y LinkedIn'), ('Permanencia', 'Ninguna, con 15 días de aviso')],
         'strip': None,
         'facts': [('0', 'permanencia: solo 15 días de aviso'), ('24 h', 'para responder comentarios y mensajes'), ('1', 'informe y llamada de estrategia al mes')],
         'focus': {'h': ('No publico', 'por publicar.'),
@@ -337,7 +341,7 @@ SERVICES = [
         'plans_h': ('Tres packs', 'según tu momento.'),
         'plans_sub': 'Sin permanencia. Empezamos por donde tiene sentido y crecemos cuando hay tracción.',
         'plans': [
-            {'tag': 'A · Esencial', 'name': 'Pack Inicio', 'price': '390 €', 'num': 390, 'suffix': '/mes + IVA',
+            {'tag': 'A · Esencial', 'name': 'Pack Inicio', 'price': '250 €', 'num': 250, 'suffix': '/mes + IVA',
              'desc': 'Presencia profesional en una red, sin saturarte.',
              'checks': ['1 red: Instagram, TikTok o LinkedIn', '8 posts al mes y stories', 'Calendario editorial', 'Community management', 'Informe mensual'],
              'cta': 'Empezar', 'wa': 'Hola Jenifer, me interesa el pack Inicio de redes.'},
@@ -370,7 +374,7 @@ SERVICES = [
         'faq_h': ('Lo que siempre', 'me preguntan.'),
         'faq': [
             ('¿En qué redes trabajas?', 'Sobre todo Instagram, TikTok y LinkedIn, y también Pinterest o Facebook si tu sector lo justifica. La estrategia inicial decide en cuáles invertir.'),
-            ('¿Cuánto cuesta gestionar las redes?', 'Pack Inicio (1 red), desde <strong>390 €/mes</strong>; Crecimiento (2 redes), <strong>690 €/mes</strong>, y Escalado (3 redes y anuncios), desde <strong>1.190 €/mes</strong>, siempre + IVA y sin permanencia.'),
+            ('¿Cuánto cuesta gestionar las redes?', 'Pack Inicio (1 red), desde <strong>250 €/mes</strong>; Crecimiento (2 redes), <strong>690 €/mes</strong>, y Escalado (3 redes y anuncios), desde <strong>1.190 €/mes</strong>, siempre + IVA y sin permanencia.'),
             ('¿Quién crea el contenido?', 'Yo: diseño, textos, planificación, programación y community. Si necesitas fotos o vídeo profesional, te pongo en contacto con fotógrafos de confianza (presupuesto aparte).'),
             ('¿Cuándo se ven los resultados?', 'La tracción real se nota en <strong>2-3 meses</strong>, y los resultados sostenidos, hacia los <strong>6 meses</strong>. Quien promete explotar en 30 días miente o usa atajos peligrosos.'),
             ('¿Hay permanencia?', 'No. Es una cuota mensual sin contrato de permanencia: puedes pausar o cancelar avisando con 15 días.'),
@@ -562,15 +566,14 @@ def page(s):
         <img src="{up}assets/img/logo-stacked.svg" alt="" width="112" height="63" />
       </a>
       <nav class="nav__links" id="nav-menu" aria-label="Principal">
-        <a href="{up}#servicios" aria-current="true">Servicios</a>
+        <a href="{up}#servicios" aria-current="true">Servicios y precios</a>
         <a href="{up}#proyectos">Proyectos</a>
         <a href="{up}#proceso">Proceso</a>
         <a href="{up}#sobre-mi">Sobre mí</a>
-        <a href="{up}#tarifas">Tarifas</a>
         <a href="{up}#faq">FAQ</a>
-        <a href="#contacto" class="btn btn--dark nav__cta-mobile">Hablemos {ARROW}</a>
+        <a href="#contacto" class="btn btn--dark nav__cta-mobile">Pide tu presupuesto gratis {ARROW}</a>
       </nav>
-      <a href="#contacto" class="btn btn--dark nav__cta">Hablemos {ARROW}</a>
+      <a href="#contacto" class="btn btn--dark nav__cta">Pide tu presupuesto gratis {ARROW}</a>
       <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="nav-menu">
         <span class="sr-only">Abrir menú</span>
         <span class="nav__bars" aria-hidden="true"><i></i><i></i></span>
@@ -731,7 +734,7 @@ def page(s):
       <div class="footer__cols">
         <div>
           <img src="{up}assets/img/logo-stacked-light.svg" alt="She's Digital" width="150" height="84" loading="lazy" />
-          <p>Agencia digital de Jenifer Jaldo.<br />Branding · Web · Ecommerce · SEO/GEO · Social.</p>
+          <p>Diseño web, marca y marketing digital en Barcelona.<br />Web · Ecommerce · SEO · Branding · Redes · IA y apps a medida.</p>
         </div>
         <nav aria-label="Pie: servicios">
           <h3>Servicios</h3>
@@ -741,6 +744,15 @@ def page(s):
             <li><a href="{up}servicios/ecommerce/">Ecommerce</a></li>
             <li><a href="{up}servicios/seo/seo-local/">SEO local</a></li>
             <li><a href="{up}servicios/redes-sociales/">Redes sociales</a></li>
+          </ul>
+        </nav>
+        <nav aria-label="Pie: sectores">
+          <h3>Sectores</h3>
+          <ul>
+            <li><a href="{up}sectores/autonomos/">Autónomos</a></li>
+            <li><a href="{up}sectores/clinicas-y-salud/">Clínicas y salud</a></li>
+            <li><a href="{up}sectores/restaurantes/">Restaurantes</a></li>
+            <li><a href="{up}sectores/servicios-locales/">Servicios locales</a></li>
           </ul>
         </nav>
         <div>
@@ -761,7 +773,7 @@ def page(s):
         </nav>
       </div>
       <div class="footer__bottom">
-        <p>© 2026 She's Digital · Jenifer Jaldo</p>
+        <p>© 2026 She's Digital · She is Digital Lab</p>
         <button class="motion-toggle" type="button" aria-pressed="false" data-motion-toggle>Reducir animaciones</button>
         <p>Hecho a mano en Barcelona ✦</p>
       </div>
@@ -769,6 +781,11 @@ def page(s):
   </footer>
 
   <div class="cursor-badge" data-cursor aria-hidden="true"></div>
+
+  <!-- ============ WhatsApp FAB ============ -->
+  <a class="wa-fab" href="https://wa.me/34637889942?text=Hola%20Jenifer%2C%20quiero%20pedir%20presupuesto%20para%20mi%20web" target="_blank" rel="noopener noreferrer" aria-label="Escríbenos por WhatsApp">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2l-.5-.3Z"/></svg>
+  </a>
 
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js" defer></script>

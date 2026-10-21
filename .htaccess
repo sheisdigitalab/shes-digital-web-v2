@@ -1,0 +1,96 @@
+Options -Indexes
+DirectoryIndex index.html index.php
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # ----- Redirecciones SEO: URL antigua del servicio de SEO -----
+  RewriteRule ^servicios/seo-local/?$ /servicios/seo/seo-local/ [R=301,L]
+
+  # ----- Ciudades sin página v2: redirigir a la home -----
+  # Ciudades con página propia (NO redirigir): Barcelona, Granollers, Sabadell, Terrassa, Mataró, Sant Cugat
+  RewriteRule ^diseno-web-a-coruna/?$               / [R=301,L]
+  RewriteRule ^diseno-web-albacete/?$               / [R=301,L]
+  RewriteRule ^diseno-web-alcala-de-henares/?$      / [R=301,L]
+  RewriteRule ^diseno-web-alcorcon/?$               / [R=301,L]
+  RewriteRule ^diseno-web-alicante/?$               / [R=301,L]
+  RewriteRule ^diseno-web-almeria/?$                / [R=301,L]
+  RewriteRule ^diseno-web-badajoz/?$                / [R=301,L]
+  RewriteRule ^diseno-web-bilbao/?$                 / [R=301,L]
+  RewriteRule ^diseno-web-burgos/?$                 / [R=301,L]
+  RewriteRule ^diseno-web-cadiz/?$                  / [R=301,L]
+  RewriteRule ^diseno-web-caldes-de-montbui/?$      / [R=301,L]
+  RewriteRule ^diseno-web-cartagena/?$              / [R=301,L]
+  RewriteRule ^diseno-web-castellon/?$              / [R=301,L]
+  RewriteRule ^diseno-web-cordoba/?$                / [R=301,L]
+  RewriteRule ^diseno-web-elche/?$                  / [R=301,L]
+  RewriteRule ^diseno-web-fuenlabrada/?$            / [R=301,L]
+  RewriteRule ^diseno-web-getafe/?$                 / [R=301,L]
+  RewriteRule ^diseno-web-gijon/?$                  / [R=301,L]
+  RewriteRule ^diseno-web-girona/?$                 / [R=301,L]
+  RewriteRule ^diseno-web-granada/?$                / [R=301,L]
+  RewriteRule ^diseno-web-hospitalet/?$             / [R=301,L]
+  RewriteRule ^diseno-web-huelva/?$                 / [R=301,L]
+  RewriteRule ^diseno-web-jerez/?$                  / [R=301,L]
+  RewriteRule ^diseno-web-las-palmas/?$             / [R=301,L]
+  RewriteRule ^diseno-web-leganes/?$                / [R=301,L]
+  RewriteRule ^diseno-web-leon/?$                   / [R=301,L]
+  RewriteRule ^diseno-web-lleida/?$                 / [R=301,L]
+  RewriteRule ^diseno-web-logrono/?$                / [R=301,L]
+  RewriteRule ^diseno-web-madrid/?$                 / [R=301,L]
+  RewriteRule ^diseno-web-malaga/?$                 / [R=301,L]
+  RewriteRule ^diseno-web-manresa/?$                / [R=301,L]
+  RewriteRule ^diseno-web-mostoles/?$               / [R=301,L]
+  RewriteRule ^diseno-web-murcia/?$                 / [R=301,L]
+  RewriteRule ^diseno-web-ourense/?$                / [R=301,L]
+  RewriteRule ^diseno-web-oviedo/?$                 / [R=301,L]
+  RewriteRule ^diseno-web-palma-de-mallorca/?$      / [R=301,L]
+  RewriteRule ^diseno-web-pamplona/?$               / [R=301,L]
+  RewriteRule ^diseno-web-reus/?$                   / [R=301,L]
+  RewriteRule ^diseno-web-salamanca/?$              / [R=301,L]
+  RewriteRule ^diseno-web-san-sebastian/?$          / [R=301,L]
+  RewriteRule ^diseno-web-santa-cruz-de-tenerife/?$ / [R=301,L]
+  RewriteRule ^diseno-web-santander/?$              / [R=301,L]
+  RewriteRule ^diseno-web-sevilla/?$                / [R=301,L]
+  RewriteRule ^diseno-web-tarragona/?$              / [R=301,L]
+  RewriteRule ^diseno-web-valladolid/?$             / [R=301,L]
+  RewriteRule ^diseno-web-valencia/?$               / [R=301,L]
+  RewriteRule ^diseno-web-vigo/?$                   / [R=301,L]
+  RewriteRule ^diseno-web-vitoria/?$                / [R=301,L]
+  RewriteRule ^diseno-web-zaragoza/?$               / [R=301,L]
+
+  # ----- WordPress: páginas dinámicas (aviso legal, privacidad, cookies…) -----
+  RewriteRule ^index\.php$ - [L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . /index.php [L]
+</IfModule>
+
+# ----- Ocultar archivos sensibles de WordPress -----
+<FilesMatch "^(readme\.html|license\.txt|wp-config-sample\.php)$">
+  Order allow,deny
+  Deny from all
+</FilesMatch>
+
+# ----- Seguridad básica -----
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# ----- Compresión gzip -----
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css application/javascript application/json image/svg+xml
+</IfModule>
+
+# ----- Caché de activos estáticos -----
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType text/css "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 month"
+  ExpiresByType font/woff2 "access plus 1 year"
+</IfModule>

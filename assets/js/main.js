@@ -54,10 +54,8 @@
   /* ---------- Formulario → WhatsApp ---------- */
   const form = document.getElementById('contact-form');
   if (form) {
-    const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const rules = {
       'f-name': (el) => el.value.trim() ? '' : 'Escribe tu nombre.',
-      'f-email': (el) => !el.value.trim() ? 'El email es obligatorio.' : (emailRe.test(el.value.trim()) ? '' : 'Ese email no parece válido.'),
       'f-msg': (el) => el.value.trim() ? '' : 'Cuéntame algo de tu proyecto.',
       'f-privacy': (el) => el.checked ? '' : 'Acepta la política de privacidad para continuar.'
     };
@@ -80,9 +78,8 @@
       const status = form.querySelector('.form__status');
       if (!ok) { form.querySelector('[aria-invalid="true"]').focus(); return; }
       const name = form.elements.name.value.trim();
-      const email = form.elements.email.value.trim();
       const message = form.elements.message.value.trim();
-      const text = 'Hola Jenifer, soy ' + name + ' (' + email + ').\n\n' + message;
+      const text = 'Hola Jenifer, soy ' + name + '.\n\n' + message;
       window.open('https://wa.me/34637889942?text=' + encodeURIComponent(text), '_blank', 'noopener');
       status.textContent = 'Te abro WhatsApp con tu mensaje. Si no se abre, escríbeme a hola@sheisdigitalab.com.';
       form.reset();
@@ -162,65 +159,6 @@
     history.replaceState(null, '', id);
   });
 
-  /* ---------- Proyectos: carril horizontal en escritorio ---------- */
-  const mm = gsap.matchMedia();
-  mm.add('(min-width: 1024px)', () => {
-    const section = document.querySelector('[data-work]');
-    if (!section) return;
-    const rail = section.querySelector('[data-work-track]');
-    const count = section.querySelector('[data-work-count]');
-    const bar = section.querySelector('[data-work-progress]');
-    const total = rail.children.length - 1;
-    section.classList.add('is-horizontal');
-    const distance = () => rail.scrollWidth - window.innerWidth;
-
-    const tween = gsap.to(rail, {
-      x: () => -distance(),
-      ease: 'none',
-      scrollTrigger: {
-        trigger: section,
-        start: 'top top',
-        end: () => '+=' + distance(),
-        pin: true,
-        scrub: 1,
-        invalidateOnRefresh: true,
-        onUpdate: (self) => {
-          gsap.set(bar, { scaleX: self.progress });
-          const n = Math.min(total, Math.round(self.progress * (total - 1)) + 1);
-          count.textContent = String(n).padStart(2, '0');
-        }
-      }
-    });
-
-    // Ligero desplazamiento interno de cada captura mientras pasa
-    rail.querySelectorAll('.case__media img').forEach((img) => {
-      gsap.fromTo(img, { xPercent: -4 }, {
-        xPercent: 4, ease: 'none',
-        scrollTrigger: { trigger: img.closest('.case'), containerAnimation: tween, start: 'left right', end: 'right left', scrub: true }
-      });
-    });
-
-    // Con teclado: llevar a la vista la tarjeta que recibe el foco
-    const onFocus = (e) => {
-      const card = e.target.closest('.case');
-      if (!card) return;
-      const st = tween.scrollTrigger;
-      const pad = parseFloat(getComputedStyle(rail).paddingLeft) || 0;
-      const p = gsap.utils.clamp(0, 1, (card.offsetLeft - pad) / distance());
-      const y = st.start + p * (st.end - st.start);
-      if (lenis) lenis.scrollTo(y, { immediate: true }); else window.scrollTo(0, y);
-      // El navegador desplaza el contenedor recortado para mostrar el foco: lo deshacemos
-      [section, section.querySelector('.work__pin')].forEach((el) => { el.scrollLeft = 0; });
-      requestAnimationFrame(() => { section.scrollLeft = 0; });
-    };
-    rail.addEventListener('focusin', onFocus);
-
-    return () => {
-      rail.removeEventListener('focusin', onFocus);
-      section.classList.remove('is-horizontal');
-    };
-  });
-
   window.SD = { lenis };
 
   /* ---------- Etiqueta «Ver caso» que sigue al cursor en las capturas ---------- */
@@ -229,14 +167,29 @@
     const bx = gsap.quickTo(badge, 'x', { duration: .45, ease: 'power3.out' });
     const by = gsap.quickTo(badge, 'y', { duration: .45, ease: 'power3.out' });
     gsap.set(badge, { xPercent: -50, yPercent: -50, scale: 0 });
-    document.querySelectorAll('[data-cursor-label]').forEach((zone) => {
-      zone.addEventListener('pointerenter', () => {
-        badge.textContent = zone.dataset.cursorLabel;
-        gsap.to(badge, { scale: 1, duration: .45, ease: 'back.out(2)' });
-      });
-      zone.addEventListener('pointerleave', () => gsap.to(badge, { scale: 0, duration: .3, ease: 'power2.in' }));
-    });
-    window.addEventListener('pointermove', (e) => { bx(e.clientX); by(e.clientY); }, { passive: true });
+    let currentZone = null;
+    let lastPX = -1, lastPY = -1;
+
+    const evalZone = (cx, cy) => {
+      const zone = document.elementFromPoint(cx, cy)?.closest('[data-cursor-label]');
+      if (zone !== currentZone) {
+        currentZone = zone;
+        if (zone) {
+          badge.textContent = zone.dataset.cursorLabel;
+          gsap.to(badge, { scale: 1, duration: .45, ease: 'back.out(2)' });
+        } else {
+          gsap.to(badge, { scale: 0, duration: .3, ease: 'power2.in' });
+        }
+      }
+    };
+
+    window.addEventListener('pointermove', (e) => {
+      lastPX = e.clientX; lastPY = e.clientY;
+      bx(e.clientX); by(e.clientY);
+      evalZone(e.clientX, e.clientY);
+    }, { passive: true });
+
+    if (lenis) lenis.on('scroll', () => { if (lastPX >= 0) evalZone(lastPX, lastPY); });
   }
 
   /* ---------- Partir titulares en palabras ---------- */
@@ -280,7 +233,11 @@
     const marks = visual.querySelectorAll('em');
     gsap.set(words, { yPercent: 110 });
     gsap.set(marks, { backgroundSize: '0% 100%' });
-    const tl = gsap.timeline({ scrollTrigger: { trigger: el, start: 'top 86%', toggleActions: 'play none none none' } });
+    const tl = gsap.timeline({
+      scrollTrigger: { trigger: el, start: 'top 86%', toggleActions: 'play none none none' },
+      onStart: () => gsap.set(words, { willChange: 'transform' }),
+      onComplete: () => gsap.set(words, { willChange: 'auto' }),
+    });
     tl.to(words, { yPercent: 0, duration: 1.05, ease: 'expo.out', stagger: 0.045 })
       .to(marks, { backgroundSize: '100% 100%', duration: .9, ease: 'expo.inOut' }, '-=.7');
   });
@@ -293,21 +250,27 @@
 
   /* ---------- Hero: intro + abanico ---------- */
   const cards = gsap.utils.toArray('.deck__card');
-  const base = cards.map((_, i) => ({ xPercent: i * 5, yPercent: i * -8, rotation: (i - 1.5) * 5 }));
-  cards.forEach((c, i) => gsap.set(c, { x: 0, y: 0, ...base[i] }));
+  const base = cards.map((_, i) => ({ xPercent: i * 5, yPercent: i * -5, rotation: (i - 1.5) * 5 }));
 
-  const intro = gsap.timeline({ defaults: { ease: 'expo.out' }, onComplete: runRotor });
-  intro
-    .to('[data-hero="line"]', { y: 0, duration: 1.2, stagger: 0.12 }, 0.1)
-    .to('[data-hero="fade"]', { opacity: 1, y: 0, duration: 1, stagger: 0.08 }, 0.35);
-  if (cards.length) {
+  let intro;
+  requestAnimationFrame(() => requestAnimationFrame(() => {
+    gsap.set('[data-hero="line"]', { y: '105%' });
+    gsap.set('[data-hero="fade"]', { opacity: 0, y: 18 });
+    cards.forEach((c, i) => gsap.set(c, { x: 0, y: 0, ...base[i] }));
+
+    intro = gsap.timeline({ defaults: { ease: 'expo.out' }, onComplete: runRotor });
     intro
-      .fromTo(cards,
-        { opacity: 0, yPercent: 60, rotation: 0, xPercent: 0 },
-        { opacity: 1, duration: 1.4, stagger: 0.1, yPercent: (i) => base[i].yPercent, rotation: (i) => base[i].rotation, xPercent: (i) => base[i].xPercent },
-        0.25)
-      .from('.deck__tag', { opacity: 0, scale: .8, duration: .8 }, 1.1);
-  }
+      .to('[data-hero="line"]', { y: 0, duration: 1.2, stagger: 0.12 }, 0.1)
+      .to('[data-hero="fade"]', { opacity: 1, y: 0, duration: 1, stagger: 0.08 }, 0.35);
+    if (cards.length) {
+      intro
+        .fromTo(cards,
+          { opacity: 0, yPercent: 60, rotation: 0, xPercent: 0, willChange: 'transform' },
+          { opacity: 1, duration: 1.4, stagger: 0.1, yPercent: (i) => base[i].yPercent, rotation: (i) => base[i].rotation, xPercent: (i) => base[i].xPercent },
+          0.25)
+        .from('.deck__tag', { opacity: 0, scale: .8, duration: .8 }, 1.1);
+    }
+  }));
 
   const stage = document.querySelector('[data-stage]');
   if (stage && finePointer) {
@@ -315,8 +278,12 @@
     const xs = cards.map((c) => gsap.quickTo(c, 'x', { duration: .8, ease: 'power3.out' }));
     const ys = cards.map((c) => gsap.quickTo(c, 'y', { duration: .8, ease: 'power3.out' }));
     let raf = 0;
+    let deckActive = false;
+    stage.addEventListener('pointerenter', () => {
+      if (!intro?.isActive()) { deckActive = true; gsap.set(cards, { willChange: 'transform' }); }
+    });
     stage.addEventListener('pointermove', (e) => {
-      if (raf || intro.isActive()) return;
+      if (raf || intro?.isActive()) return;
       raf = requestAnimationFrame(() => {
         raf = 0;
         const r = stage.getBoundingClientRect();
@@ -330,9 +297,14 @@
         });
       });
     });
-    const reset = () => cards.forEach((_, i) => { rot[i](base[i].rotation); xs[i](0); ys[i](0); });
+    const reset = () => {
+      cards.forEach((_, i) => { rot[i](base[i].rotation); xs[i](0); ys[i](0); });
+      gsap.delayedCall(0.85, () => { deckActive = false; gsap.set(cards, { willChange: 'auto' }); });
+    };
     stage.addEventListener('pointerleave', reset);
     window.addEventListener('blur', reset);
+  } else if (cards.length) {
+    gsap.delayedCall(2, () => gsap.set(cards, { willChange: 'auto' }));
   }
 
   // El abanico se abre un poco al hacer scroll fuera del hero
