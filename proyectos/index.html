@@ -13,6 +13,12 @@
   <link rel="stylesheet" href="/assets/fonts/fonts.css" />
   <link rel="stylesheet" href="../assets/css/v2.css?v=20261021" />
   <link rel="stylesheet" href="../assets/css/service.css?v=20261021" />
+  <style>
+    .proj-badge{display:inline-block;padding:2px 8px;border-radius:4px;font-size:.7rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px}
+    .proj-badge--real{background:#e6f4ee;color:#005c2e;border:1px solid #00854a33}
+    .proj-badge--propuesta{background:#fef3c7;color:#78350f;border:1px solid #d9770633}
+    .proj-badge--demo{background:#f0f0f0;color:#666;border:1px solid #ccc}
+  </style>
   <script>
     (function (d) {
       var r = d.documentElement; r.classList.add('js');
@@ -80,14 +86,15 @@
         </header>
         <ul class="proj-index">
           <li>
-            <a href="martilota/" class="proj-card">
+            <a href="olia-workplace/" class="proj-card">
               <figure class="proj-card__media">
-                <img src="../assets/img/work/martilota-sm.webp" alt="Web de Martilota" width="800" height="500" loading="lazy" />
+                <img src="../assets/img/work/olia-sm.webp" alt="Web de Olia Workplace" width="800" height="500" loading="lazy" />
               </figure>
               <div class="proj-card__body">
-                <p class="proj-card__sector">Restauración</p>
-                <h3 class="proj-card__name">Martilota</h3>
-                <p class="proj-card__desc">Restaurante en Alcalá de Henares. Web que transmite la experiencia antes de cruzar la puerta.</p>
+                <p class="proj-card__sector">Salud y bienestar</p>
+                <span class="proj-badge proj-badge--real">Cliente real</span>
+                <h3 class="proj-card__name">Olia Workplace</h3>
+                <p class="proj-card__desc">Osteopatía para empresas en Barcelona. Web B2B bilingüe que explica el servicio y capta leads.</p>
                 <span class="proj-card__cta" aria-hidden="true">Ver proyecto →</span>
               </div>
             </a>
@@ -99,6 +106,7 @@
               </figure>
               <div class="proj-card__body">
                 <p class="proj-card__sector">Transporte</p>
+                <span class="proj-badge proj-badge--real">Cliente real</span>
                 <h3 class="proj-card__name">Taxi Santa Susanna</h3>
                 <p class="proj-card__desc">Servicio de taxi en Santa Susanna. Reservas online y presencia local en Google.</p>
                 <span class="proj-card__cta" aria-hidden="true">Ver proyecto →</span>
@@ -106,14 +114,15 @@
             </a>
           </li>
           <li>
-            <a href="olia-workplace/" class="proj-card">
+            <a href="martilota/" class="proj-card">
               <figure class="proj-card__media">
-                <img src="../assets/img/work/olia-sm.webp" alt="Web de Olia Workplace" width="800" height="500" loading="lazy" />
+                <img src="../assets/img/work/martilota-sm.webp" alt="Web de Martilota" width="800" height="500" loading="lazy" />
               </figure>
               <div class="proj-card__body">
-                <p class="proj-card__sector">Espacios de trabajo</p>
-                <h3 class="proj-card__name">Olia Workplace</h3>
-                <p class="proj-card__desc">Coworking en Barcelona. Web que convierte visitas en reservas de espacio.</p>
+                <p class="proj-card__sector">Restauración</p>
+                <span class="proj-badge proj-badge--propuesta">Propuesta</span>
+                <h3 class="proj-card__name">Martilota</h3>
+                <p class="proj-card__desc">Restaurante en Alcalá de Henares. Web que transmite la experiencia antes de cruzar la puerta.</p>
                 <span class="proj-card__cta" aria-hidden="true">Ver proyecto →</span>
               </div>
             </a>
@@ -125,6 +134,7 @@
               </figure>
               <div class="proj-card__body">
                 <p class="proj-card__sector">Servicios locales</p>
+                <span class="proj-badge proj-badge--propuesta">Propuesta</span>
                 <h3 class="proj-card__name">Juli Manitas</h3>
                 <p class="proj-card__desc">Manitas y reparaciones en Barcelona, Vallès y Maresme. Captación de clientes locales.</p>
                 <span class="proj-card__cta" aria-hidden="true">Ver proyecto →</span>
@@ -138,6 +148,7 @@
               </figure>
               <div class="proj-card__body">
                 <p class="proj-card__sector">Peluquería y belleza</p>
+                <span class="proj-badge proj-badge--demo">Demo</span>
                 <h3 class="proj-card__name">Alma Salinas</h3>
                 <p class="proj-card__desc">Peluquería en Barcelona. Web con reservas online, carta de servicios y ficha de Google.</p>
                 <span class="proj-card__cta" aria-hidden="true">Ver proyecto →</span>
@@ -151,6 +162,7 @@
               </figure>
               <div class="proj-card__body">
                 <p class="proj-card__sector">Servicios locales</p>
+                <span class="proj-badge proj-badge--demo">Demo</span>
                 <h3 class="proj-card__name">Punt i Còpia</h3>
                 <p class="proj-card__desc">Copistería en Barcelona. Presencia online con catálogo de servicios y formulario de pedido.</p>
                 <span class="proj-card__cta" aria-hidden="true">Ver proyecto →</span>
@@ -164,6 +176,7 @@
               </figure>
               <div class="proj-card__body">
                 <p class="proj-card__sector">Ecommerce · Cosmética natural</p>
+                <span class="proj-badge proj-badge--demo">Demo</span>
                 <h3 class="proj-card__name">Civère</h3>
                 <p class="proj-card__desc">Tienda online de cosmética natural. Diseño premium y experiencia de compra optimizada.</p>
                 <span class="proj-card__cta" aria-hidden="true">Ver proyecto →</span>
@@ -177,6 +190,7 @@
               </figure>
               <div class="proj-card__body">
                 <p class="proj-card__sector">Inmobiliaria</p>
+                <span class="proj-badge proj-badge--demo">Demo</span>
                 <h3 class="proj-card__name">Nordal Homes</h3>
                 <p class="proj-card__desc">Agencia inmobiliaria. Web con ficha de propiedades, captación de leads y SEO local.</p>
                 <span class="proj-card__cta" aria-hidden="true">Ver proyecto →</span>
