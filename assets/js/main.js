@@ -10,6 +10,18 @@
   const hasGsap = typeof window.gsap !== 'undefined' && typeof window.ScrollTrigger !== 'undefined';
   const animate = hasGsap && !reduced;
 
+  /* ---------- Seguro de visibilidad: si falla JS o no arrancan los ScrollTriggers ---------- */
+  function emergencyReveal() {
+    root.classList.remove('is-anim');
+    document.querySelectorAll('[data-reveal],[data-words],[data-hero],[data-split] .split-word > span,[data-split] em')
+      .forEach((el) => { el.style.opacity = ''; el.style.transform = ''; el.style.backgroundSize = ''; });
+  }
+  { const _prev = window.onerror; window.onerror = (...a) => { emergencyReveal(); if (_prev) _prev(...a); }; }
+  setTimeout(() => {
+    if (root.classList.contains('is-anim') && !(typeof ScrollTrigger !== 'undefined' && ScrollTrigger.getAll().length)) emergencyReveal();
+  }, 3000);
+  /* ----------------------------------------------------------------------------------------- */
+
   if (!animate) root.classList.remove('is-anim');
 
   /* ---------- Interruptor «Reducir animaciones» (se recuerda en este navegador) ---------- */
@@ -68,6 +80,7 @@
     };
     Object.keys(rules).forEach((id) => {
       const el = document.getElementById(id);
+      if (!el) return;
       el.addEventListener('blur', () => { if (el.value || el.type === 'checkbox') check(id); });
       el.addEventListener('input', () => { if (el.getAttribute('aria-invalid') === 'true') check(id); });
       el.addEventListener('change', () => { if (el.getAttribute('aria-invalid') === 'true') check(id); });
@@ -387,7 +400,6 @@
 
   /* ---------- Limpieza ---------- */
   window.addEventListener('pagehide', () => {
-    mm.revert();
     ScrollTrigger.getAll().forEach((t) => t.kill());
     if (lenis) lenis.destroy();
   });
