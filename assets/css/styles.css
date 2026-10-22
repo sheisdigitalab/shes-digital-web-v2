@@ -203,7 +203,7 @@ strong { font-weight: 600; }
 }
 .hero__line { display: block; overflow: hidden; padding-bottom: .06em; }
 .hero__line-in { display: inline-block; }
-.hero__line--rotor { margin-top: .02em; }
+.hero__line--rotor { margin-top: .02em; overflow: visible; }
 .rotor { position: relative; display: inline-grid; isolation: isolate; }
 .rotor::before {
   content: ""; position: absolute; z-index: -1; left: -.12em; top: .14em; bottom: .02em;

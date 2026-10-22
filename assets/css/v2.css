@@ -205,7 +205,7 @@ strong { font-weight: 600; }
 }
 .hero__line { display: block; overflow: hidden; padding-bottom: .06em; }
 .hero__line-in { display: inline-block; }
-.hero__line--rotor { margin-top: .02em; }
+.hero__line--rotor { margin-top: .02em; overflow: visible; }
 .rotor { position: relative; display: inline-grid; isolation: isolate; }
 .rotor::before {
   content: ""; position: absolute; z-index: -1; left: -.12em; top: .14em; bottom: .02em;
@@ -266,6 +266,8 @@ strong { font-weight: 600; }
   position: relative;
   padding-top: 0;
   background: var(--cream);
+  /* La columna copy es 44 % del wrap → reescalamos fs-1 para que el rotor quepa */
+  --fs-1: clamp(2.75rem, 1.6rem + 3.8vw, 5.75rem);
 }
 .hero--split::before {
   content: '';
