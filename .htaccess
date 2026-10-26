@@ -5,6 +5,18 @@ DirectoryIndex index.html index.php
   RewriteEngine On
   RewriteBase /
 
+  # ----- www → non-www -----
+  RewriteCond %{HTTP_HOST} ^www\.sheisdigitalab\.com$ [NC]
+  RewriteRule ^(.*)$ https://sheisdigitalab.com/$1 [R=301,L]
+
+  # ----- /xxx/index.html → /xxx/ -----
+  RewriteRule ^(.+/)?index\.html$ /$1 [R=301,L]
+
+  # ----- Añadir barra final a secciones estáticas v2 (sin extensión y sin barra) -----
+  # Cubre: /servicios, /blog/xxx, /proyectos/xxx, /sectores/xxx, /legal/xxx
+  # y las 6 ciudades con página propia (diseno-web-barcelona, etc.)
+  RewriteRule ^((?:servicios|blog|proyectos|sectores|legal|diseno-web-(?:barcelona|granollers|sabadell|terrassa|mataro|sant-cugat))(?:/[^./]+)*)$ /$1/ [R=301,L]
+
   # ----- Redirecciones SEO: URL antigua del servicio de SEO -----
   RewriteRule ^servicios/seo-local/?$ /servicios/seo/seo-local/ [R=301,L]
 
