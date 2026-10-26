@@ -304,6 +304,8 @@ body:has(.hero--split) .nav:not(.is-scrolled) {
 }
 .hero--split .hero__lead { color: var(--on-ink-muted); }
 .hero--split .hero__founder { color: var(--on-ink-muted); }
+.hero--split .hero__copy .eyebrow { color: var(--on-ink-muted); }
+.hero--split .hero__sub { color: var(--on-ink-muted); }
 .hero--split .hero__copy .btn--dark {
   background: var(--mint); color: var(--ink); border-color: var(--mint);
 }
@@ -349,6 +351,8 @@ body:has(.hero--split) .nav:not(.is-scrolled) {
   }
   .hero--split .hero__lead { color: var(--ink-2); }
   .hero--split .hero__founder { color: var(--muted); }
+  .hero--split .hero__copy .eyebrow { color: var(--muted); }
+  .hero--split .hero__sub { color: var(--ink-2); }
   .hero--split .hero__copy .btn--dark { background: var(--ink); color: var(--on-ink); border-color: var(--ink); }
   .hero--split .hero__copy .btn--dark:hover { background: var(--paper); color: var(--ink); }
   .hero--split .hero__copy .btn--line { color: var(--ink); border-color: var(--ink); }
