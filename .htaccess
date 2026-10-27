@@ -92,6 +92,24 @@ DirectoryIndex index.html index.php
   Deny from all
 </FilesMatch>
 
+# ----- Bloquear archivos de repo y scripts no web -----
+<FilesMatch "^(README\.md|\.gitignore|\.gitattributes|\.nojekyll)$">
+  Order allow,deny
+  Deny from all
+</FilesMatch>
+
+<FilesMatch "\.py$">
+  Order allow,deny
+  Deny from all
+</FilesMatch>
+
+<IfModule mod_rewrite.c>
+  # Bloquear carpeta tools/
+  RewriteRule ^tools(/|$) - [F,L]
+  # Bloquear info.json dentro de assets/img/cases/
+  RewriteRule ^assets/img/cases/.+/info\.json$ - [F,L]
+</IfModule>
+
 # ----- Seguridad básica -----
 <IfModule mod_headers.c>
   Header always set X-Content-Type-Options "nosniff"

@@ -1,0 +1,7 @@
+# Excluir del git archive (deploy)
+README.md        export-ignore
+.gitignore       export-ignore
+.gitattributes   export-ignore
+.nojekyll        export-ignore
+tools/           export-ignore
+assets/img/cases/*/info.json export-ignore
