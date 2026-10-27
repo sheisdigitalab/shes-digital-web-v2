@@ -68,6 +68,7 @@
   if (form) {
     const rules = {
       'f-name': (el) => el.value.trim() ? '' : 'Escribe tu nombre.',
+      'f-service': (el) => el.value ? '' : 'Elige una opción.',
       'f-msg': (el) => el.value.trim() ? '' : 'Cuéntame algo de tu proyecto.',
       'f-privacy': (el) => el.checked ? '' : 'Acepta la política de privacidad para continuar.'
     };
@@ -91,8 +92,11 @@
       const status = form.querySelector('.form__status');
       if (!ok) { form.querySelector('[aria-invalid="true"]').focus(); return; }
       const name = form.elements.name.value.trim();
+      const service = form.elements.service ? form.elements.service.value : '';
+      const budget = form.elements.budget ? form.elements.budget.value : '';
       const message = form.elements.message.value.trim();
-      const text = 'Hola Jenifer, soy ' + name + '.\n\n' + message;
+      const budgetText = budget || 'sin indicar';
+      const text = 'Hola Jenifer, soy ' + name + '. Necesito: ' + service + '. Presupuesto: ' + budgetText + '.\n\n' + message;
       window.open('https://wa.me/34637889942?text=' + encodeURIComponent(text), '_blank', 'noopener');
       status.textContent = 'Te abro WhatsApp con tu mensaje. Si no se abre, escríbeme a hola@sheisdigitalab.com.';
       form.reset();
