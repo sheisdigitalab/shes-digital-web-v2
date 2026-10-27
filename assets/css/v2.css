@@ -969,10 +969,10 @@ html.reduce-motion *, html.reduce-motion *::before, html.reduce-motion *::after 
 .v3-badge { font-size: .6875rem; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; padding: 4px 9px; border-radius: 999px; background: var(--cream); color: var(--ink); white-space: nowrap; }
 .v3-badge--new { background: var(--mint); }
 .v3-price--quote b { font-family: var(--sans); font-size: .875rem; font-weight: 600; }
-.v3-guar { list-style: none; margin-top: 24px; display: flex; flex-wrap: wrap; gap: 10px 28px; padding: 18px 22px; border-radius: 18px; background: var(--cream); }
+.v3-guar { list-style: none; margin-top: 24px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px 28px; padding: 18px 22px; border-radius: 18px; background: var(--cream); }
 .v3-guar li { display: flex; align-items: center; gap: 10px; font-size: var(--fs-6); font-weight: 500; }
 .v3-guar svg { width: 18px; height: 18px; flex: none; padding: 3px; border-radius: 50%; background: var(--mint); fill: none; stroke: var(--ink); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
-.v3-includes { margin-top: 14px; font-size: var(--fs-6); color: var(--ink-2); line-height: 1.55; }
+@media (max-width: 479px) { .v3-guar { grid-template-columns: 1fr; } }
 .v3-foot { margin-top: 20px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 8px 24px; }
 .v3-iva { font-size: .8125rem; color: var(--muted); }
 .v3-more { font-size: var(--fs-6); color: var(--ink-2); }
