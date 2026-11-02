@@ -1,0 +1,451 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Apps a medida y CRM para tu negocio | She&#x27;s Digital</title>
+  <meta name="description" content="Apps web a medida para negocios: CRM sencillo, área de clientes con login o herramienta de gestión interna. React, Next.js, base de datos segura. Presupuesto en 24 h." />
+  <link rel="canonical" href="https://sheisdigitalab.com/servicios/apps-a-medida/" />
+  <meta property="og:title" content="Apps a medida y CRM para tu negocio | She&#x27;s Digital" />
+  <meta property="og:description" content="Apps web a medida para negocios: CRM sencillo, área de clientes con login o herramienta de gestión interna. React, Next.js, base de datos segura." />
+  <meta property="og:image" content="../../assets/img/og-cover.jpg" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Apps a medida y CRM para tu negocio | She&#x27;s Digital" />
+  <meta name="twitter:image" content="../../assets/img/og-cover.jpg" />
+  <meta name="theme-color" content="#FAF8F4" />
+  <link rel="icon" href="../../assets/img/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="/assets/fonts/fonts.css" />
+  <link rel="stylesheet" href="../../assets/css/v2.css?v=20261029" />
+  <link rel="stylesheet" href="../../assets/css/case.css?v=20261029" />
+  <link rel="stylesheet" href="../../assets/css/service.css?v=20261029" />
+  <script>
+    (function (d) {
+      var r = d.documentElement; r.classList.add('js');
+      var manual = false;
+      try { manual = localStorage.getItem('sd-motion') === 'reduce'; } catch (e) {}
+      if (manual) r.classList.add('reduce-motion');
+      if (!manual && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        r.classList.add('is-anim');
+        setTimeout(function () { if (!window.gsap) r.classList.remove('is-anim'); }, 3000);
+      }
+    })(document);
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "name": "Apps y CRM a medida",
+      "serviceType": "Desarrollo de aplicaciones web",
+      "provider": {
+        "@type": "ProfessionalService",
+        "name": "She's Digital",
+        "url": "https://sheisdigitalab.com/"
+      },
+      "description": "Desarrollo de apps web a medida para negocios: CRM sencillo, área de clientes con login, herramientas de gestión interna. React, Next.js, base de datos segura.",
+      "url": "https://sheisdigitalab.com/servicios/apps-a-medida/"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inicio",
+          "item": "https://sheisdigitalab.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Servicios",
+          "item": "https://sheisdigitalab.com/servicios/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Apps a medida",
+          "item": "https://sheisdigitalab.com/servicios/apps-a-medida/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿En qué se diferencia una app a medida de un software genérico?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Un software genérico tiene funciones que no usas y le falta las que sí necesitas. Una app a medida hace exactamente lo que tu negocio necesita, sin pantallas de más ni flujos que no encajan con tu forma de trabajar. A largo plazo también es más fácil de mantener porque no dependes de que otro proveedor actualice su producto."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Necesito saber programación para usar la app?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. La app se diseña para que la use tu equipo sin formación técnica: paneles claros, acciones en pocos clics y sin terminología de desarrollo. Si algo no es intuitivo, lo ajustamos antes de terminar."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Mis datos están seguros?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí. Las contraseñas se guardan cifradas, nunca en texto plano. Los datos sensibles no pasan por el navegador sin protección. Cada usuario solo puede ver lo que le corresponde. Y la base de datos tiene copias de seguridad automáticas para que nada se pierda."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué pasa si necesito añadir algo más adelante?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Las apps que hago están pensadas para crecer. El código está estructurado para que añadir nuevas funciones no obligue a reescribir todo lo anterior. Si en seis meses necesitas un módulo nuevo, lo presupuestamos y lo añadimos sin tirar lo que ya funciona."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body class="service-page">
+  <a class="skip" href="#main">Saltar al contenido</a>
+
+  <!-- ============ Cabecera ============ -->
+  <header class="nav" data-nav>
+    <div class="nav__inner wrap">
+      <a href="../../" class="nav__logo" aria-label="She's Digital, inicio">
+        <img src="../../assets/img/logo-stacked.svg" alt="" width="112" height="63" />
+      </a>
+      <nav class="nav__links" id="nav-menu" aria-label="Principal">
+        <a href="../../#servicios" aria-current="true">Servicios y precios</a>
+        <a href="../../#proyectos">Proyectos</a>
+        <a href="../../#proceso">Proceso</a>
+        <a href="../../#sobre-mi">Sobre mí</a>
+        <a href="../../#faq">FAQ</a>
+        <a href="#contacto" class="btn btn--dark nav__cta-mobile">Pide tu presupuesto gratis <span class="btn__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span></a>
+      </nav>
+      <a href="#contacto" class="btn btn--dark nav__cta">Pide tu presupuesto gratis <span class="btn__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span></a>
+      <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="nav-menu">
+        <span class="sr-only">Abrir menú</span>
+        <span class="nav__bars" aria-hidden="true"><i></i><i></i></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ============ Cabecera del servicio ============ -->
+    <section class="cs-hero sv-hero" id="top" aria-labelledby="sv-title">
+      <div class="wrap">
+        <nav class="sv-crumbs" aria-label="Ruta" data-hero="fade">
+          <ol>
+            <li><a href="../../">Inicio</a></li>
+            <li><a href="../../#servicios">Servicios</a></li>
+            <li aria-current="page">Apps a medida</li>
+          </ol>
+        </nav>
+
+        <p class="eyebrow" data-hero="fade">Servicio · Apps y CRM a medida</p>
+        <h1 class="sv-title" id="sv-title">
+          <span class="hero__line"><span class="hero__line-in" data-hero="line">Apps y CRM</span></span>
+          <span class="hero__line"><span class="hero__line-in" data-hero="line"><span class="sv-mark">a medida.</span></span></span>
+        </h1>
+
+        <div class="cs-hero__grid sv-hero__grid">
+          <div>
+            <p class="cs-hero__lead" data-hero="fade">Si tu negocio ya ha crecido más de lo que una hoja de cálculo puede gestionar, te construyo la herramienta exacta que necesitas: un CRM, un área de clientes o un sistema de gestión interno, sin pagar por funciones que nunca vas a usar.</p>
+            <div class="sv-actions" data-hero="fade">
+              <a href="https://wa.me/34637889942?text=Hola%20Jenifer%2C%20me%20interesa%20una%20app%20o%20CRM%20a%20medida.%20%C2%BFPodemos%20hablar%3F" class="btn btn--dark btn--magnetic">Pide tu presupuesto gratis <span class="btn__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span></a>
+              <p class="sv-note">Presupuesto cerrado en 24 h</p>
+              <a href="#opciones" class="btn btn--line">Ver qué incluye</a>
+            </div>
+          </div>
+
+          <dl class="cs-meta" data-hero="fade">
+            <div><dt>Presupuesto</dt><dd>Cerrado en 24 h, sin sorpresas</dd></div>
+            <div><dt>Tecnología</dt><dd>React, Next.js, base de datos con acceso por usuario</dd></div>
+            <div><dt>Seguridad</dt><dd>Contraseñas cifradas, copias de seguridad automáticas</dd></div>
+            <div><dt>Privacidad</dt><dd>Cada cliente ve solo sus datos</dd></div>
+          </dl>
+        </div>
+      </div>
+
+      <ul class="wrap cs-facts" aria-label="En resumen">
+        <li data-reveal><strong>100 %</strong><span>tuya: código, datos y accesos a tu nombre</span></li>
+        <li data-reveal><strong>24 h</strong><span>para tener tu presupuesto cerrado</span></li>
+      </ul>
+    </section>
+
+    <!-- ============ Enfoque ============ -->
+    <section class="section cs-block" aria-labelledby="enf-title">
+      <div class="wrap cs-block__grid">
+        <header class="cs-block__head">
+          <p class="eyebrow" data-reveal>01 — El enfoque</p>
+          <h2 class="h2" id="enf-title" data-split>Exactamente<br /><em>lo que necesitas.</em></h2>
+        </header>
+        <div class="cs-block__body">
+          <p class="cs-statement" data-words>Un software genérico tiene funciones que no usas y le faltan las que sí necesitas. Una app a medida hace exactamente lo que tu negocio hace, y nada más.</p>
+          <p data-reveal>Trabajo contigo para entender cómo gestionas los clientes, los pedidos o los proyectos. Diseño la herramienta que encaja con ese flujo, sin obligarte a cambiar cómo trabajas. El resultado es más rápido de usar, más fácil de aprender y más barato de mantener que una plataforma genérica.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Opciones ============ -->
+    <section class="section cs-block sv-includes" id="opciones" aria-labelledby="inc-title">
+      <div class="wrap">
+        <header class="cs-block__head cs-block__head--wide">
+          <p class="eyebrow" data-reveal>02 — Qué puedo construir</p>
+          <h2 class="h2" id="inc-title" data-split>Tres tipos <br /><em>de herramienta.</em></h2>
+        </header>
+        <ol class="cs-points">
+          <li data-reveal>
+            <span class="cs-points__n">01</span>
+            <h3>CRM sencillo</h3>
+            <p>Ficha de cada cliente con su historial de contactos, presupuestos enviados, proyectos activos y seguimiento de conversaciones. Sin las cien columnas que no vas a rellenar nunca. Busca en dos clics, filtra por estado y exporta cuando necesites.</p>
+          </li>
+          <li data-reveal>
+            <span class="cs-points__n">02</span>
+            <h3>Área de clientes</h3>
+            <p>Un portal con login donde tus clientes acceden a sus documentos, presupuestos, facturas o el estado de sus pedidos. Cada cliente ve solo lo suyo. Tú subes los archivos desde un panel propio y ellos los descargan sin mandarte correos.</p>
+          </li>
+          <li data-reveal>
+            <span class="cs-points__n">03</span>
+            <h3>Herramienta de gestión interna</h3>
+            <p>Para sustituir hojas de cálculo que se han quedado pequeñas: control de stock, gestión de turnos, seguimiento de tareas por proyecto o cualquier proceso que ahora haces en Excel y ya empieza a fallar cuando hay varios usuarios tocando el mismo archivo.</p>
+          </li>
+        </ol>
+        <div class="guarantees" data-reveal>
+          <p><strong>Presupuesto cerrado en 24 h</strong> para cualquiera de estas opciones.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Proceso ============ -->
+    <section class="section process" aria-labelledby="sv-process-title">
+      <div class="wrap">
+        <header class="head">
+          <p class="eyebrow eyebrow--light" data-reveal>03 — Cómo trabajamos</p>
+          <h2 class="h2" id="sv-process-title" data-split>Del problema <br /><em>a la herramienta.</em></h2>
+        </header>
+        <div class="process__line" aria-hidden="true"><span data-process-line></span></div>
+        <ol class="process__steps">
+          <li class="step" data-reveal>
+            <span class="step__num">01</span>
+            <h3 class="step__title">Escucha y análisis</h3>
+            <p class="step__when">Día 1</p>
+            <p>Videollamada para entender cómo trabajas ahora y qué quieres mejorar. Anoto los flujos, las fricciones y los datos que necesitas manejar. Presupuesto cerrado en 24 horas.</p>
+          </li>
+          <li class="step" data-reveal>
+            <span class="step__num">02</span>
+            <h3 class="step__title">Diseño funcional</h3>
+            <p class="step__when">Semana 1-2</p>
+            <p>Diseño las pantallas y los flujos antes de programar: cómo se navega, qué ve cada tipo de usuario y cómo se organizan los datos. Lo revisas y corriges antes de que escriba una línea de código.</p>
+          </li>
+          <li class="step" data-reveal>
+            <span class="step__num">03</span>
+            <h3 class="step__title">Desarrollo</h3>
+            <p class="step__when">Semanas 3-8</p>
+            <p>Construyo la app con React y Next.js, conecto la base de datos con acceso por usuario y configuro las copias de seguridad automáticas. Tienes acceso a un entorno de prueba desde el primer día.</p>
+          </li>
+          <li class="step" data-reveal>
+            <span class="step__num">04</span>
+            <h3 class="step__title">Prueba y entrega</h3>
+            <p class="step__when">Semana 9 en adelante</p>
+            <p>Probamos la app con datos reales y usuarios reales. Ajustamos lo que no fluye, documentamos cómo añadir usuarios o exportar datos, y hacemos el traspaso con una sesión de formación.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ Tecnología ============ -->
+    <section class="section sv-tech" aria-labelledby="tech-title">
+      <div class="wrap">
+        <header class="cs-block__head cs-block__head--wide">
+          <p class="eyebrow" data-reveal>04 — Tecnología</p>
+          <h2 class="h2" id="tech-title" data-split>Construido <br /><em>para durar.</em></h2>
+        </header>
+        <ul class="index sv-tech__list">
+          <li class="index__row" data-reveal><div class="index__link sv-tech__row"><span class="index__num">01</span><span class="index__name">React y Next.js</span><span class="index__desc">La interfaz es rápida, fluida y funciona bien en móvil y ordenador. Next.js permite que las páginas carguen desde el servidor, lo que mejora la velocidad y el SEO cuando es necesario.</span></div></li>
+          <li class="index__row" data-reveal><div class="index__link sv-tech__row"><span class="index__num">02</span><span class="index__name">Base de datos con acceso por usuario</span><span class="index__desc">Cada usuario tiene su sesión y solo puede ver los datos que le corresponden. Los accesos se gestionan desde un panel de administración sin tocar código.</span></div></li>
+          <li class="index__row" data-reveal><div class="index__link sv-tech__row"><span class="index__num">03</span><span class="index__name">Contraseñas cifradas</span><span class="index__desc">Las contraseñas nunca se guardan en texto plano ni pasan por el navegador sin protección. Se usa cifrado estándar del sector y verificación segura en cada inicio de sesión.</span></div></li>
+          <li class="index__row" data-reveal><div class="index__link sv-tech__row"><span class="index__num">04</span><span class="index__name">Copias de seguridad automáticas</span><span class="index__desc">La base de datos hace copias automáticas a diario. Si algo sale mal, se puede restaurar a un punto anterior sin perder trabajo. Nada depende de que alguien se acuerde de exportar un Excel.</span></div></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ Seguridad ============ -->
+    <section class="section cs-block" aria-labelledby="seg-title">
+      <div class="wrap cs-block__grid">
+        <header class="cs-block__head">
+          <p class="eyebrow" data-reveal>05 — Seguridad</p>
+          <h2 class="h2" id="seg-title" data-split>Los datos, <br /><em>protegidos.</em></h2>
+        </header>
+        <div class="cs-block__body">
+          <p data-reveal>Las claves de acceso a la base de datos y los servicios externos no se guardan en el código ni en el navegador: viven en variables de entorno en el servidor, fuera del alcance de cualquier usuario.</p>
+          <p data-reveal>La comunicación va cifrada con HTTPS. Las rutas privadas comprueban la sesión antes de mostrar cualquier dato. Si un usuario cierra sesión, sus datos dejan de ser accesibles.</p>
+          <p data-reveal>Si tu app va a manejar datos personales de clientes, te preparo el aviso de privacidad y la documentación necesaria para cumplir con el RGPD.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section class="section faq" aria-labelledby="faq-title">
+      <div class="wrap faq__grid">
+        <header class="head head--sticky">
+          <p class="eyebrow" data-reveal>06 — Preguntas frecuentes</p>
+          <h2 class="h2" id="faq-title" data-split>Lo que siempre <br /><em>me preguntan.</em></h2>
+        </header>
+        <div class="faq__list">
+          <details class="qa" data-reveal>
+            <summary>¿En qué se diferencia una app a medida de un software genérico? <span class="qa__icon" aria-hidden="true"></span></summary>
+            <div class="qa__body"><p>Un software genérico tiene funciones que no usas y le falta las que sí necesitas. Una app a medida hace exactamente lo que tu negocio necesita, sin pantallas de más ni flujos que no encajan con tu forma de trabajar. A largo plazo también es más fácil de mantener porque no dependes de que otro proveedor actualice su producto.</p></div>
+          </details>
+          <details class="qa" data-reveal>
+            <summary>¿Necesito saber programación para usar la app? <span class="qa__icon" aria-hidden="true"></span></summary>
+            <div class="qa__body"><p>No. La app se diseña para que la use tu equipo sin formación técnica: paneles claros, acciones en pocos clics y sin terminología de desarrollo. Si algo no es intuitivo, lo ajustamos antes de terminar.</p></div>
+          </details>
+          <details class="qa" data-reveal>
+            <summary>¿Mis datos están seguros? <span class="qa__icon" aria-hidden="true"></span></summary>
+            <div class="qa__body"><p>Sí. Las contraseñas se guardan cifradas, nunca en texto plano. Los datos sensibles no pasan por el navegador sin protección. Cada usuario solo puede ver lo que le corresponde. Y la base de datos tiene copias de seguridad automáticas para que nada se pierda.</p></div>
+          </details>
+          <details class="qa" data-reveal>
+            <summary>¿Qué pasa si necesito añadir algo más adelante? <span class="qa__icon" aria-hidden="true"></span></summary>
+            <div class="qa__body"><p>Las apps que hago están pensadas para crecer. El código está estructurado para que añadir nuevas funciones no obligue a reescribir todo lo anterior. Si en seis meses necesitas un módulo nuevo, lo presupuestamos y lo añadimos sin tirar lo que ya funciona.</p></div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CTA ============ -->
+    <section class="audit cs-cta" id="contacto" aria-labelledby="cta-title">
+      <div class="wrap audit__inner">
+        <div>
+          <p class="eyebrow" data-reveal>Primera consulta sin compromiso</p>
+          <h2 class="h2" id="cta-title" data-split>¿Cuéntame qué <br /><em>necesitas gestionar?</em></h2>
+        </div>
+        <div class="audit__body" data-reveal>
+          <p>Si tienes un proceso que se te ha quedado pequeño, cuéntamelo. Te digo si tiene solución y qué costaría resolverlo. Presupuesto cerrado en 24 horas.</p>
+          <div class="cs-cta__actions">
+            <a class="btn btn--dark btn--magnetic" href="https://wa.me/34637889942?text=Hola%20Jenifer%2C%20me%20interesa%20una%20app%20o%20CRM%20a%20medida.">
+              <span class="btn__wa" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2l-.5-.3Z"/></svg></span>
+              Pide tu presupuesto gratis
+            </a>
+            <a class="btn btn--line" href="tel:+34637889942">Llamar al 637 889 942</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ Pie ============ -->
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer__cols">
+        <div>
+          <img src="/assets/img/logo-stacked-light.svg" alt="She's Digital" width="150" height="84" loading="lazy" />
+          <p>Diseño web, marca y marketing digital en Barcelona. <br />Web · Ecommerce · SEO · Branding · Redes · IA y apps a medida.</p>
+        </div>
+        <nav aria-label="Pie: servicios">
+          <h3>Servicios</h3>
+          <ul>
+            <li><a href="/servicios/branding/">Branding</a></li>
+            <li><a href="/servicios/diseno-web/">Diseño web</a></li>
+            <li><a href="/servicios/ecommerce/">Ecommerce</a></li>
+            <li><a href="/servicios/seo/seo-local/">SEO local</a></li>
+            <li><a href="/servicios/redes-sociales/">Redes sociales</a></li>
+            <li><a href="/servicios/agentes-ia/">Agentes de IA</a></li>
+            <li><a href="/servicios/apps-a-medida/">Apps a medida</a></li>
+          </ul>
+        </nav>
+        <nav aria-label="Pie: sectores">
+          <h3>Sectores</h3>
+          <ul>
+            <li><a href="/sectores/autonomos/">Autónomos</a></li>
+            <li><a href="/sectores/clinicas-y-salud/">Clínicas y salud</a></li>
+            <li><a href="/sectores/restaurantes/">Restaurantes</a></li>
+            <li><a href="/sectores/servicios-locales/">Servicios locales</a></li>
+          </ul>
+        </nav>
+        <nav aria-label="Pie: más">
+          <h3>Más</h3>
+          <ul>
+            <li><a href="/proyectos/">Proyectos</a></li>
+            <li><a href="https://sheisdigitalab.com/blog/">Blog</a></li>
+          </ul>
+        </nav>
+        <nav aria-label="Pie: zonas">
+          <h3>Zonas</h3>
+          <ul>
+            <li><a href="/diseno-web-barcelona/">Diseño web en Barcelona</a></li>
+            <li><a href="/diseno-web-granollers/">Diseño web en Granollers</a></li>
+            <li><a href="/diseno-web-sabadell/">Diseño web en Sabadell</a></li>
+            <li><a href="/diseno-web-terrassa/">Diseño web en Terrassa</a></li>
+            <li><a href="/diseno-web-mataro/">Diseño web en Mataró</a></li>
+            <li><a href="/diseno-web-sant-cugat/">Diseño web en Sant Cugat</a></li>
+          </ul>
+        </nav>
+        <div>
+          <h3>Contacto</h3>
+          <ul>
+            <li><a href="mailto:hola@sheisdigitalab.com">hola@sheisdigitalab.com</a></li>
+            <li><a href="tel:+34637889942">+34 637 889 942</a></li>
+            <li>Barcelona</li>
+          </ul>
+        </div>
+        <nav aria-label="Pie: legal">
+          <h3>Legal</h3>
+          <ul>
+            <li><a href="https://sheisdigitalab.com/legal/aviso-legal/">Aviso legal</a></li>
+            <li><a href="https://sheisdigitalab.com/legal/privacidad/">Privacidad</a></li>
+            <li><a href="https://sheisdigitalab.com/legal/cookies/">Cookies</a></li>
+            <li><button type="button" class="footer__cookie-btn" data-cookie-action="reopen">Configurar cookies</button></li>
+          </ul>
+        </nav>
+      </div><div class="footer__bottom">
+        <p>© 2026 She's Digital · She is Digital Lab</p>
+        <button class="motion-toggle" type="button" aria-pressed="false" data-motion-toggle>Reducir animaciones</button>
+        <p>Hecho a mano en Barcelona ✦</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="cursor-badge" data-cursor aria-hidden="true"></div>
+
+  <!-- ============ WhatsApp FAB ============ -->
+  <aside aria-label="Contacto rápido">
+  <a class="wa-fab" href="https://wa.me/34637889942?text=Hola%20Jenifer%2C%20quiero%20pedir%20presupuesto%20para%20mi%20web" target="_blank" rel="noopener noreferrer" aria-label="Escríbenos por WhatsApp">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2l-.5-.3Z"/></svg>
+  </a>
+  </aside>
+
+  <script src="../../assets/js/gsap.min.js?v=20261029" defer></script>
+  <script src="../../assets/js/ScrollTrigger.min.js?v=20261029" defer></script>
+  <script src="../../assets/js/lenis.min.js?v=20261029" defer></script>
+  <script src="../../assets/js/main.js?v=20261029" defer></script>
+  <script src="../../assets/js/service.js?v=20261029" defer></script>
+
+  <div class="cookie-banner" id="cookieBanner" role="dialog" aria-labelledby="cookieTitle" aria-describedby="cookieDesc" hidden>
+    <div class="cookie-banner__inner">
+      <div class="cookie-banner__body">
+        <h2 id="cookieTitle" class="cookie-banner__title">Cookies</h2>
+        <p id="cookieDesc" class="cookie-banner__text">
+          Usamos cookies técnicas (necesarias) y analíticas (Google Analytics) para mejorar la web.
+          Puedes aceptarlas todas, rechazar las analíticas o configurarlas.
+          <a href="https://sheisdigitalab.com/legal/cookies/">Más info</a>.
+        </p>
+      </div>
+      <div class="cookie-banner__actions">
+        <button type="button" class="cookie-btn cookie-btn--reject" data-cookie-action="reject">Rechazar</button>
+        <button type="button" class="cookie-btn cookie-btn--config" data-cookie-action="config">Configurar</button>
+        <button type="button" class="cookie-btn cookie-btn--accept" data-cookie-action="accept">Aceptar todo</button>
+      </div>
+    </div>
+  </div>
+  <button type="button" class="cookie-reopen" data-cookie-action="reopen" aria-label="Configurar cookies" hidden>&#x1F36A;</button>
+  <script src="../../assets/js/cookies.js?v=20261029" defer></script>
+</body>
+</html>
