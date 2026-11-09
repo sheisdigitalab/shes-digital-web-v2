@@ -1,5 +1,6 @@
 Options -Indexes
-DirectoryIndex index.html index.php
+DirectoryIndex index.html
+ErrorDocument 404 /404.html
 
 <IfModule mod_rewrite.c>
   RewriteEngine On
@@ -83,11 +84,13 @@ DirectoryIndex index.html index.php
   RewriteRule ^diseno-web-vitoria/?$                / [R=301,L]
   RewriteRule ^diseno-web-zaragoza/?$               / [R=301,L]
 
-  # ----- WordPress: páginas dinámicas (aviso legal, privacidad, cookies…) -----
-  RewriteRule ^index\.php$ - [L]
-  RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteRule . /index.php [L]
+  # ----- Restos de WordPress: ya no existen en esta web estática (410 Gone) -----
+  # Van antes del bloque de index.php para que tengan prioridad
+  RewriteRule ^wp-login\.php$ - [G,L]
+  RewriteRule ^wp-sitemap[^/]*\.xml$ - [G,L]
+  RewriteRule ^wp-admin(/|$) - [G,L]
+  RewriteRule ^xmlrpc\.php$ - [G,L]
+
 </IfModule>
 
 # ----- Ocultar archivos sensibles de WordPress -----
@@ -119,6 +122,8 @@ DirectoryIndex index.html index.php
   Header always set X-Content-Type-Options "nosniff"
   Header always set X-Frame-Options "SAMEORIGIN"
   Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Strict-Transport-Security "max-age=31536000"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=(), usb=(), accelerometer=(), gyroscope=(), magnetometer=(), display-capture=()"
 </IfModule>
 
 # ----- Compresión gzip -----
