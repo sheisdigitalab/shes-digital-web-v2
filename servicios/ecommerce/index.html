@@ -14,8 +14,10 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="theme-color" content="#FAF8F4" />
   <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml" />
+  <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/inter-latin.woff2" crossorigin />
+  <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/space-grotesk-latin.woff2" crossorigin />
   <link rel="stylesheet" href="/assets/fonts/fonts.css" />
-  <link rel="stylesheet" href="/assets/css/v2.css?v=20261102" />
+  <link rel="stylesheet" href="/assets/css/v2.css?v=20261109" />
   <link rel="stylesheet" href="/assets/css/sv3-ecommerce.css?v=20261102" />
   <script>
     (function (d) {
@@ -25,7 +27,7 @@
       if (manual) r.classList.add('reduce-motion');
       if (!manual && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
         r.classList.add('is-anim');
-        setTimeout(function () { if (!window.gsap) r.classList.remove('is-anim'); }, 3000);
+        setTimeout(function () { if (!window.gsap) r.classList.remove('is-anim'); }, 1000);
       }
     })(document);
   </script>
@@ -40,11 +42,10 @@
       "url": "https://sheisdigitalab.com/servicios/ecommerce/",
       "areaServed": "ES",
       "provider": {
+        "@id": "https://sheisdigitalab.com/#organization",
         "@type": "ProfessionalService",
         "name": "She's Digital",
-        "url": "https://sheisdigitalab.com/",
-        "telephone": "+34637889942",
-        "email": "hola@sheisdigitalab.com"
+        "url": "https://sheisdigitalab.com/"
       }
     },
     {
@@ -167,7 +168,7 @@
       </div>
       <p class="proof">Desde 1.190 € · 0 % de comisión sobre tus ventas · Tuya al 100 %</p>
     </div>
-    <div class="stage"><div class="vis store"><div class="win"><div class="bbar"><span></span><span></span><span></span><em>Civère · demo</em></div><div class="win-body"><img loading="lazy" class="cyc on" src="/assets/img/work/civere-sm.webp" alt=""></div></div><div class="toast"><i>✓</i><span><b>Nuevo pedido · 49,90 €</b>Pagado con Bizum</span></div><div class="toast toast2"><i>→</i><span><b>Enviado</b>Seguimiento al cliente</span></div></div></div>
+    <div class="stage"><div class="vis store"><div class="win"><div class="bbar"><span></span><span></span><span></span><em>Civère · demo</em></div><div class="win-body"><img loading="lazy" class="cyc on" src="/assets/img/work/civere-sm.webp" alt="" width="720" height="450"></div></div><div class="toast"><i>✓</i><span><b>Nuevo pedido · 49,90 €</b>Pagado con Bizum</span></div><div class="toast toast2"><i>→</i><span><b>Enviado</b>Seguimiento al cliente</span></div></div></div>
   </div>
 </section>
 
@@ -228,7 +229,7 @@
       <h2>Algunos de mis proyectos.</h2>
       <a class="more" href="/proyectos/" >Ver todos los proyectos →</a>
     </div>
-    <div class="p-work"><a class="wk" href="/proyectos/civere/" ><img loading="lazy" src="/assets/img/work/civere-sm.webp" alt="Web de Civère"><span>Ecommerce · Proyecto demo</span><h3>Civère</h3><p>Catálogo, filtros, ficha de producto y carrito.</p></a><a class="wk" href="/proyectos/taxi-santa-susanna/" ><img loading="lazy" src="/assets/img/work/taxi-sm.webp" alt="Web de Taxi Santa Susanna"><span>Transporte</span><h3>Taxi Santa Susanna</h3><p>Reservas y pago online, y SEO local en el Maresme.</p></a><a class="wk" href="/proyectos/juli-manitas/" ><img loading="lazy" src="/assets/img/work/juli-manitas-sm.webp" alt="Web de Juli Manitas"><span>Servicios del hogar · Propuesta</span><h3>Juli Manitas</h3><p>Presupuesto por WhatsApp y buscador de 63 municipios.</p></a></div>
+    <div class="p-work"><a class="wk" href="/proyectos/civere/" ><img loading="lazy" src="/assets/img/work/civere-sm.webp" alt="Web de Civère" width="720" height="450"><span>Ecommerce · Proyecto demo</span><h3>Civère</h3><p>Catálogo, filtros, ficha de producto y carrito.</p></a><a class="wk" href="/proyectos/taxi-santa-susanna/" ><img loading="lazy" src="/assets/img/work/taxi-sm.webp" alt="Web de Taxi Santa Susanna" width="720" height="450"><span>Transporte</span><h3>Taxi Santa Susanna</h3><p>Reservas y pago online, y SEO local en el Maresme.</p></a><a class="wk" href="/proyectos/juli-manitas/" ><img loading="lazy" src="/assets/img/work/juli-manitas-sm.webp" alt="Web de Juli Manitas" width="720" height="450"><span>Servicios del hogar · Propuesta</span><h3>Juli Manitas</h3><p>Presupuesto por WhatsApp y buscador de 63 municipios.</p></a></div>
   </div>
 </section>
 
@@ -433,7 +434,7 @@
   <script src="/assets/js/gsap.min.js?v=20261102" defer></script>
   <script src="/assets/js/ScrollTrigger.min.js?v=20261102" defer></script>
   <script src="/assets/js/lenis.min.js?v=20261102" defer></script>
-  <script src="/assets/js/main.js?v=20261102" defer></script>
+  <script src="/assets/js/main.js?v=20261109" defer></script>
   <div class="cookie-banner" id="cookieBanner" role="dialog" aria-labelledby="cookieTitle" aria-describedby="cookieDesc" hidden>
     <div class="cookie-banner__inner">
       <div class="cookie-banner__body">

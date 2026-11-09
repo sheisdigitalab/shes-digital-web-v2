@@ -19,7 +19,7 @@
   { const _prev = window.onerror; window.onerror = (...a) => { emergencyReveal(); if (_prev) _prev(...a); }; }
   setTimeout(() => {
     if (root.classList.contains('is-anim') && !(typeof ScrollTrigger !== 'undefined' && ScrollTrigger.getAll().length)) emergencyReveal();
-  }, 3000);
+  }, 1000);
   /* ----------------------------------------------------------------------------------------- */
 
   if (!animate) root.classList.remove('is-anim');

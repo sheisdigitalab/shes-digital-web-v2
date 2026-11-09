@@ -851,10 +851,10 @@ html.reduce-motion *, html.reduce-motion *::before, html.reduce-motion *::after 
   white-space: nowrap;
   font-family: var(--display);
 }
-.cookie-btn--accept { background: var(--ink); color: var(--on-ink); }
-.cookie-btn--accept:hover { background: var(--mint); color: var(--ink); }
-.cookie-btn--reject { border-color: var(--line); color: var(--ink-2); background: transparent; }
-.cookie-btn--reject:hover { border-color: var(--ink); color: var(--ink); }
+.cookie-btn--accept,
+.cookie-btn--reject { background: var(--ink); color: var(--on-ink); border-color: var(--ink); min-width: 7.5rem; }
+.cookie-btn--accept:hover,
+.cookie-btn--reject:hover { background: var(--mint); color: var(--ink); border-color: var(--mint); }
 .cookie-btn--config { background: transparent; color: var(--ink-2); border-color: transparent; text-decoration: underline; text-underline-offset: 3px; }
 .cookie-btn--config:hover { color: var(--ink); }
 .cookie-reopen {
@@ -877,9 +877,18 @@ html.reduce-motion *, html.reduce-motion *::before, html.reduce-motion *::after 
 }
 .cookie-reopen:hover { transform: scale(1.08); border-color: var(--mint); }
 @media (max-width: 600px) {
-  .cookie-banner { padding: 18px; }
-  .cookie-banner__inner { grid-template-columns: 1fr; }
-  .cookie-banner__actions { justify-content: flex-start; }
+  .cookie-banner { left: 10px; right: 10px; bottom: 10px; padding: 12px 14px; border-radius: 16px; }
+  .cookie-banner__inner { grid-template-columns: 1fr; gap: 10px; }
+  .cookie-banner__title { position: absolute; width: 1px; height: 1px; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  .cookie-banner__text { font-size: 0.78rem; line-height: 1.4; max-width: none; }
+  .cookie-banner__actions { display: grid; grid-template-columns: 1fr 1fr auto; gap: 6px; align-items: center; }
+  .cookie-btn { padding: 8px 10px; font-size: 0.8rem; }
+  .cookie-btn--accept, .cookie-btn--reject { min-width: 0; }
+  .cookie-btn--config { padding: 8px 6px; font-size: 0.78rem; }
+}
+@media (max-width: 359px) {
+  .cookie-banner__actions { grid-template-columns: 1fr 1fr; }
+  .cookie-btn--config { grid-column: 1 / -1; }
 }
 
 /* ===== Reseñas ===== */

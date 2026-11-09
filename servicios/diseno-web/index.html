@@ -14,8 +14,10 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="theme-color" content="#FAF8F4" />
   <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml" />
+  <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/inter-latin.woff2" crossorigin />
+  <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/space-grotesk-latin.woff2" crossorigin />
   <link rel="stylesheet" href="/assets/fonts/fonts.css" />
-  <link rel="stylesheet" href="/assets/css/v2.css?v=20261102" />
+  <link rel="stylesheet" href="/assets/css/v2.css?v=20261109" />
   <link rel="stylesheet" href="/assets/css/sv3-diseno-web.css?v=20261102" />
   <script>
     (function (d) {
@@ -25,7 +27,7 @@
       if (manual) r.classList.add('reduce-motion');
       if (!manual && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
         r.classList.add('is-anim');
-        setTimeout(function () { if (!window.gsap) r.classList.remove('is-anim'); }, 3000);
+        setTimeout(function () { if (!window.gsap) r.classList.remove('is-anim'); }, 1000);
       }
     })(document);
   </script>
@@ -40,11 +42,10 @@
       "url": "https://sheisdigitalab.com/servicios/diseno-web/",
       "areaServed": "ES",
       "provider": {
+        "@id": "https://sheisdigitalab.com/#organization",
         "@type": "ProfessionalService",
         "name": "She's Digital",
-        "url": "https://sheisdigitalab.com/",
-        "telephone": "+34637889942",
-        "email": "hola@sheisdigitalab.com"
+        "url": "https://sheisdigitalab.com/"
       }
     },
     {
@@ -195,10 +196,10 @@
       <div class="win">
         <div class="bbar"><span></span><span></span><span></span><em id="cyc-url">Martilota · prototipo</em></div>
         <div class="win-body">
-          <img loading="lazy" class="cyc on" src="/assets/img/work/martilota-sm.webp" alt="" data-url="Martilota · prototipo" data-tag="Restauración">
-          <img loading="lazy" class="cyc" src="/assets/img/work/civere-sm.webp" alt="" data-url="Civère · demo" data-tag="Tienda online">
-          <img loading="lazy" class="cyc" src="/assets/img/work/alma-salinas-sm.webp" alt="" data-url="Alma Salinas · demo" data-tag="Belleza">
-          <img loading="lazy" class="cyc" src="/assets/img/work/nordal-homes-sm.webp" alt="" data-url="Nordal Homes · demo" data-tag="Inmobiliaria">
+          <img loading="lazy" class="cyc on" src="/assets/img/work/martilota-sm.webp" alt="" data-url="Martilota · prototipo" data-tag="Restauración" width="720" height="450">
+          <img loading="lazy" class="cyc" src="/assets/img/work/civere-sm.webp" alt="" data-url="Civère · demo" data-tag="Tienda online" width="720" height="450">
+          <img loading="lazy" class="cyc" src="/assets/img/work/alma-salinas-sm.webp" alt="" data-url="Alma Salinas · demo" data-tag="Belleza" width="720" height="450">
+          <img loading="lazy" class="cyc" src="/assets/img/work/nordal-homes-sm.webp" alt="" data-url="Nordal Homes · demo" data-tag="Inmobiliaria" width="720" height="450">
         </div>
       </div>
       <div class="cyc-dots"><span class="on"></span><span></span><span></span><span></span><b id="cyc-tag">Restauración</b></div>
@@ -268,9 +269,9 @@
       <a class="more" href="/proyectos/" >Ver todos los proyectos →</a>
     </div>
     <div class="p-work">
-      <a class="wk" href="/proyectos/taxi-santa-susanna/" ><img loading="lazy" src="/assets/img/work/taxi-sm.webp" alt="Web de Taxi Santa Susanna"><span>Transporte</span><h3>Taxi Santa Susanna</h3><p>Reservas y pago de traslados online.</p></a>
-      <a class="wk" href="/proyectos/olia-workplace/" ><img loading="lazy" src="/assets/img/work/olia-sm.webp" alt="Web de Olia Workplace"><span>Salud y bienestar</span><h3>Olia Workplace</h3><p>Marca y web para un servicio nuevo, en dos idiomas.</p></a>
-      <a class="wk" href="/proyectos/juli-manitas/" ><img loading="lazy" src="/assets/img/work/juli-manitas-sm.webp" alt="Web de Juli Manitas"><span>Servicios del hogar · Propuesta</span><h3>Juli Manitas</h3><p>Presupuesto por WhatsApp y buscador de 63 municipios.</p></a>
+      <a class="wk" href="/proyectos/taxi-santa-susanna/" ><img loading="lazy" src="/assets/img/work/taxi-sm.webp" alt="Web de Taxi Santa Susanna" width="720" height="450"><span>Transporte</span><h3>Taxi Santa Susanna</h3><p>Reservas y pago de traslados online.</p></a>
+      <a class="wk" href="/proyectos/olia-workplace/" ><img loading="lazy" src="/assets/img/work/olia-sm.webp" alt="Web de Olia Workplace" width="720" height="450"><span>Salud y bienestar</span><h3>Olia Workplace</h3><p>Marca y web para un servicio nuevo, en dos idiomas.</p></a>
+      <a class="wk" href="/proyectos/juli-manitas/" ><img loading="lazy" src="/assets/img/work/juli-manitas-sm.webp" alt="Web de Juli Manitas" width="720" height="450"><span>Servicios del hogar · Propuesta</span><h3>Juli Manitas</h3><p>Presupuesto por WhatsApp y buscador de 63 municipios.</p></a>
     </div>
   </div>
 </section>
@@ -488,7 +489,7 @@
   <script src="/assets/js/gsap.min.js?v=20261102" defer></script>
   <script src="/assets/js/ScrollTrigger.min.js?v=20261102" defer></script>
   <script src="/assets/js/lenis.min.js?v=20261102" defer></script>
-  <script src="/assets/js/main.js?v=20261102" defer></script>
+  <script src="/assets/js/main.js?v=20261109" defer></script>
   <div class="cookie-banner" id="cookieBanner" role="dialog" aria-labelledby="cookieTitle" aria-describedby="cookieDesc" hidden>
     <div class="cookie-banner__inner">
       <div class="cookie-banner__body">

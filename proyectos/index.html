@@ -10,8 +10,10 @@
   <meta property="og:image" content="../assets/img/og-cover.jpg" />
   <meta name="theme-color" content="#FAF8F4" />
   <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml" />
+  <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/inter-latin.woff2" crossorigin />
+  <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/space-grotesk-latin.woff2" crossorigin />
   <link rel="stylesheet" href="/assets/fonts/fonts.css" />
-  <link rel="stylesheet" href="../assets/css/v2.css?v=20261029" />
+  <link rel="stylesheet" href="../assets/css/v2.css?v=20261109" />
   <link rel="stylesheet" href="../assets/css/service.css?v=20261029" />
   <style>
     .proj-badge{display:inline-block;padding:2px 8px;border-radius:4px;font-size:.7rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px}
@@ -27,7 +29,7 @@
       if (manual) r.classList.add('reduce-motion');
       if (!manual && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
         r.classList.add('is-anim');
-        setTimeout(function () { if (!window.gsap) r.classList.remove('is-anim'); }, 3000);
+        setTimeout(function () { if (!window.gsap) r.classList.remove('is-anim'); }, 1000);
       }
     })(document);
   </script>
@@ -321,7 +323,7 @@
   </a>
   </aside>
 
-  <script src="../assets/js/main.js?v=20261029" defer></script>
+  <script src="../assets/js/main.js?v=20261109" defer></script>
 
   <div class="cookie-banner" id="cookieBanner" role="dialog" aria-labelledby="cookieTitle" aria-describedby="cookieDesc" hidden>
     <div class="cookie-banner__inner">

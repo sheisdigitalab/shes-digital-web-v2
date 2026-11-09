@@ -13,8 +13,10 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="theme-color" content="#FAF8F4" />
   <link rel="icon" href="../../assets/img/favicon.svg" type="image/svg+xml" />
+  <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/inter-latin.woff2" crossorigin />
+  <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/space-grotesk-latin.woff2" crossorigin />
   <link rel="stylesheet" href="/assets/fonts/fonts.css" />
-  <link rel="stylesheet" href="../../assets/css/v2.css?v=20261029" />
+  <link rel="stylesheet" href="../../assets/css/v2.css?v=20261109" />
   <link rel="stylesheet" href="../../assets/css/service.css?v=20261029" />
   <link rel="stylesheet" href="../../assets/css/blog.css?v=20261029" />
   <script>
@@ -25,7 +27,7 @@
       if (manual) r.classList.add('reduce-motion');
       if (!manual && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
         r.classList.add('is-anim');
-        setTimeout(function () { if (!window.gsap) r.classList.remove('is-anim'); }, 3000);
+        setTimeout(function () { if (!window.gsap) r.classList.remove('is-anim'); }, 1000);
       }
     })(document);
   </script>
@@ -37,8 +39,16 @@
     "description": "Las dos opciones son buenas. La mala es elegir la que no toca. Te lo explico sin tecnicismos para que decidas con criterio.",
     "datePublished": "2026-05-28",
     "dateModified": "2026-11-02",
-    "author": {"@type": "Person", "name": "Jenifer Jaldo"},
-    "publisher": {"@type": "Organization", "name": "She's Digital", "url": "https://sheisdigitalab.com"}
+    "author": {
+      "@type": "Person",
+      "name": "Jenifer Jaldo"
+    },
+    "publisher": {
+      "@id": "https://sheisdigitalab.com/#organization",
+      "@type": "ProfessionalService",
+      "name": "She's Digital",
+      "url": "https://sheisdigitalab.com/"
+    }
   }
   </script>
 </head>
@@ -239,7 +249,7 @@
   <script src="../../assets/js/gsap.min.js?v=20261029" defer></script>
   <script src="../../assets/js/ScrollTrigger.min.js?v=20261029" defer></script>
   <script src="../../assets/js/lenis.min.js?v=20261029" defer></script>
-  <script src="../../assets/js/main.js?v=20261029" defer></script>
+  <script src="../../assets/js/main.js?v=20261109" defer></script>
   <script src="../../assets/js/service.js?v=20261029" defer></script>
 
   <div class="cookie-banner" id="cookieBanner" role="dialog" aria-labelledby="cookieTitle" aria-describedby="cookieDesc" hidden>
