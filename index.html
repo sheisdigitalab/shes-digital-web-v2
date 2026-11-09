@@ -9,28 +9,47 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "name": "She's Digital",
-    "alternateName": "She is Digital Lab",
-    "url": "https://sheisdigitalab.com/",
-    "logo": "https://sheisdigitalab.com/assets/img/logo-stacked.svg",
-    "image": "https://sheisdigitalab.com/assets/img/og-cover.jpg",
-    "description": "Diseño web para negocios en Barcelona. Webs a medida, branding, SEO y marketing digital para pymes y negocios locales.",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Barcelona",
-      "addressCountry": "ES"
-    },
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "telephone": "+34-637-889-942",
-      "email": "hola@sheisdigitalab.com",
-      "contactType": "customer service",
-      "availableLanguage": ["Spanish", "English"]
-    },
-    "sameAs": [
-      "https://www.google.com/maps?cid=11590911008523238605",
-      "https://www.instagram.com/sheisdigitalab/"
+    "@graph": [
+      {
+        "@type": "ProfessionalService",
+        "@id": "https://sheisdigitalab.com/#organization",
+        "name": "She's Digital",
+        "alternateName": "She is Digital Lab",
+        "url": "https://sheisdigitalab.com/",
+        "logo": "https://sheisdigitalab.com/assets/img/logo-stacked.svg",
+        "image": "https://sheisdigitalab.com/assets/img/og-cover.jpg",
+        "description": "Diseño web para negocios en Barcelona. Webs a medida, branding, SEO y marketing digital para pymes y negocios locales.",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Barcelona",
+          "addressCountry": "ES"
+        },
+        "telephone": "+34637889942",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+34637889942",
+          "email": "hola@sheisdigitalab.com",
+          "contactType": "customer service",
+          "availableLanguage": [
+            "Spanish",
+            "English"
+          ]
+        },
+        "sameAs": [
+          "https://www.google.com/maps?cid=11590911008523238605",
+          "https://www.instagram.com/sheisdigitalab/"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://sheisdigitalab.com/#website",
+        "url": "https://sheisdigitalab.com/",
+        "name": "She's Digital",
+        "inLanguage": "es",
+        "publisher": {
+          "@id": "https://sheisdigitalab.com/#organization"
+        }
+      }
     ]
   }
   </script>
@@ -50,11 +69,11 @@
   <meta name="theme-color" content="#FAF8F4" />
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" />
+  <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/inter-latin.woff2" crossorigin />
+  <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/space-grotesk-latin.woff2" crossorigin />
   <link rel="stylesheet" href="/assets/fonts/fonts.css" />
-  <link rel="preload" as="image" href="assets/img/work/olia-sm.webp" />
-  <link rel="preload" as="image" href="assets/img/work/taxi-sm.webp" />
-  <link rel="preload" as="image" href="assets/img/work/juli-manitas-sm.webp" />
-  <link rel="stylesheet" href="assets/css/v2.css?v=20261029" />
+  <link rel="preload" as="image" href="assets/img/work/juli-manitas-sm.webp" fetchpriority="high" />
+  <link rel="stylesheet" href="assets/css/v2.css?v=20261109" />
   <script>
     (function (d) {
       var r = d.documentElement; r.classList.add('js');
@@ -64,7 +83,7 @@
       if (!manual && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
         r.classList.add('is-anim');
         // Si las librerías no llegan, se muestra todo sin animar
-        setTimeout(function () { if (!window.gsap) r.classList.remove('is-anim'); }, 3000);
+        setTimeout(function () { if (!window.gsap) r.classList.remove('is-anim'); }, 1000);
       }
     })(document);
   </script>
@@ -111,10 +130,10 @@
               <span class="hero__line"><span class="hero__line-in" data-hero="line">Tu web</span></span>
               <span class="hero__line hero__line--rotor"><span class="hero__line-in" data-hero="line">
                 <span class="rotor" data-rotor>
-                  <span class="rotor__word is-active">que vende.</span>
-                  <span class="rotor__word">que destaca.</span>
-                  <span class="rotor__word">que convierte.</span>
-                  <span class="rotor__word">a medida.</span>
+                  <span class="rotor__word is-active" aria-hidden="true">que vende.</span>
+                  <span class="rotor__word" aria-hidden="true">que destaca.</span>
+                  <span class="rotor__word" aria-hidden="true">que convierte.</span>
+                  <span class="rotor__word" aria-hidden="true">a medida.</span>
                 </span>
               </span></span>
             </span>
@@ -137,8 +156,8 @@
 
         <div class="hero__stage" data-stage aria-hidden="true">
           <figure class="deck__card" style="--i:0"><img src="assets/img/work/juli-manitas-sm.webp" alt="" width="720" height="450" fetchpriority="high" /></figure>
-          <figure class="deck__card" style="--i:1"><img src="assets/img/work/taxi-sm.webp" alt="" width="720" height="450" fetchpriority="high" /></figure>
-          <figure class="deck__card" style="--i:2"><img src="assets/img/work/olia-sm.webp" alt="" width="720" height="450" fetchpriority="high" /></figure>
+          <figure class="deck__card" style="--i:1"><img src="assets/img/work/taxi-sm.webp" alt="" width="720" height="450" /></figure>
+          <figure class="deck__card" style="--i:2"><img src="assets/img/work/olia-sm.webp" alt="" width="720" height="450" /></figure>
           <span class="deck__tag">Proyectos · 2026</span>
         </div>
       </div>
@@ -168,7 +187,7 @@
         </header>
         <div class="ar">
           <article class="ar-card ar-card--web">
-            <div class="ar-vis"><span class="m-shot" aria-hidden="true"><span class="m-bar"><i></i><i></i><i></i></span><img src="assets/img/work/taxi-hero.webp" alt="" loading="lazy"><span class="m-case">Proyecto real · Taxi Santa Susanna</span></span></div>
+            <div class="ar-vis"><span class="m-shot" aria-hidden="true"><span class="m-bar"><i></i><i></i><i></i></span><img src="assets/img/work/taxi-hero.webp" alt="" loading="lazy" width="1424" height="890"><span class="m-case">Proyecto real · Taxi Santa Susanna</span></span></div>
             <div class="ar-main"><header class="ar-head"><h3 class="ar-title">Tu web</h3><p class="ar-lead">Diseñada a medida para tu negocio, sin plantillas genéricas. Para que te encuentren en Google y te compren.</p></header>
               <ul class="ar-list">
               <li><a class="ar-row" href="servicios/diseno-web/">
@@ -197,8 +216,8 @@
           </article>
           <article class="ar-card ar-card--marca">
             <div class="ar-vis"><span class="m-kit" aria-hidden="true">
-              <span class="kit-logo"><img src="assets/img/work/olia-logo.webp" alt="" loading="lazy"></span>
-              <span class="kit-photo"><img src="assets/img/work/olia-foto.webp" alt="" loading="lazy"></span>
+              <span class="kit-logo"><img src="assets/img/work/olia-logo.webp" alt="" loading="lazy" width="175" height="74"></span>
+              <span class="kit-photo"><img src="assets/img/work/olia-foto.webp" alt="" loading="lazy" width="360" height="360"></span>
               <span class="kit-pal"><i style="background:#3D4A3D"><b>3D4A3D</b></i><i style="background:#98B398;color:#221E1E"><b>98B398</b></i><i style="background:#FAF0D7;color:#3D4A3D"><b>FAF0D7</b></i><i style="background:#E37C5C;color:#221E1E"><b>E37C5C</b></i></span>
               <span class="m-case kit-case">Proyecto real · Olia Workplace</span>
             </span></div>
@@ -209,7 +228,7 @@
                 <span class="v3-price">desde <b>490 €</b></span><span class="v3-go" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
               </a></li>
               <li><a class="ar-row" href="servicios/redes-sociales/">
-                <span class="ar-txt"><span class="ar-name">Redes sociales</span><span class="ar-desc">Contenido constante y con tu voz, sin permanencia.</span></span>
+                <span class="ar-txt"><span class="ar-name">Redes sociales</span><span class="ar-desc">Contenido constante y con tu voz, cada mes.</span></span>
                 <span class="v3-price">desde <b>250 €</b>/mes</span><span class="v3-go" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
               </a></li>
             </ul>
@@ -695,7 +714,7 @@
   <script src="assets/js/gsap.min.js?v=20261029" defer></script>
   <script src="assets/js/ScrollTrigger.min.js?v=20261029" defer></script>
   <script src="assets/js/lenis.min.js?v=20261029" defer></script>
-  <script src="assets/js/main.js?v=20261029" defer></script>
+  <script src="assets/js/main.js?v=20261109" defer></script>
 
   <!-- ============ COOKIE BANNER ============ -->
   <div class="cookie-banner" id="cookieBanner" role="dialog" aria-labelledby="cookieTitle" aria-describedby="cookieDesc" hidden>
