@@ -26,6 +26,7 @@ DirectoryIndex index.html index.php
 
   # ----- Redirecciones SEO: URL antigua del servicio de SEO -----
   RewriteRule ^servicios/seo-local/?$ /servicios/seo/seo-local/ [R=301,L]
+  RewriteRule ^servicios/seo/?$ /servicios/seo/seo-local/ [R=301,L]
 
   # ----- QR de la tarjeta de visita → WhatsApp con mensaje -----
   RewriteRule ^ideas/?$ https://wa.me/34637889942?text=Hola%20Jenifer%2C%20tengo%20tu%20tarjeta%20y%20quiero%20mis%203%20ideas%20para%20mi%20negocio.%20Mi%20negocio%20es%3A%20 [R=302,L,NE]
