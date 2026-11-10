@@ -1,4 +1,5 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://sheisdigitalab.com/sitemap.xml
+Sitemap: https://sheisdigitallab.com/sitemap.xml
+llms.txt: https://sheisdigitallab.com/llms.txt

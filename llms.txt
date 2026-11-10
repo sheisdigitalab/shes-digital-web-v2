@@ -1,0 +1,34 @@
+# She's Digital — llms.txt
+# Diseño web para pequeños negocios y autónomos en Barcelona
+
+> She's Digital es una agencia de diseño web fundada por Jenifer Jaldo en Barcelona. Crea webs a medida, tiendas online y aplica SEO local para pequeños negocios y autónomos. No usa plantillas ni WordPress como única opción: cada proyecto se decide según lo que encaja mejor. Especializada en negocios de Barcelona y el área metropolitana.
+
+## Páginas principales
+
+- [Inicio](https://sheisdigitallab.com/): presentación de la agencia, servicios, proyectos y contacto.
+- [Diseño web](https://sheisdigitallab.com/servicios/diseno-web/): precios, opciones de tecnología, proceso y preguntas frecuentes.
+- [Diseño web en Barcelona](https://sheisdigitallab.com/diseno-web-barcelona/): información específica para negocios de Barcelona, con zonas de actuación y posibilidad de reuniones en persona.
+- [Ecommerce](https://sheisdigitallab.com/servicios/ecommerce/): tiendas online con Shopify y WooCommerce.
+- [Branding](https://sheisdigitallab.com/servicios/branding/): logo e identidad visual para negocios locales.
+- [SEO local en Barcelona](https://sheisdigitallab.com/servicios/seo/seo-local/): posicionamiento en Google Maps y búsquedas locales.
+- [Redes sociales](https://sheisdigitallab.com/servicios/redes-sociales/): gestión de redes.
+- [Agentes de IA](https://sheisdigitallab.com/servicios/agentes-ia/): automatizaciones con inteligencia artificial para negocios.
+- [Apps a medida](https://sheisdigitallab.com/servicios/apps-a-medida/): aplicaciones con React y Next.js.
+- [Proyectos](https://sheisdigitallab.com/proyectos/): portfolio de trabajos realizados.
+- [Blog](https://sheisdigitallab.com/blog/): artículos sobre diseño web, SEO y marketing para negocios locales.
+
+## Sectores
+
+- [Autónomos](https://sheisdigitallab.com/sectores/autonomos/)
+- [Clínicas y salud](https://sheisdigitallab.com/sectores/clinicas-y-salud/)
+- [Restaurantes](https://sheisdigitallab.com/sectores/restaurantes/)
+- [Servicios locales](https://sheisdigitallab.com/sectores/servicios-locales/)
+
+## Zonas
+
+- [Diseño web en Barcelona](https://sheisdigitallab.com/diseno-web-barcelona/)
+- [Diseño web en Granollers](https://sheisdigitallab.com/diseno-web-granollers/)
+- [Diseño web en Sabadell](https://sheisdigitallab.com/diseno-web-sabadell/)
+- [Diseño web en Terrassa](https://sheisdigitallab.com/diseno-web-terrassa/)
+- [Diseño web en Mataró](https://sheisdigitallab.com/diseno-web-mataro/)
+- [Diseño web en Sant Cugat del Vallès](https://sheisdigitallab.com/diseno-web-sant-cugat/)
