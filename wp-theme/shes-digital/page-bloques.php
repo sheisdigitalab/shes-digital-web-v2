@@ -1,0 +1,190 @@
+<?php
+/**
+ * Template Name: Página con bloques
+ *
+ * Plantilla para la portada con bloques nativos de Gutenberg.
+ * Proporciona la envoltura completa (head, nav, footer, scripts).
+ * El contenido editable (secciones) vive en el editor de bloques.
+ */
+if ( ! defined( 'ABSPATH' ) ) exit;
+
+$pid   = get_the_ID();
+$title = get_post_meta( $pid, '_shes_meta_title', true ) ?: get_the_title();
+$desc  = get_post_meta( $pid, '_shes_meta_desc',  true ) ?: '';
+$url   = get_permalink( $pid );
+$home  = home_url( '/' );
+?><!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title><?= esc_html( $title ) ?></title>
+<?php if ( $desc ) : ?>
+<meta name="description" content="<?= esc_attr( $desc ) ?>">
+<?php endif; ?>
+<link rel="canonical" href="<?= esc_url( $url ) ?>">
+<meta property="og:type"  content="website">
+<meta property="og:url"   content="<?= esc_url( $url ) ?>">
+<meta property="og:title" content="<?= esc_attr( $title ) ?>">
+<?php if ( $desc ) : ?>
+<meta property="og:description" content="<?= esc_attr( $desc ) ?>">
+<?php endif; ?>
+<meta name="twitter:card"  content="summary_large_image">
+<meta name="theme-color"   content="#FAF8F4">
+<link rel="icon" href="<?= esc_url( $home ) ?>assets/img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="<?= esc_url( $home ) ?>assets/img/apple-touch-icon.png">
+<link rel="preload" as="font" type="font/woff2" href="<?= esc_url( $home ) ?>assets/fonts/inter-latin.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="<?= esc_url( $home ) ?>assets/fonts/space-grotesk-latin.woff2" crossorigin>
+<link rel="stylesheet" href="<?= esc_url( $home ) ?>assets/fonts/fonts.css">
+<script>
+(function(d){var r=d.documentElement;r.classList.add('js');var m=false;try{m=localStorage.getItem('sd-motion')==='reduce';}catch(e){}if(m)r.classList.add('reduce-motion');if(!m&&!matchMedia('(prefers-reduced-motion:reduce)').matches){r.classList.add('is-anim');setTimeout(function(){if(!window.gsap)r.classList.remove('is-anim');},1000);}})(document);
+</script>
+<?php wp_head(); ?>
+</head>
+<body <?php body_class(); ?>>
+<?php wp_body_open(); ?>
+
+<a class="skip" href="#main">Saltar al contenido</a>
+
+<!-- ============ Cabecera ============ -->
+<header class="nav" data-nav>
+  <div class="nav__inner wrap">
+    <a href="<?= esc_url( $home ) ?>" class="nav__logo" aria-label="She's Digital, inicio">
+      <img src="<?= esc_url( $home ) ?>assets/img/logo-stacked.svg" alt="" width="112" height="63">
+    </a>
+    <nav class="nav__links" id="nav-menu" aria-label="Principal">
+      <a href="#servicios">Servicios y precios</a>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#proceso">Proceso</a>
+      <a href="#sobre-mi">Sobre mí</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contacto" class="btn btn--dark nav__cta-mobile">Pide tu presupuesto gratis <span class="btn__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span></a>
+    </nav>
+    <a href="#contacto" class="btn btn--dark nav__cta">Pide tu presupuesto gratis <span class="btn__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span></a>
+    <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="nav-menu">
+      <span class="sr-only">Abrir menú</span>
+      <span class="nav__bars" aria-hidden="true"><i></i><i></i></span>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+<?php
+if ( have_posts() ) :
+    while ( have_posts() ) :
+        the_post();
+        the_content();
+    endwhile;
+endif;
+?>
+</main>
+
+<!-- ============ Pie ============ -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__top">
+      <p class="footer__claim" data-split>¿Hablamos de <br><em>tu web?</em></p>
+      <a href="#contacto" class="btn btn--mint btn--magnetic">Pide tu presupuesto gratis <span class="btn__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span></a>
+    </div>
+    <div class="footer__cols">
+      <div>
+        <img src="<?= esc_url( $home ) ?>assets/img/logo-stacked-light.svg" alt="She's Digital" width="150" height="84" loading="lazy">
+        <p>Diseño web, marca y marketing digital en Barcelona. <br>Web · Ecommerce · SEO · Branding · Redes · IA y apps a medida.</p>
+      </div>
+      <nav aria-label="Pie: servicios">
+        <h3>Servicios</h3>
+        <ul>
+          <li><a href="/servicios/branding/">Branding</a></li>
+          <li><a href="/servicios/diseno-web/">Diseño web</a></li>
+          <li><a href="/servicios/ecommerce/">Ecommerce</a></li>
+          <li><a href="/servicios/seo/seo-local/">SEO local</a></li>
+          <li><a href="/servicios/redes-sociales/">Redes sociales</a></li>
+          <li><a href="/servicios/agentes-ia/">Agentes de IA</a></li>
+          <li><a href="/servicios/apps-a-medida/">Apps a medida</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Pie: sectores">
+        <h3>Sectores</h3>
+        <ul>
+          <li><a href="/sectores/autonomos/">Autónomos</a></li>
+          <li><a href="/sectores/clinicas-y-salud/">Clínicas y salud</a></li>
+          <li><a href="/sectores/restaurantes/">Restaurantes</a></li>
+          <li><a href="/sectores/servicios-locales/">Servicios locales</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Pie: más">
+        <h3>Más</h3>
+        <ul>
+          <li><a href="/proyectos/">Proyectos</a></li>
+          <li><a href="https://sheisdigitallab.com/blog/">Blog</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Pie: zonas">
+        <h3>Zonas</h3>
+        <ul>
+          <li><a href="/diseno-web-barcelona/">Diseño web en Barcelona</a></li>
+          <li><a href="/diseno-web-granollers/">Diseño web en Granollers</a></li>
+          <li><a href="/diseno-web-sabadell/">Diseño web en Sabadell</a></li>
+          <li><a href="/diseno-web-terrassa/">Diseño web en Terrassa</a></li>
+          <li><a href="/diseno-web-mataro/">Diseño web en Mataró</a></li>
+          <li><a href="/diseno-web-sant-cugat/">Diseño web en Sant Cugat</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h3>Contacto</h3>
+        <ul>
+          <li><a href="mailto:hola@sheisdigitallab.com">hola@sheisdigitallab.com</a></li>
+          <li><a href="tel:+34637889942">+34 637 889 942</a></li>
+          <li>Barcelona</li>
+        </ul>
+      </div>
+      <nav aria-label="Pie: legal">
+        <h3>Legal</h3>
+        <ul>
+          <li><a href="https://sheisdigitallab.com/legal/aviso-legal/">Aviso legal</a></li>
+          <li><a href="https://sheisdigitallab.com/legal/privacidad/">Privacidad</a></li>
+          <li><a href="https://sheisdigitallab.com/legal/cookies/">Cookies</a></li>
+          <li><button type="button" class="footer__cookie-btn" data-cookie-action="reopen">Configurar cookies</button></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="footer__bottom">
+      <p>© 2026 She's Digital · She is Digital Lab</p>
+      <button class="motion-toggle" type="button" aria-pressed="false" data-motion-toggle>Reducir animaciones</button>
+      <p>Hecho a mano en Barcelona ✦</p>
+    </div>
+  </div>
+</footer>
+
+<div class="cursor-badge" data-cursor aria-hidden="true"></div>
+
+<!-- ============ WhatsApp FAB ============ -->
+<aside aria-label="Contacto rápido">
+  <a class="wa-fab" href="https://wa.me/34637889942?text=Hola%20Jenifer%2C%20quiero%20pedir%20presupuesto%20para%20mi%20web" target="_blank" rel="noopener noreferrer" aria-label="Escríbenos por WhatsApp">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2l-.5-.3Z"/></svg>
+  </a>
+</aside>
+
+<!-- ============ COOKIE BANNER ============ -->
+<div class="cookie-banner" id="cookieBanner" role="dialog" aria-labelledby="cookieTitle" aria-describedby="cookieDesc" hidden>
+  <div class="cookie-banner__inner">
+    <div class="cookie-banner__body">
+      <h2 id="cookieTitle" class="cookie-banner__title">Cookies</h2>
+      <p id="cookieDesc" class="cookie-banner__text">
+        Usamos cookies técnicas (necesarias) y analíticas (Google Analytics) para mejorar la web.
+        Puedes aceptarlas todas, rechazar las analíticas o configurarlas.
+        <a href="https://sheisdigitallab.com/legal/cookies/">Más info</a>.
+      </p>
+    </div>
+    <div class="cookie-banner__actions">
+      <button type="button" class="cookie-btn cookie-btn--reject" data-cookie-action="reject">Rechazar</button>
+      <button type="button" class="cookie-btn cookie-btn--config" data-cookie-action="config">Configurar</button>
+      <button type="button" class="cookie-btn cookie-btn--accept" data-cookie-action="accept">Aceptar todo</button>
+    </div>
+  </div>
+</div>
+<button type="button" class="cookie-reopen" data-cookie-action="reopen" aria-label="Configurar cookies" hidden>🍪</button>
+
+<?php wp_footer(); ?>
+</body>
+</html>

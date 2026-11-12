@@ -1,0 +1,571 @@
+/*
+Theme Name:   She's Digital — Divi Child
+Theme URI:    https://shesdigital.com
+Description:  Child theme de Divi para She's Digital. Mantiene la identidad visual completa: paleta pastel, tipografía Funnel Display + DM Sans y todos los estilos de componentes.
+Author:       She's Digital
+Template:     Divi
+Version:      1.0.0
+Text Domain:  shes-digital-divi
+*/
+
+/* ─────────────────────────────────────────────
+   VARIABLES DE MARCA
+───────────────────────────────────────────── */
+:root {
+  /* Paleta principal */
+  --mint:         #C8E8E0;
+  --mint-deep:    #7CBCAD;
+  --mint-light:   #E4F4F0;
+  --rose:         #F0D4D4;
+  --rose-soft:    #F5E4E4;
+  --butter:       #F8EEBB;
+  --beige:        #F0E8D8;
+  --beige-warm:   #EDE0CC;
+  --dark:         #1E2420;
+  --text-dark:    #1E2420;
+  --text-mid:     #4A5045;
+  --text-light:   #8A9088;
+  --border:       rgba(122,186,173,0.25);
+  --border-rose:  rgba(200,160,160,0.2);
+
+  /* Tipografía */
+  --font-display: 'Funnel Display', sans-serif;
+  --font-body:    'DM Sans', sans-serif;
+}
+
+/* ─────────────────────────────────────────────
+   TIPOGRAFÍA GLOBAL
+───────────────────────────────────────────── */
+body,
+.et_pb_text,
+.et_pb_blurb_description,
+.et_pb_module_description {
+  font-family: var(--font-body) !important;
+  color: var(--text-dark);
+  font-weight: 300;
+}
+
+h1, h2, h3, h4, h5, h6,
+.et_pb_slide_title,
+.et_pb_blurb_title,
+.et_pb_module_header {
+  font-family: var(--font-display) !important;
+  letter-spacing: -0.03em;
+  color: var(--text-dark);
+}
+
+/* Cursiva de marca */
+em, i {
+  font-style: italic;
+  font-family: var(--font-display) !important;
+}
+
+/* ─────────────────────────────────────────────
+   COLORES GLOBALES DIVI
+───────────────────────────────────────────── */
+.et_pb_section {
+  background-color: transparent;
+}
+
+/* Links */
+a { color: var(--mint-deep); }
+a:hover { color: var(--dark); }
+
+/* ─────────────────────────────────────────────
+   BOTONES
+───────────────────────────────────────────── */
+.et_pb_button,
+.et_pb_promo_button,
+.et_pb_more_button {
+  font-family: var(--font-body) !important;
+  font-weight: 500 !important;
+  border-radius: 10px !important;
+  padding: 0.85rem 2rem !important;
+  font-size: 0.9rem !important;
+  letter-spacing: 0 !important;
+  transition: all 0.25s !important;
+}
+
+/* Botón primario — oscuro */
+.et_pb_button.sd-btn-primary,
+.et_pb_section--dark .et_pb_button {
+  background: var(--dark) !important;
+  color: white !important;
+  border: none !important;
+}
+.et_pb_button.sd-btn-primary:hover {
+  background: var(--mint-deep) !important;
+  transform: translateY(-2px);
+}
+
+/* Botón secundario — outline */
+.et_pb_button.sd-btn-secondary {
+  background: transparent !important;
+  color: var(--text-dark) !important;
+  border: 1.5px solid rgba(30,36,32,0.2) !important;
+}
+.et_pb_button.sd-btn-secondary:hover {
+  background: var(--dark) !important;
+  color: white !important;
+  border-color: var(--dark) !important;
+}
+
+/* Botón blanco — para fondos oscuros */
+.et_pb_button.sd-btn-white {
+  background: white !important;
+  color: var(--text-dark) !important;
+  border: none !important;
+  box-shadow: 0 4px 20px rgba(30,36,32,0.12) !important;
+}
+.et_pb_button.sd-btn-white:hover {
+  background: var(--dark) !important;
+  color: white !important;
+}
+
+/* ─────────────────────────────────────────────
+   SECCIÓN HERO
+   Clase CSS a añadir en Divi: sd-hero
+───────────────────────────────────────────── */
+.sd-hero {
+  background: #FAFAF6 !important;
+  position: relative;
+  overflow: hidden;
+}
+.sd-hero::before,
+.sd-hero::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+.sd-hero::before {
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(200,232,224,0.4) 0%, transparent 70%);
+  top: -200px; right: -100px;
+}
+.sd-hero::after {
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, rgba(240,212,212,0.35) 0%, transparent 70%);
+  bottom: -100px; left: 5%;
+}
+.sd-hero .et_pb_row { position: relative; z-index: 1; }
+
+/* Badge superior del hero */
+.sd-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 1rem;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 50px;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--text-mid);
+  letter-spacing: 0.02em;
+  margin-bottom: 1.5rem;
+}
+.sd-hero-badge::before {
+  content: '';
+  width: 6px; height: 6px;
+  background: var(--mint-deep);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.5; transform: scale(1.3); }
+}
+
+/* Titular hero */
+.sd-hero h1,
+.sd-hero .et_pb_module_header {
+  font-size: clamp(3rem, 5vw, 5.5rem) !important;
+  font-weight: 800 !important;
+  line-height: 1.05 !important;
+  letter-spacing: -0.05em !important;
+  color: var(--text-dark) !important;
+}
+.sd-hero h1 em {
+  color: var(--mint-deep);
+  font-style: italic;
+}
+
+/* ─────────────────────────────────────────────
+   SECCIÓN SERVICIOS
+   Clase CSS: sd-services
+───────────────────────────────────────────── */
+.sd-services {
+  background: #FAFAF6 !important;
+  padding: 7rem 4rem !important;
+}
+
+/* Cards de servicios — usar módulo Blurb de Divi */
+.sd-services .et_pb_blurb {
+  padding: 2.2rem !important;
+  border-radius: 14px !important;
+  border: 1px solid transparent !important;
+  transition: transform 0.28s, box-shadow 0.28s !important;
+}
+.sd-services .et_pb_blurb:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 16px 40px rgba(30,36,32,0.1) !important;
+}
+.sd-services .et_pb_blurb:nth-child(1) { background: var(--rose-soft) !important;              border-color: var(--border-rose) !important; }
+.sd-services .et_pb_blurb:nth-child(2) { background: rgba(200,232,224,0.35) !important;        border-color: var(--border) !important; }
+.sd-services .et_pb_blurb:nth-child(3) { background: var(--beige) !important;                  border-color: var(--beige-warm) !important; }
+.sd-services .et_pb_blurb:nth-child(4) { background: rgba(248,238,184,0.45) !important;        border-color: rgba(212,192,96,0.2) !important; }
+.sd-services .et_pb_blurb:nth-child(5) { background: rgba(224,244,240,0.6) !important;         border-color: var(--border) !important; }
+.sd-services .et_pb_blurb:nth-child(6) { background: rgba(240,232,216,0.6) !important;         border-color: var(--beige-warm) !important; }
+
+.sd-services .et_pb_main_blurb_image {
+  width: 44px !important;
+  height: 44px !important;
+  background: white !important;
+  border-radius: 10px !important;
+  box-shadow: 0 2px 8px rgba(30,36,32,0.08) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 1.3rem !important;
+  margin-bottom: 1.3rem !important;
+}
+.sd-services .et_pb_blurb_title {
+  font-size: 1.1rem !important;
+  font-weight: 600 !important;
+  color: var(--text-dark) !important;
+  margin-bottom: 0.6rem !important;
+}
+.sd-services .et_pb_blurb_description {
+  font-size: 0.875rem !important;
+  line-height: 1.68 !important;
+  color: var(--text-mid) !important;
+}
+
+/* ─────────────────────────────────────────────
+   SECCIÓN PROYECTOS (fondo oscuro)
+   Clase CSS: sd-projects
+───────────────────────────────────────────── */
+.sd-projects {
+  background: var(--dark) !important;
+  padding: 7rem 4rem !important;
+}
+.sd-projects .et_pb_text,
+.sd-projects .et_pb_module_description,
+.sd-projects p {
+  color: rgba(250,250,246,0.6) !important;
+}
+.sd-projects h2,
+.sd-projects .et_pb_module_header {
+  color: white !important;
+}
+.sd-projects .section-label {
+  color: rgba(200,232,224,0.65) !important;
+}
+
+/* Cards de proyectos */
+.sd-project-card {
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  aspect-ratio: 4/3;
+  display: block;
+  text-decoration: none;
+  transition: transform 0.3s;
+}
+.sd-project-card:hover { transform: scale(1.03); }
+.sd-project-card-overlay {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 1.5rem;
+  background: linear-gradient(0deg, rgba(20,24,20,0.8) 0%, transparent 100%);
+}
+.sd-project-card-overlay h3 {
+  color: white !important;
+  font-size: 1.2rem !important;
+  margin: 0 !important;
+}
+.sd-project-card-cat {
+  color: rgba(200,232,224,0.75);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.3rem;
+}
+
+/* ─────────────────────────────────────────────
+   SECCIÓN TESTIMONIOS
+   Clase CSS: sd-testimonials
+───────────────────────────────────────────── */
+.sd-testimonials {
+  background: white !important;
+  padding: 7rem 4rem !important;
+}
+.sd-testimonials .et_pb_testimonial {
+  background: #FAFAF6 !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 16px !important;
+  padding: 2rem !important;
+  transition: transform 0.25s, box-shadow 0.25s !important;
+}
+.sd-testimonials .et_pb_testimonial:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 12px 32px rgba(30,36,32,0.08) !important;
+}
+.sd-testimonials .et_pb_testimonial_description {
+  font-size: 0.95rem !important;
+  line-height: 1.75 !important;
+  color: var(--text-mid) !important;
+  font-weight: 300 !important;
+}
+.sd-testimonials .et_pb_testimonial_author {
+  font-family: var(--font-display) !important;
+  font-weight: 600 !important;
+  color: var(--text-dark) !important;
+}
+.sd-testimonials .et_pb_testimonial_company {
+  font-size: 0.8rem !important;
+  color: var(--text-light) !important;
+}
+
+/* Estrellas */
+.sd-stars {
+  color: #F5B800;
+  font-size: 0.9rem;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.8rem;
+  display: block;
+}
+
+/* ─────────────────────────────────────────────
+   SECCIÓN SOBRE NOSOTRAS
+   Clase CSS: sd-about
+───────────────────────────────────────────── */
+.sd-about {
+  background: #FAFAF6 !important;
+  padding: 7rem 4rem !important;
+}
+.sd-about h2 {
+  font-size: clamp(2rem, 3vw, 3rem) !important;
+  font-weight: 700 !important;
+}
+.sd-about h2 em { color: var(--mint-deep); }
+.sd-about .et_pb_text p {
+  color: var(--text-mid) !important;
+  line-height: 1.8 !important;
+  font-weight: 300 !important;
+}
+
+/* Badges flotantes */
+.sd-badge {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 0.8rem 1.2rem;
+  display: inline-block;
+  box-shadow: 0 4px 20px rgba(30,36,32,0.08);
+}
+.sd-badge-num {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--text-dark);
+  display: block;
+  letter-spacing: -0.04em;
+}
+.sd-badge-txt {
+  font-size: 0.75rem;
+  color: var(--text-light);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* Etiquetas de valores */
+.sd-value-tag {
+  display: inline-block;
+  padding: 0.4rem 1rem;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 50px;
+  font-size: 0.82rem;
+  color: var(--text-mid);
+  margin: 0.25rem;
+}
+
+/* ─────────────────────────────────────────────
+   SECCIÓN CTA FINAL
+   Clase CSS: sd-cta
+───────────────────────────────────────────── */
+.sd-cta {
+  background: linear-gradient(135deg, var(--beige-warm) 0%, var(--rose-soft) 40%, var(--mint) 100%) !important;
+  padding: 7rem 4rem !important;
+  text-align: center;
+}
+.sd-cta h2 {
+  font-size: clamp(2.2rem, 3.5vw, 3.5rem) !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.04em !important;
+}
+.sd-cta h2 em { color: var(--dark); font-style: italic; }
+.sd-cta .et_pb_text p {
+  color: var(--text-mid) !important;
+  font-size: 1.05rem !important;
+  max-width: 480px;
+  margin: 0 auto 2.5rem !important;
+}
+
+/* ─────────────────────────────────────────────
+   SECCIÓN CONTACTO
+   Clase CSS: sd-contact
+───────────────────────────────────────────── */
+.sd-contact {
+  background: #FAFAF6 !important;
+  padding: 6rem 4rem !important;
+}
+.sd-contact h2 { font-size: clamp(2rem, 3vw, 3rem) !important; }
+.sd-contact h2 em { color: var(--mint-deep); }
+
+/* Info items */
+.sd-contact-icon {
+  width: 36px; height: 36px;
+  background: white;
+  border-radius: 9px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  box-shadow: 0 2px 8px rgba(30,36,32,0.1);
+  margin-right: 0.8rem;
+  vertical-align: middle;
+}
+
+/* Formulario de contacto */
+.sd-contact .et_pb_contact_field input,
+.sd-contact .et_pb_contact_field textarea,
+.sd-contact .et_pb_contact_field select {
+  border: 1px solid #E4D4BC !important;
+  border-radius: 8px !important;
+  font-family: var(--font-body) !important;
+  font-size: 0.95rem !important;
+  padding: 0.75rem 1rem !important;
+  transition: border-color 0.25s, box-shadow 0.25s !important;
+}
+.sd-contact .et_pb_contact_field input:focus,
+.sd-contact .et_pb_contact_field textarea:focus {
+  border-color: var(--mint-deep) !important;
+  box-shadow: 0 0 0 3px rgba(122,186,173,0.15) !important;
+  outline: none !important;
+}
+.sd-contact .et_pb_contact_submit {
+  background: var(--dark) !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 10px !important;
+  padding: 0.85rem 2rem !important;
+  font-family: var(--font-body) !important;
+  font-weight: 500 !important;
+  cursor: pointer !important;
+  transition: background 0.25s !important;
+}
+.sd-contact .et_pb_contact_submit:hover {
+  background: var(--mint-deep) !important;
+}
+
+/* ─────────────────────────────────────────────
+   HEADER / NAV
+───────────────────────────────────────────── */
+#main-header,
+#main-header.et-fixed-header {
+  background: rgba(250,250,246,0.95) !important;
+  backdrop-filter: blur(12px) !important;
+  border-bottom: 1px solid var(--border) !important;
+  box-shadow: none !important;
+}
+#main-header .et_pb_menu__menu a,
+#main-header nav a {
+  font-family: var(--font-body) !important;
+  font-size: 0.88rem !important;
+  font-weight: 400 !important;
+  color: var(--text-mid) !important;
+  letter-spacing: 0.01em !important;
+}
+#main-header nav a:hover {
+  color: var(--text-dark) !important;
+}
+
+/* ─────────────────────────────────────────────
+   FOOTER
+───────────────────────────────────────────── */
+#main-footer {
+  background: var(--dark) !important;
+  color: rgba(250,250,246,0.65) !important;
+}
+#main-footer a {
+  color: rgba(250,250,246,0.65) !important;
+}
+#main-footer a:hover {
+  color: var(--mint-deep) !important;
+}
+
+/* ─────────────────────────────────────────────
+   HELPERS GENERALES
+───────────────────────────────────────────── */
+
+/* Etiqueta de sección (SOBRE NOSOTRAS, LO QUE HACEMOS...) */
+.sd-label {
+  display: inline-block;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--mint-deep);
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+.sd-label::before {
+  content: '— ';
+  opacity: 0.5;
+}
+
+/* Divisor decorativo */
+.sd-divider {
+  width: 40px;
+  height: 2px;
+  background: var(--mint-deep);
+  border: none;
+  margin: 1.5rem 0;
+}
+
+/* Pill/tag genérico */
+.sd-pill {
+  display: inline-block;
+  padding: 0.35rem 0.9rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  background: rgba(200,232,224,0.45);
+  border: 1px solid var(--border);
+  color: var(--text-mid);
+}
+
+/* Fondo oscuro helper */
+.sd-dark-bg {
+  background: var(--dark) !important;
+}
+.sd-dark-bg,
+.sd-dark-bg h1,
+.sd-dark-bg h2,
+.sd-dark-bg h3,
+.sd-dark-bg p {
+  color: white !important;
+}
+
+/* Reveal animation */
+.sd-reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.sd-reveal.visible {
+  opacity: 1;
+  transform: none;
+}

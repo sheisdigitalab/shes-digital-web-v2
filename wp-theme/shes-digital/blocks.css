@@ -1,0 +1,34 @@
+/*
+ * She's Digital — Gutenberg bridge
+ * Neutraliza estilos por defecto de los bloques para que no entren en conflicto con v2.css.
+ */
+
+/* El contenedor de bloques no debe añadir márgenes propios */
+.wp-block-group {
+    margin-block-start: 0;
+    margin-block-end: 0;
+    padding: 0;
+}
+
+/* Respetar h2 / h3 de v2.css; el bloque wp:heading añade .wp-block-heading */
+.wp-block-heading {
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
+/* Respetar párrafos de v2.css */
+.wp-block-paragraph {
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
+/* Eliminar padding lateral que añade Gutenberg a los bloques alineados */
+.wp-block-html {
+    all: unset;
+    display: block;
+}
+
+/* Suprimir el margen entre bloques consecutivos dentro de <main> */
+.entry-content > * + * {
+    margin-block-start: 0;
+}
