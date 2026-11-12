@@ -72,23 +72,26 @@ function sd_enqueue_bloques(): void {
     wp_enqueue_style( 'sd-v2', $home . 'assets/css/v2.css', [], $v );
     wp_enqueue_style( 'sd-blocks', get_stylesheet_directory_uri() . '/blocks.css', [ 'sd-v2' ], '1.0.0' );
 
-    $scripts = [
-        'sd-gsap'          => 'gsap.min.js',
-        'sd-scrolltrigger' => 'ScrollTrigger.min.js',
-        'sd-lenis'         => 'lenis.min.js',
-        'sd-main'          => 'main.js',
-        'sd-cookies'       => 'cookies.js',
-    ];
-
+    // GSAP + Lenis (encadenados por dependencias)
     $prev = [];
-    foreach ( $scripts as $handle => $file ) {
-        wp_enqueue_script(
-            $handle,
-            $home . 'assets/js/' . $file,
-            $prev,
-            $v,
-            [ 'strategy' => 'defer', 'in_footer' => true ]
-        );
+    foreach ( [ 'sd-gsap' => 'gsap.min.js', 'sd-scrolltrigger' => 'ScrollTrigger.min.js', 'sd-lenis' => 'lenis.min.js' ] as $handle => $file ) {
+        wp_enqueue_script( $handle, $home . 'assets/js/' . $file, $prev, $v, [ 'strategy' => 'defer', 'in_footer' => true ] );
+        $prev = [ $handle ];
+    }
+
+    // bloques-attrs.js — inyecta data-* antes de que main.js los lea
+    wp_enqueue_script(
+        'sd-bloques-attrs',
+        get_stylesheet_directory_uri() . '/assets/js/bloques-attrs.js',
+        $prev,
+        '1.0.0',
+        [ 'strategy' => 'defer', 'in_footer' => true ]
+    );
+    $prev = [ 'sd-bloques-attrs' ];
+
+    // main.js y cookies.js dependen de sd-bloques-attrs
+    foreach ( [ 'sd-main' => 'main.js', 'sd-cookies' => 'cookies.js' ] as $handle => $file ) {
+        wp_enqueue_script( $handle, $home . 'assets/js/' . $file, $prev, $v, [ 'strategy' => 'defer', 'in_footer' => true ] );
         $prev = [ $handle ];
     }
 }

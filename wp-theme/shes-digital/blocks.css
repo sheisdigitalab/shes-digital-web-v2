@@ -1,34 +1,80 @@
-/*
- * She's Digital — Gutenberg bridge
- * Neutraliza estilos por defecto de los bloques para que no entren en conflicto con v2.css.
- */
+/* ================================================================
+   blocks.css — correctores para el marcado de bloques nativos
+   Se carga después de v2.css (ver functions.php)
+   ================================================================ */
 
-/* El contenedor de bloques no debe añadir márgenes propios */
+/* ---- Reset de márgenes y padding que WP inyecta por defecto ---- */
 .wp-block-group {
-    margin-block-start: 0;
-    margin-block-end: 0;
-    padding: 0;
+  display: block;        /* evita flow-root cuando el contexto no lo requiere */
+  margin-block-start: 0;
+  margin-block-end: 0;
+  padding: 0;
+}
+.wp-block-heading { margin-block-start: 0; margin-block-end: 0; }
+.wp-block-paragraph { margin-block-start: 0; margin-block-end: 0; }
+.wp-block-html { all: unset; display: block; }
+
+/* Las secciones/grupos como section/article/header mantienen su display correcto */
+section.wp-block-group,
+article.wp-block-group,
+header.wp-block-group { display: block; }
+
+/* Elimina el margen añadido por WP entre bloques consecutivos */
+.entry-content > * + * { margin-block-start: 0; }
+
+/* ---- wp:list — reset para .trust y otros listados de diseño ---- */
+.wp-block-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-/* Respetar h2 / h3 de v2.css; el bloque wp:heading añade .wp-block-heading */
-.wp-block-heading {
-    margin-block-start: 0;
-    margin-block-end: 0;
+/* ---- wp:details — reset base ---- */
+.wp-block-details {
+  margin: 0;
+  padding: 0;
 }
 
-/* Respetar párrafos de v2.css */
-.wp-block-paragraph {
-    margin-block-start: 0;
-    margin-block-end: 0;
+/* El párrafo de respuesta del FAQ actúa como .qa__body */
+.wp-block-details > .wp-block-paragraph {
+  padding: 0 64px 28px 0;
+  color: var(--ink-2);
+  max-width: 62ch;
+  margin: 0;
+}
+@media (max-width: 599px) {
+  .wp-block-details > .wp-block-paragraph { padding-right: 0; }
 }
 
-/* Eliminar padding lateral que añade Gutenberg a los bloques alineados */
-.wp-block-html {
-    all: unset;
-    display: block;
+/* ---- Reviews: párrafos que actúan como blockquote/footer ---- */
+/* .review-card__text y .review-card__author son selectores de clase
+   en v2.css — funcionan en <p> igual que en <blockquote> o <footer> */
+p.review-card__text  { display: block; }
+p.review-card__author { display: block; }
+
+/* ---- Grupos de sección sin margen extra ---- */
+.wp-block-group.wrap,
+.wp-block-group.hero__copy,
+.wp-block-group.hero__grid,
+.wp-block-group.about__grid,
+.wp-block-group.about__copy,
+.wp-block-group.contact__intro,
+.wp-block-group.contact__grid,
+.wp-block-group.faq__list,
+.wp-block-group.faq__grid,
+.wp-block-group.reviews__grid,
+.wp-block-group.v3-head,
+.wp-block-group.head,
+.wp-block-group.ps-head {
+  margin: 0;
+  padding: 0;
 }
 
-/* Suprimir el margen entre bloques consecutivos dentro de <main> */
-.entry-content > * + * {
-    margin-block-start: 0;
-}
+/* ---- Mantener el grid de about cuando wp-block-group es el wrapper ---- */
+.wp-block-group.about__grid { display: grid; }
+
+/* ---- Mantener el grid de reviews cuando wp-block-group es el wrapper ---- */
+.wp-block-group.reviews__grid { display: grid; }
+
+/* ---- Mantener flex en contact__grid ---- */
+.wp-block-group.contact__grid { display: grid; }
