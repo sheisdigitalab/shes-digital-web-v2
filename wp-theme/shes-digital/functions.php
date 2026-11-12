@@ -96,3 +96,5 @@ function sd_enqueue_bloques(): void {
     }
 }
 add_action( 'wp_enqueue_scripts', 'sd_enqueue_bloques' );
+
+require_once get_template_directory() . '/inc/textos-panel.php';

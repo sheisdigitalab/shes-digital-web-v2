@@ -9,11 +9,29 @@
  */
 if ( ! defined( 'ABSPATH' ) ) exit;
 
-$pid   = get_the_ID();
-$title = get_post_meta( $pid, '_shes_meta_title', true ) ?: get_the_title();
-$desc  = get_post_meta( $pid, '_shes_meta_desc',  true ) ?: '';
-$url   = get_permalink( $pid );
-$home  = home_url( '/' );
+// Portada (ID 400): devolver el contenido directamente, sin envolver en HTML extra.
+// El HTML de la portada ya incluye <!doctype html>…</html> completo.
+if ( get_the_ID() === 400 ) {
+    if ( have_posts() ) :
+        while ( have_posts() ) :
+            the_post();
+            remove_filter( 'the_content', 'wpautop',     10 );
+            remove_filter( 'the_content', 'wptexturize', 10 );
+            the_content();
+        endwhile;
+    endif;
+    exit;
+}
+
+$pid       = get_the_ID();
+$sd_textos = (array) get_option( 'sd_textos', [] );
+$title     = get_post_meta( $pid, '_shes_meta_title', true )
+             ?: ( $sd_textos['meta_title'] ?? '' )
+             ?: get_the_title();
+$desc      = get_post_meta( $pid, '_shes_meta_desc', true )
+             ?: ( $sd_textos['meta_desc'] ?? '' );
+$url       = get_permalink( $pid );
+$home      = home_url( '/' );
 ?><!DOCTYPE html>
 <html lang="es">
 <head>

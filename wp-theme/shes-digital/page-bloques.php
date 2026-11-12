@@ -116,7 +116,7 @@ endif;
         <h3>Más</h3>
         <ul>
           <li><a href="/proyectos/">Proyectos</a></li>
-          <li><a href="https://sheisdigitallab.com/blog/">Blog</a></li>
+          <li><a href="https://sheisdigitalab.com/blog/">Blog</a></li>
         </ul>
       </nav>
       <nav aria-label="Pie: zonas">
@@ -133,7 +133,7 @@ endif;
       <div>
         <h3>Contacto</h3>
         <ul>
-          <li><a href="mailto:hola@sheisdigitallab.com">hola@sheisdigitallab.com</a></li>
+          <li><a href="mailto:hola@sheisdigitalab.com">hola@sheisdigitalab.com</a></li>
           <li><a href="tel:+34637889942">+34 637 889 942</a></li>
           <li>Barcelona</li>
         </ul>
@@ -141,9 +141,9 @@ endif;
       <nav aria-label="Pie: legal">
         <h3>Legal</h3>
         <ul>
-          <li><a href="https://sheisdigitallab.com/legal/aviso-legal/">Aviso legal</a></li>
-          <li><a href="https://sheisdigitallab.com/legal/privacidad/">Privacidad</a></li>
-          <li><a href="https://sheisdigitallab.com/legal/cookies/">Cookies</a></li>
+          <li><a href="https://sheisdigitalab.com/legal/aviso-legal/">Aviso legal</a></li>
+          <li><a href="https://sheisdigitalab.com/legal/privacidad/">Privacidad</a></li>
+          <li><a href="https://sheisdigitalab.com/legal/cookies/">Cookies</a></li>
           <li><button type="button" class="footer__cookie-btn" data-cookie-action="reopen">Configurar cookies</button></li>
         </ul>
       </nav>
@@ -173,7 +173,7 @@ endif;
       <p id="cookieDesc" class="cookie-banner__text">
         Usamos cookies técnicas (necesarias) y analíticas (Google Analytics) para mejorar la web.
         Puedes aceptarlas todas, rechazar las analíticas o configurarlas.
-        <a href="https://sheisdigitallab.com/legal/cookies/">Más info</a>.
+        <a href="https://sheisdigitalab.com/legal/cookies/">Más info</a>.
       </p>
     </div>
     <div class="cookie-banner__actions">
