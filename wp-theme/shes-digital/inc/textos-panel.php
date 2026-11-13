@@ -376,7 +376,7 @@ function sd_textos_page(): void {
  * Filtro the_content — reemplaza {{sd:key}} en la portada
  * Solo actúa en la página con ID 400.
  * ----------------------------------------------------- */
-add_filter( 'the_content', function ( $content ) {
+function sd_textos_reemplazar( $content ) {
     if ( ! is_singular() || get_the_ID() !== 400 ) {
         return $content;
     }
@@ -413,10 +413,39 @@ add_filter( 'the_content', function ( $content ) {
         foreach ( [ 'q', 'a' ] as $t ) {
             $key   = "faq_{$t}_{$n}";
             $val   = $opts[ $key ] ?? $defaults[ $key ] ?? '';
-            $plain = esc_js( wp_strip_all_tags( wp_kses_post( (string) $val ) ) );
+            $plain = substr( wp_json_encode( wp_strip_all_tags( wp_kses_post( (string) $val ) ) ), 1, -1 );
             $content = str_replace( "{{sd:json_faq_{$t}_{$n}}}", $plain, $content );
         }
     }
 
     return $content;
-}, 10 );
+}
+add_filter( 'the_content', 'sd_textos_reemplazar', 10 );
+
+/* -------------------------------------------------------
+ * Sincroniza meta_title y meta_desc con _shes_meta_title / _shes_meta_desc
+ * al guardar la opción sd_textos.
+ * ----------------------------------------------------- */
+function sd_textos_sync_meta( $value ): void {
+    $data = is_array( $value ) ? $value : (array) get_option( 'sd_textos', [] );
+    if ( isset( $data['meta_title'] ) ) {
+        update_post_meta( 400, '_shes_meta_title', sanitize_text_field( $data['meta_title'] ) );
+    }
+    if ( isset( $data['meta_desc'] ) ) {
+        update_post_meta( 400, '_shes_meta_desc', sanitize_text_field( $data['meta_desc'] ) );
+    }
+}
+add_action( 'add_option_sd_textos',    'sd_textos_sync_meta' );
+add_action( 'update_option_sd_textos', function ( $old, $value ) { sd_textos_sync_meta( $value ); }, 10, 2 );
+
+/* -------------------------------------------------------
+ * Sustitución anticipada en template_redirect para la página 400.
+ * Necesario porque el snippet "Full Blank" (Code Snippets) renderiza
+ * post_content directamente sin pasar por the_content.
+ * ----------------------------------------------------- */
+add_action( 'template_redirect', function () {
+    global $post;
+    if ( ! is_singular() || ! $post || (int) $post->ID !== 400 ) return;
+
+    $post->post_content = sd_textos_reemplazar( $post->post_content );
+}, 1 );
