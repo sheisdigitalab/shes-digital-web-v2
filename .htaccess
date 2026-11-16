@@ -1,3 +1,8 @@
+# ⚠️  ATENCIÓN: Este .htaccess es de la web estática (GitHub Pages / hosting estático).
+# NO lo subas al hosting de WordPress: las reglas 410 de wp-login, wp-admin,
+# wp-sitemap y xmlrpc bloquearían el acceso al panel de administración.
+# El .htaccess para WordPress está documentado en wp-theme/ACTUALIZAR-TEXTOS.md.
+
 Options -Indexes
 DirectoryIndex index.html
 ErrorDocument 404 /404.html
@@ -84,12 +89,6 @@ ErrorDocument 404 /404.html
   RewriteRule ^diseno-web-vitoria/?$                / [R=301,L]
   RewriteRule ^diseno-web-zaragoza/?$               / [R=301,L]
 
-  # ----- Restos de WordPress: ya no existen en esta web estática (410 Gone) -----
-  # Van antes del bloque de index.php para que tengan prioridad
-  RewriteRule ^wp-login\.php$ - [G,L]
-  RewriteRule ^wp-sitemap[^/]*\.xml$ - [G,L]
-  RewriteRule ^wp-admin(/|$) - [G,L]
-  RewriteRule ^xmlrpc\.php$ - [G,L]
 
 </IfModule>
 

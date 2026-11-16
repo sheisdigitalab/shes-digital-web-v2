@@ -78,3 +78,8 @@ p.review-card__author { display: block; }
 
 /* ---- Mantener flex en contact__grid ---- */
 .wp-block-group.contact__grid { display: grid; }
+
+/* ---- Ocultar FAB WhatsApp y botón galleta mientras el banner de cookies está abierto ---- */
+/* En móvil se montaban encima de los botones "Aceptar todo" / "Rechazar"                  */
+body:has(.cookie-banner:not([hidden])) .wa-fab { display: none !important; }
+.cookie-banner:not([hidden]) ~ .cookie-reopen  { display: none !important; }
