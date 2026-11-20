@@ -361,6 +361,151 @@ body:has(.hero--split) .nav:not(.is-scrolled) {
   body:has(.hero--split) .nav:not(.is-scrolled) { background: none; backdrop-filter: none; -webkit-backdrop-filter: none; box-shadow: none; }
 }
 
+/* ── Hero: avatar con bocadillo y chat ── */
+.hero--split .hero__stage.avatar {
+  display: flex; flex-direction: column; gap: 14px;
+  align-items: stretch; justify-content: flex-start;
+  aspect-ratio: auto; overflow: visible; perspective: none;
+  background: transparent;
+  padding-block: clamp(92px, 7vw, 104px) clamp(20px, 2.4vw, 32px);
+  padding-inline: clamp(16px, 3vw, 48px) 0;
+}
+.hero--split .hero__stage.avatar::before { display: none; }
+
+/* Marco del avatar: la imagen no se mueve; solo cambia la pose según el cursor */
+.avatar__frame {
+  position: relative; flex: 1 1 auto; min-height: 640px;
+}
+.avatar__scene {
+  position: absolute; inset: 0;
+  border-radius: var(--card-r); overflow: hidden; background: var(--line);
+  box-shadow: 0 34px 60px -30px rgba(34, 30, 30, .42);
+}
+.avatar__img {
+  position: absolute; inset: 0; width: 100%; height: 100%; max-width: none;
+  object-fit: cover; object-position: 50% 6%;
+}
+/* Siete poses apiladas sobre el mismo fondo: solo la activa se ve (cambio rápido de opacidad) */
+.avatar__img { opacity: 0; z-index: 2; transition: opacity .14s ease-out; }
+.avatar__img--c { opacity: 1; z-index: 1; }
+.avatar__img.is-on { opacity: 1; z-index: 3; }
+
+/* Bocadillo: aquí aparecen el saludo y las respuestas */
+.avatar__bubble {
+  position: absolute; z-index: 2;
+  top: clamp(14px, 4%, 30px); left: clamp(14px, 4%, 30px);
+  width: max-content; max-width: min(310px, 58%);
+  padding: 14px 18px;
+  background: var(--paper); color: var(--ink);
+  border-radius: 20px 20px 6px 20px;
+  font-size: var(--fs-5); line-height: 1.4;
+  box-shadow: 0 18px 38px -16px rgba(34, 30, 30, .5);
+}
+.avatar__bubble.has-actions { max-width: min(370px, 60%); }
+.avatar__bubble.has-actions .avatar__ghost,
+.avatar__bubble.has-actions .avatar__typed { padding-right: 30px; }
+.avatar__bubble-close {
+  display: none; position: absolute; top: 4px; right: 4px; width: 44px; height: 44px;
+  place-items: center; border: 0; border-radius: 50%; background: transparent; color: var(--ink); cursor: pointer;
+  transition: background-color .3s var(--ease);
+}
+.avatar__bubble.has-actions .avatar__bubble-close { display: grid; }
+.avatar__bubble-close:hover { background: var(--cream); }
+.avatar__bubble-close svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; }
+.avatar__bubble::after {
+  content: ""; position: absolute; right: 26px; bottom: -8px;
+  width: 16px; height: 16px; background: var(--paper);
+  transform: rotate(45deg); border-radius: 3px;
+}
+.avatar__bubble-body { position: relative; }
+.avatar__ghost { display: block; visibility: hidden; }
+.avatar__typed { position: absolute; inset: 0; display: block; }
+.avatar__dots { position: absolute; left: 0; top: 6px; display: inline-flex; gap: 5px; opacity: 0; transition: opacity .2s; }
+.avatar__dots.is-on { opacity: 1; }
+.avatar__dots i { width: 8px; height: 8px; border-radius: 50%; background: var(--ink); animation: avatar-dot 1s ease-in-out 2; }
+.avatar__dots i:nth-child(2) { animation-delay: .15s; }
+.avatar__dots i:nth-child(3) { animation-delay: .3s; }
+@keyframes avatar-dot { 0%, 70%, 100% { transform: translateY(0); opacity: .35; } 35% { transform: translateY(-4px); opacity: 1; } }
+.avatar__actions { display: none; flex-wrap: wrap; gap: 10px; margin-top: 12px; }
+.avatar__actions .btn { --h: 44px; }
+.avatar__bubble.has-actions .avatar__actions { display: flex; opacity: 0; visibility: hidden; transition: opacity .4s var(--ease), visibility .4s; }
+.avatar__bubble.is-done.has-actions .avatar__actions { opacity: 1; visibility: visible; }
+
+/* Preguntas sugeridas (fila deslizable con flecha) y cuadro de texto */
+.avatar__chat { display: grid; gap: 12px; }
+.avatar__chips-row { display: flex; align-items: center; gap: 8px; min-width: 0; }
+.avatar__chips {
+  flex: 1; min-width: 0; display: flex; gap: 8px;
+  overflow-x: auto; scroll-snap-type: x proximity; scrollbar-width: none;
+  padding: 3px 0;
+}
+.avatar__chips::-webkit-scrollbar { display: none; }
+.avatar__chips.is-overflow { -webkit-mask-image: linear-gradient(90deg, #000 calc(100% - 36px), transparent); mask-image: linear-gradient(90deg, #000 calc(100% - 36px), transparent); }
+.avatar__chips li { flex: none; scroll-snap-align: start; }
+.avatar__chip {
+  min-height: 44px; padding: 0 16px;
+  border: 1px solid var(--ink); border-radius: var(--radius);
+  background: transparent; color: var(--ink);
+  font-family: var(--sans); font-size: var(--fs-6); font-weight: 500; line-height: 1; white-space: nowrap;
+  cursor: pointer;
+  transition: background-color .3s var(--ease), color .3s var(--ease);
+}
+.avatar__chip:hover { background: var(--ink); color: var(--on-ink); }
+.avatar__next {
+  flex: none; width: 44px; height: 44px;
+  display: grid; place-items: center;
+  border: 1px solid var(--ink); border-radius: 50%; background: transparent; color: var(--ink); cursor: pointer;
+  transition: background-color .3s var(--ease), color .3s var(--ease);
+}
+.avatar__next[hidden] { display: none; }
+.avatar__next:hover { background: var(--ink); color: var(--on-ink); }
+.avatar__next svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.avatar__form {
+  display: flex; align-items: center; gap: 8px;
+  padding: 5px 5px 5px 20px;
+  background: var(--paper); border: 1px solid var(--ink); border-radius: var(--radius);
+}
+.avatar__form:focus-within { outline: 2px solid var(--ink); outline-offset: 3px; }
+.avatar__form input {
+  flex: 1; min-width: 0; height: 44px;
+  border: 0; outline: 0; background: transparent; color: var(--ink);
+  font-family: var(--sans); font-size: var(--fs-5);
+}
+.avatar__form input::placeholder { color: var(--muted); opacity: 1; }
+.avatar__send {
+  flex: none; width: 44px; height: 44px;
+  display: grid; place-items: center;
+  border: 0; border-radius: 50%; background: var(--ink); color: var(--on-ink); cursor: pointer;
+  transition: background-color .3s var(--ease), color .3s var(--ease);
+}
+.avatar__send:hover { background: var(--mint); color: var(--ink); }
+.avatar__send svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+
+@media (max-width: 1023px) {
+  .hero--split .hero__stage.avatar { max-width: 560px; margin-inline: auto; padding: 0; aspect-ratio: auto; }
+  .avatar__frame { flex: none; min-height: 0; aspect-ratio: 4 / 5; }
+  .avatar__img { object-position: 60% 25%; }
+}
+@media (max-width: 767px) {
+  /* El bocadillo se queda en la zona izquierda y no tapa la cara */
+  .avatar__bubble { width: auto; max-width: none; right: 12px; padding: 10px 14px; font-size: var(--fs-6); top: 10px; left: 12px; }
+  .avatar__bubble::after { display: none; }
+  /* Con respuesta, el bocadillo baja y ocupa el ancho: se ven la cara y el perro */
+  .avatar__bubble.has-actions {
+    top: auto; bottom: 12px; left: 12px; right: 12px; width: auto; max-width: none;
+    border-radius: 20px; padding: 14px 16px; transform: none;
+  }
+  .avatar__bubble.has-actions::after { display: none; }
+  .avatar__actions .btn { flex: 1 1 auto; padding: 0 14px; }
+  /* En móvil las preguntas se deslizan con el dedo, sin flecha */
+  .avatar__next { display: none; }
+  .avatar__chips-row { margin-inline: calc(var(--gutter) * -1); }
+  .avatar__chips { padding: 3px var(--gutter); scroll-padding-inline: var(--gutter); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .avatar__dots i { animation: none; opacity: 1; }
+}
+
 /* ---------- Cinta ---------- */
 .ribbon {
   overflow: hidden; background: var(--ink); color: var(--on-ink);
